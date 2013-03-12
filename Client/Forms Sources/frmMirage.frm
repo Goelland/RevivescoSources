@@ -465,6 +465,7 @@ Begin VB.Form FrmMirage
       End
       Begin VB.PictureBox picPlayerSpells 
          Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
          BackColor       =   &H00FFFFFF&
          BorderStyle     =   0  'None
          CausesValidation=   0   'False
@@ -549,10 +550,10 @@ Begin VB.Form FrmMirage
                Left            =   120
                ScaleHeight     =   529
                ScaleMode       =   3  'Pixel
-               ScaleWidth      =   502
+               ScaleWidth      =   510
                TabIndex        =   246
                Top             =   120
-               Width           =   7530
+               Width           =   7650
                Begin VB.PictureBox picspell 
                   Appearance      =   0  'Flat
                   AutoRedraw      =   -1  'True
@@ -1131,7 +1132,7 @@ Begin VB.Form FrmMirage
          Height          =   300
          Left            =   6480
          TabIndex        =   203
-         Top             =   2760
+         Top             =   2640
          Width           =   195
       End
       Begin VB.Label AddSpeed 
@@ -1527,6 +1528,7 @@ Begin VB.Form FrmMirage
          _Version        =   393217
          BackColor       =   8421504
          BorderStyle     =   0
+         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   2
          Appearance      =   0

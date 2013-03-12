@@ -156,7 +156,7 @@ ligne = ""
 
         
         
-        For i = 1 To MAX_PLAYER_SPELLS - 1
+        For i = 1 To MAX_SPELLS - 1
             If Loading = False Then Load FrmMirage.picspell(i)
             
             X = Int(i / 10)

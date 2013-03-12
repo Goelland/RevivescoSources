@@ -31,7 +31,7 @@ Begin VB.Form frmMainMenu
       ScaleHeight     =   1575
       ScaleWidth      =   3660
       TabIndex        =   18
-      Top             =   5520
+      Top             =   5640
       Width           =   3660
       Begin VB.TextBox txtPassword2 
          Appearance      =   0  'Flat
