@@ -1,0 +1,6 @@
+Public Sub NPC2(Byval index, Byval texte)
+
+                    script.Mapplayermsg(index, "Golem : GROARRRRRRRRR!!!",0)
+
+Exit Sub
+

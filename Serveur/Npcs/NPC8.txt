@@ -1,0 +1,23 @@
+Public Sub NPC8(byval index, byval texte)
+
+Call Mapplayermsg(index,"Test",0)
+
+
+End sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

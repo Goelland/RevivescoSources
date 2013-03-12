@@ -1,0 +1,7 @@
+Sub DropItems(index)  
+   
+'...........................................................................................................................Jusqu'à là pour empecher la perte d'objets à la mort
+
+'SYST_SCRIPT(dropitem)
+
+End Sub

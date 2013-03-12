@@ -1,0 +1,15 @@
+Public sub NPC15(byval index, byval texte)
+dim s
+Select case texte
+      Case "bonjour"
+             script.playermsg index,"Salut a toi aussi!",0
+ script.getplayerhp index
+
+exit sub
+      case "adieu"
+             script.playermsg index, "a bientôt",0
+exit sub
+End select
+End sub
+
+

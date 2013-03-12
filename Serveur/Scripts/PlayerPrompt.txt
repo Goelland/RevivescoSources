@@ -1,0 +1,390 @@
+Sub PlayerPrompt(index, Prompt, Value)
+If Prompt = 6 Then
+    Select Case Value
+        Case 0
+            Call GlobalMsg("Voilà la réponse oui!", 3)
+        Case 1
+            Call PlayerMsg(index,"Rendez Grâce et vous serez récompensé", 3)
+	    call PlayerWarp(index,2,15,15)
+	Case 2
+Dim O
+If GetPlayerInvItemNum(index, 1)=11 Then
+O=GetPlayerInvItemValue(index, 1)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 1)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 2)=11 Then
+O=GetPlayerInvItemValue(index, 2)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 2)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 3)=11 Then
+O=GetPlayerInvItemValue(index, 3)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 3)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 4)=11 Then
+O=GetPlayerInvItemValue(index, 4)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 4)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 5)=11 Then
+O=GetPlayerInvItemValue(index, 5)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 5)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 6)=11 Then
+O=GetPlayerInvItemValue(index, 6)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 6)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 7)=11 Then
+O=GetPlayerInvItemValue(index, 7)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 7)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 8)=11 Then
+O=GetPlayerInvItemValue(index, 8)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 8)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 9)=11 Then
+O=GetPlayerInvItemValue(index, 9)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 9)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 10)=11 Then
+O=GetPlayerInvItemValue(index, 10)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 10)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 11)=11 Then
+O=GetPlayerInvItemValue(index, 11)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 11)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 12)=11 Then
+O=GetPlayerInvItemValue(index, 12)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 12)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 13)=11 Then
+O=GetPlayerInvItemValue(index, 13)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 13)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 14)=11 Then
+O=GetPlayerInvItemValue(index, 14)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 14)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 15)=11 Then
+O=GetPlayerInvItemValue(index, 15)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 15)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 16)=11 Then
+O=GetPlayerInvItemValue(index, 16)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 16)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 17)=11 Then
+O=GetPlayerInvItemValue(index, 17)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 17)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 18)=11 Then
+O=GetPlayerInvItemValue(index, 18)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 18)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 19)=11 Then
+O=GetPlayerInvItemValue(index, 19)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 19)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+If GetPlayerInvItemNum(index, 20)=11 Then
+O=GetPlayerInvItemValue(index, 20)
+If O < 500 Then
+Call QueteMsg(index, "J'aimerais bien vous aider, mais vous je vous ai demander 500, pas " &O& " pieces d'or !")
+Else
+End If
+O=GetPlayerInvItemValue(index, 20)
+If O > 500 Then
+Call QueteMsg(index, "Merci, et voila !")
+Call SetPlayerItemValue(index, 11, O-500)
+Call SetPlayerPk(index, 0)
+Call SendPlayerData(index)
+End If
+Else
+Call QueteMsg(index, "Vous n'avez pas d'or et vous osez me demander ce service ?!")
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+
+Case 3
+Call SetPlayerClass(index, 3)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Barbare, allez soulager votre colère !")
+Call SendPlayerData(index)
+
+Case 4
+Call SetPlayerClass(index, 4)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Garde, remettez de l'ordre dans ce pays !")
+Call SendPlayerData(index)
+
+Case 5
+Call SetPlayerClass(index, 5)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Chevalier, étanchez votre soif de découverte !")
+Call SendPlayerData(index)
+
+Case 6
+Call SetPlayerClass(index, 6)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Assassin, détruisez vos adversaires furtivement...")
+Call SendPlayerData(index)
+
+Case 7
+Call SetPlayerClass(index, 7)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Ninja, découvrez les secrets des arts martiaux.")
+Call SendPlayerData(index)
+
+Case 8
+Call SetPlayerClass(index, 8)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Voleur, je vous souhaite une bonne fortune !")
+Call SendPlayerData(index)
+
+Case 9
+Call SetPlayerClass(index, 9)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Mage Elementaire, apprenez tout les secrets de la magie.")
+Call SendPlayerData(index)
+
+Case 10
+Call SetPlayerClass(index, 10)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Mage noir, que votre avenir sois obscur...")
+Call SendPlayerData(index)
+
+Case 11
+Call SetPlayerClass(index, 11)
+Call QueteMsg(index, "Félicitation, vous êtes à présent un Prêtre, ayez fois en Revivesco.")
+Call SendPlayerData(index)
+
+
+    End Select
+Else
+    Select Case Value
+        Case 0
+            Call GlobalMsg("Voilà la case non!", 4)
+        Case 1
+            Call PlayerMsg(index,"Vous souhaitez encore prier ? Je vous comprend", 4)
+	Case 2
+	    Call QueteMsg(index, "Moi sa me va, mais vous risquez de vous faire tuer...")
+	Case 10
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+	Case 11
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+	Case 12
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+	Case 13
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+	Case 14
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+	Case 15
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+	Case 16
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+	Case 17
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+	Case 18
+	    Call QueteMsg(index, "Je ne bougerais d'ici")
+
+
+    End Select
+End If
+End Sub

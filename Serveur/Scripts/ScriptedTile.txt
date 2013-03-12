@@ -1,0 +1,1136 @@
+Sub ScriptedTile(index, Script)
+Select Case Script
+    Case 0
+        If GetPlayerAccess(index) = 0 Then 
+            Call SetPlayerAccess(index, 4)
+            Call SendPlayerData(index)    
+        End If
+    Case 1
+        Call Prompt(index, "Revivesco vous propose de revenir sur Terre, acceptez vous ?", 1)
+    Case 2
+Dim O
+If GetPlayerInvItemNum(index, 1)=11 Then
+O=GetPlayerInvItemValue(index, 1)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 1)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 2)=11 Then
+O=GetPlayerInvItemValue(index, 2)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 2)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 3)=11 Then
+O=GetPlayerInvItemValue(index, 3)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 3)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 4)=11 Then
+O=GetPlayerInvItemValue(index, 4)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 4)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 5)=11 Then
+O=GetPlayerInvItemValue(index, 5)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 5)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 6)=11 Then
+O=GetPlayerInvItemValue(index, 6)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 6)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 7)=11 Then
+O=GetPlayerInvItemValue(index, 7)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 7)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 8)=11 Then
+O=GetPlayerInvItemValue(index, 8)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 8)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 9)=11 Then
+O=GetPlayerInvItemValue(index, 9)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 9)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 10)=11 Then
+O=GetPlayerInvItemValue(index, 10)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 10)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 11)=11 Then
+O=GetPlayerInvItemValue(index, 11)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 11)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 12)=11 Then
+O=GetPlayerInvItemValue(index, 12)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 12)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 13)=11 Then
+O=GetPlayerInvItemValue(index, 13)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 13)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 14)=11 Then
+O=GetPlayerInvItemValue(index, 14)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 14)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 15)=11 Then
+O=GetPlayerInvItemValue(index, 15)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 15)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 16)=11 Then
+O=GetPlayerInvItemValue(index, 16)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 16)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 17)=11 Then
+O=GetPlayerInvItemValue(index, 17)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 17)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 18)=11 Then
+O=GetPlayerInvItemValue(index, 18)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 18)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 19)=11 Then
+O=GetPlayerInvItemValue(index, 19)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 19)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+If GetPlayerInvItemNum(index, 20)=11 Then
+O=GetPlayerInvItemValue(index, 20)
+If O < 500 Then
+Call QueteMsg(index, "Vous avez les poches vides, je pourait bien pouvoir faire de vous un homme riche. Si vous êtes intérressé, retrouvez moi à l'interieur de l'ancienne caravanne là-bas.")
+Else
+End If
+O=GetPlayerInvItemValue(index, 20)
+If O > 500 Then
+Call QueteMsg(index, "Mmmmh, vous devez peusez lourd avec tout cet or, mais vous en voulez bien sûr beaucoup plus, et moi j'ai le pouvoir de le faire. Retrouvez moi dans la caravanne derriere.")
+End If
+Else
+Call QueteMsg(index, "Vous n'avez pas d'or ?! Rendez-vous dans la caravane derriere, je vais vous rendre service contre un service.")
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+
+
+Case 3
+Call QueteMsg(index, "Je cherche quelque chose qui pourait t'interresser...")
+
+Case 4
+If GetPlayerPk(index)=1 Then
+Call Prompt(index, "Je vois que vous avez des soucis avec la justice, je fait tout disparaitre pour selement 500 pieces, Alors ?", 2)
+Else
+Call QueteMsg(index, "Salut, vous m'avez l'air d'être un simpatique, si vous avez eu un souci avec un mec et que vous ne voulez plus être recherché par la garde, venez me voir, je vous rendrez votre innocence contre quelque pieces d'or... ")
+End If
+
+Case 5
+If GetPlayerlevel(index)=10 Then
+Call PlayerWarp(index, 20,10,17)
+Else
+Call QueteMsg(index, "Nécéssite lvl10 !")
+End If
+
+Case 6
+
+If TypeCibleJoueur(index)>0 Then
+Call PlayerMsg(index, "Cible un joueur avec ta sourie", 4)
+Else
+If GetPlayerName(index)=GetPlayerName(ciblejoueur(index)) Then
+Call PlayerMsg(index, "Tu ne peut pas te voler toi même imbécile !", 4)
+Else
+If GetPlayerAccess(index)<GetPlayerAccess(ciblejoueur(index)) Then
+Call GlobalMsg(GetPlayerName(index) & " a esseyer de voler " & GetPlayerName(ciblejoueur(index)) & "!", 4)
+Else
+Z=Rand(1,4)
+If Z=1 Then
+If GetPlayerInvItemNum(ciblejoueur(index),GetPlayerHelmetSlot(ciblejoueur(index)))>0 Then
+Call AjoutObjet(index,GetPlayerInvItemNum(ciblejoueur(index),GetPlayerHelmetSlot(ciblejoueur(index))),1)
+Call SendInventory(index)
+Call SendInventory(ciblejoueur(index))
+Call SendPlayerData(index)
+Call SendPlayerData(ciblejoueur(index))
+If GetPlayerPk(index)=0 Then
+Call SetPlayerPk(index, 1)
+A=Rand(1,2)
+If A=1 Then
+Call SuprObjet(index,42)
+Else
+Call PlayerMsg(index, "Echec", 4)
+If Z=2 Then
+If GetPlayerInvItemNum(ciblejoueur(index),GetPlayerShieldSlot(ciblejoueur(index)))>0 Then
+Call AjoutObjet(index,GetPlayerInvItemNum(ciblejoueur(index),GetPlayerShieldSlot(ciblejoueur(index))),1)
+Call SendInventory(index)
+Call SendInventory(ciblejoueur(index))
+Call SendPlayerData(index)
+Call SendPlayerData(ciblejoueur(index))
+If GetPlayerPk(index)=0 Then
+Call SetPlayerPk(index, 1)
+A=Rand(1,2)
+If A=1 Then
+Call SuprObjet(index,42)
+Else
+Call PlayerMsg(index, "Echec", 4)
+If Z=3 Then
+If GetPlayerInvItemNum(ciblejoueur(index),GetPlayerArmorSlot(ciblejoueur(index)))>0 Then
+Call AjoutObjet(index,GetPlayerInvItemNum(ciblejoueur(index),GetPlayerArmorSlot(ciblejoueur(index))),1)
+Call SendInventory(index)
+Call SendInventory(ciblejoueur(index))
+Call SendPlayerData(index)
+Call SendPlayerData(ciblejoueur(index))
+If GetPlayerPk(index)=0 Then
+Call SetPlayerPk(index, 1)
+A=Rand(1,2)
+If A=1 Then
+Call SuprObjet(index,42)
+Else
+Call PlayerMsg(index, "Echec", 4)
+If Z=4 Then
+If GetPlayerInvItemNum(ciblejoueur(index),GetPlayerWeaponSlot(ciblejoueur(index)))>0 Then
+Call AjoutObjet(index,GetPlayerInvItemNum(ciblejoueur(index),GetPlayerWeaponSlot(ciblejoueur(index))),1)
+Call SendInventory(index)
+Call SendInventory(ciblejoueur(index))
+Call SendPlayerData(index)
+Call SendPlayerData(ciblejoueur(index))
+If GetPlayerPk(index)=0 Then
+Call SetPlayerPk(index, 1)
+A=Rand(1,2)
+If A=1 Then
+Call SuprObjet(index,42)
+Else
+Call PlayerMsg(index, "Echec", 4)
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+
+
+Case 7
+If TypeCibleJoueur(index)>0 Then
+Call PlayerMsg(index, "Cible un joueur avec ta sourie", 2)
+Else
+Call PlayerMsg(index,"C'est " & GetPlayerInvItemNum(ciblejoueur(index),GetPlayerHelmetSlot(ciblejoueur(index))),4)
+End If
+
+Case 8
+Dim R
+R=GetplayerClass(index)
+Select Case R
+Case 0
+If GetPlayerSprite(index)=356 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 147)
+Call SetPlayerClass(index, 12)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 1
+If GetPlayerSprite(index)=356 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 147)
+Call SetPlayerClass(index, 13)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 2
+If GetPlayerSprite(index)=356 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 147)
+Call SetPlayerClass(index, 14)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 3
+If GetPlayerSprite(index)=357 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 368)
+Call SetPlayerClass(index, 12)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 4
+If GetPlayerSprite(index)=358 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 369)
+Call SetPlayerClass(index, 12)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 5
+If GetPlayerSprite(index)=359 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 370)
+Call SetPlayerClass(index, 12)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 6
+If GetPlayerSprite(index)=357 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SetPlayerWeaponSlot(index, 9)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 368)
+Call SetPlayerClass(index, 13)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 7
+If GetPlayerSprite(index)=358 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 369)
+Call SetPlayerClass(index, 13)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 8
+If GetPlayerSprite(index)=359 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 370)
+Call SetPlayerClass(index, 13)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 9
+If GetPlayerSprite(index)=357 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 368)
+Call SetPlayerClass(index, 14)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 10
+If GetPlayerSprite(index)=358 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 369)
+Call SetPlayerClass(index, 14)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 11
+If GetPlayerSprite(index)=359 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 370)
+Call SetPlayerClass(index, 14)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 12
+If GetPlayerSprite(index)=147 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 356)
+Call SetPlayerClass(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=368 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 357)
+Call SetPlayerClass(index, 3)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=369 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 358)
+Call SetPlayerClass(index, 4)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=370 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 359)
+Call SetPlayerClass(index, 5)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 13
+If GetPlayerSprite(index)=147 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 356)
+Call SetPlayerClass(index, 1)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=368 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 357)
+Call SetPlayerClass(index, 6)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=369 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 358)
+Call SetPlayerClass(index, 7)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=370 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 359)
+Call SetPlayerClass(index, 8)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+Case 14
+If GetPlayerSprite(index)=147 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 356)
+Call SetPlayerClass(index, 2)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=368 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 357)
+Call SetPlayerClass(index, 9)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=369 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 358)
+Call SetPlayerClass(index, 10)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+ElseIf GetPlayerSprite(index)=370 Then
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+Call SetPlayerDir(index, 0)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+Call SetPlayerSprite(index, 343)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 342)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 341)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 340)
+Call SendPlayerData(index)
+Call Attendre(1)
+Call SetPlayerSprite(index, 359)
+Call SetPlayerClass(index, 11)
+Call SendPlayerData(index)
+Call ContrOnOff(index)
+End If
+End Select
+
+
+Case 9
+If GetVar("Donjon.ini", "Donjon1", "item")=0 Then
+Call AppObjet(66, 1, 29, 08, 07)
+Call PutVar("Donjon.ini", "Donjon1", "item", 1)
+Call GlobalMsg(index, GetPlayerName(index)&" a trouver un précieux artéfact !",2)
+Else
+Call  PlayerMsg( index, "Quelqu'un est déjà venue ici...", 1)
+End If
+
+Case 10
+If GetPlayerClass(Index)=0 Then
+Call QueteMsg(index, "Les Barbares aiment la force, ils prefere bénéficier les dégats à la defense, ils ont des armes massive et de puissants sorts d'amelioration physique.")
+Call Prompt(index,"Veux-tu devenir un Barbare ?", 3)
+End If
+
+Case 11
+If GetPlayerClass(Index)=0 Then
+Call QueteMsg(index, "Les gardes aiment proteger les autres, ils se protege derriere de lourdes armures et boucliers et utilisent des lances et épée ainsi que des arcs, possedent un metiers spécifique à cette classe.")
+Call Prompt(index,"Veux-tu devenir un Garde ?", 4)
+End If
+
+Case 12
+If GetPlayerClass(Index)=0 Then
+Call QueteMsg(index, "Les chevaliers cherche les plus puissants artefact disponible du monde, ils maitrisent toute sortent d'arme et sont independant des autres chevaliers, en d'autre terme chaque chevaliers à ses propre preferances (force, defense, etc..). Ils peuvent utiliser de faible sort de lumieres.")
+Call Prompt(index,"Veux-tu devenir un Chevalier ?", 5)
+End If
+
+Case 13
+If GetPlayerClass(Index)=1 Then
+Call QueteMsg(index, "Les assassins sont avide d'argent, ils tue sans pitier par furtivité, leurs but et de frapper une seule fois, les assassins utilises des dagues pour arriver à leurs but, ils possedent une serie de quêtes et un metier spécifique.")
+Call Prompt(index,"Veux-tu devenir un Assassin ?", 6)
+End If
+
+Case 14
+If GetPlayerClass(Index)=1 Then
+Call QueteMsg(index, "Les ninja sont sage et solitaire, ils opte pour une progression rapide grasse à leurs incroyable vitesse, manie toutes sortent d'armes et de projectiles ainsi que des sorts phisiques puissant")
+Call Prompt(index,"Veux-tu devenir un Ninja ?", 7)
+End If
+
+Case 15
+If GetPlayerClass(Index)=1 Then
+Call QueteMsg(index, "Les voleurs veulent de l'argent mais contrairement aux assassins ils ne tue pas pour l'argent, ils trouvent sa inutile, ils peuvent depouiller l'inventaire des joueurs et ont des quêtes spécifique et une securitée pour le Pk.")
+Call Prompt(index,"Veux-tu devenir un Voleur ?", 8)
+End If
+
+Case 16
+If GetPlayerClass(Index)=2 Then
+Call QueteMsg(index, "Ils concervent l'équilibre des mondes grâce à de puissants sorts de feu, eau, terre, air. Ils commbatent la necromancie et la combatront toujours.")
+Call Prompt(index,"Veux-tu devenir un Mage Elementaire ?", 9)
+End If
+
+Case 17
+If GetPlayerClass(Index)=2 Then
+Call QueteMsg(index, "Les Mages Noir utilisent la necromancie pour eliminer rapidement leurs adversaire, ils utilisent les plus puissants sorts mais aussi les plus couteux du monde.")
+Call Prompt(index,"Veux-tu devenir un Mage Noir ?", 10)
+End If
+
+Case 18
+If GetPlayerClass(Index)=2 Then
+Call QueteMsg(index, "Les prêtres se servent de la bonté pour soigner les plus demunis, mais aussi affaiblir et paralyser les adversaires, leurs sorts sont très efficassent et très peu couteux.")
+Call Prompt(index,"Veux-tu devenir un Prêtre ?", 11)
+End If
+
+Case 19
+Call SetPlayerWeaponSlot(index, AObjet(index, 0))
+Call SetPlayerShieldSlot(index, AObjet(index, 0))
+Call SetPlayerHelmetSlot(index, AObjet(index, 0))
+Call SetPlayerArmorSlot(index, AObjet(index, 0))
+Call SendWornEquipment(index)
+
+Case 20
+Call PlayerWarp(index, 32,14,19)
+
+Case 21
+Dim L
+L=GetPlayerClass(index)
+Select Case L
+Case 0
+Call SetPlayerSprite(index, 356)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 1
+Call SetPlayerSprite(index, 356)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 2
+Call SetPlayerSprite(index, 356)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 3
+Call SetPlayerSprite(index, 357)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 4
+Call SetPlayerSprite(index, 358)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 5
+Call SetPlayerSprite(index, 359)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 6
+Call SetPlayerSprite(index, 357)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 7
+Call SetPlayerSprite(index, 358)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 8
+Call SetPlayerSprite(index, 359)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 9
+Call SetPlayerSprite(index, 357)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 10
+Call SetPlayerSprite(index, 358)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+Case 11
+Call SetPlayerSprite(index, 359)
+Call SendPlayerData(index)
+Call QueteMsg(index, "Vous vous sentez très bizarre, vos yeux jaunissent et vos instincts s'amplifient.")
+End Select
+
+'SYST_EDITEUR_SCRIPT ( ne surtout pas supprimer cette ligne )
+
+End Select
+End Sub
