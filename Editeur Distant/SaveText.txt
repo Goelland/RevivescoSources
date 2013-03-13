@@ -1,23 +1,5 @@
-Public Sub NPC8(byval index, byval texte)
+Public Sub NPC15 (Byval Index, Byval Texte)
 
-Call Mapplayermsg(index,"Test",0)
+	Call MapPlayerMsg(Index ,trim(GetnpcName(15)) &  ": enchanté", 0 ) 
 
-
-End sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+end sub

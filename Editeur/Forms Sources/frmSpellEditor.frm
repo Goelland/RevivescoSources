@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "Tabctl32.ocx"
 Begin VB.Form frmSpellEditor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Éditer un sort"
@@ -79,43 +79,56 @@ Begin VB.Form frmSpellEditor
       Tab(0).Control(11).Enabled=   0   'False
       Tab(0).Control(12)=   "Label11"
       Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "info"
+      Tab(0).Control(13)=   "Label12"
       Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "Frame1"
+      Tab(0).Control(14)=   "info"
       Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "scrlSound"
+      Tab(0).Control(15)=   "Frame1"
       Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "scrlVitalMod"
+      Tab(0).Control(16)=   "scrlSound"
       Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "cmbType"
+      Tab(0).Control(17)=   "scrlVitalMod"
       Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "cmdCancel"
+      Tab(0).Control(18)=   "cmbType"
       Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "cmdOk"
+      Tab(0).Control(19)=   "cmdCancel"
       Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "scrlRange"
+      Tab(0).Control(20)=   "cmdOk"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "scrlSpellAnim"
+      Tab(0).Control(21)=   "scrlRange"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "scrlSpellTime"
+      Tab(0).Control(22)=   "scrlSpellAnim"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "scrlSpellDone"
+      Tab(0).Control(23)=   "scrlSpellTime"
       Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "picSpell"
+      Tab(0).Control(24)=   "scrlSpellDone"
       Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "Command1"
+      Tab(0).Control(25)=   "picSpell"
       Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "HScroll1"
+      Tab(0).Control(26)=   "Command1"
       Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "CheckSpell"
+      Tab(0).Control(27)=   "HScroll1"
       Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "picSpellIco"
+      Tab(0).Control(28)=   "CheckSpell"
       Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "picPic"
+      Tab(0).Control(29)=   "picSpellIco"
       Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "VScroll1"
+      Tab(0).Control(30)=   "picPic"
       Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).ControlCount=   31
+      Tab(0).Control(31)=   "VScroll1"
+      Tab(0).Control(31).Enabled=   0   'False
+      Tab(0).Control(32)=   "HScroll2"
+      Tab(0).Control(32).Enabled=   0   'False
+      Tab(0).ControlCount=   33
+      Begin VB.HScrollBar HScroll2 
+         Height          =   255
+         Left            =   6000
+         Max             =   13
+         TabIndex        =   43
+         Top             =   840
+         Value           =   1
+         Width           =   3975
+      End
       Begin VB.VScrollBar VScroll1 
          Height          =   2760
          LargeChange     =   10
@@ -177,7 +190,7 @@ Begin VB.Form frmSpellEditor
          Height          =   225
          Left            =   6000
          TabIndex        =   38
-         Top             =   4020
+         Top             =   4320
          Width           =   1995
       End
       Begin VB.HScrollBar HScroll1 
@@ -186,7 +199,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          Max             =   10000
          TabIndex        =   35
-         Top             =   1260
+         Top             =   1440
          Visible         =   0   'False
          Width           =   5655
       End
@@ -202,9 +215,9 @@ Begin VB.Form frmSpellEditor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   220
-         Left            =   9420
+         Left            =   9360
          TabIndex        =   33
-         Top             =   4020
+         Top             =   4320
          Width           =   1095
       End
       Begin VB.PictureBox picSpell 
@@ -219,7 +232,7 @@ Begin VB.Form frmSpellEditor
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   32
          TabIndex        =   32
-         Top             =   3720
+         Top             =   3840
          Width           =   480
       End
       Begin VB.HScrollBar scrlSpellDone 
@@ -229,7 +242,7 @@ Begin VB.Form frmSpellEditor
          Max             =   10
          Min             =   1
          TabIndex        =   31
-         Top             =   5220
+         Top             =   5400
          Value           =   1
          Width           =   5655
       End
@@ -240,7 +253,7 @@ Begin VB.Form frmSpellEditor
          Max             =   500
          Min             =   40
          TabIndex        =   30
-         Top             =   4620
+         Top             =   4800
          Value           =   40
          Width           =   5655
       End
@@ -250,7 +263,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          Max             =   2000
          TabIndex        =   29
-         Top             =   3720
+         Top             =   3960
          Value           =   1
          Width           =   4515
       End
@@ -261,7 +274,7 @@ Begin VB.Form frmSpellEditor
          Max             =   30
          Min             =   1
          TabIndex        =   25
-         Top             =   3060
+         Top             =   3240
          Value           =   1
          Width           =   5655
       End
@@ -311,14 +324,14 @@ Begin VB.Form frmSpellEditor
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   285
+         Height          =   300
          ItemData        =   "frmSpellEditor.frx":001C
          Left            =   6000
          List            =   "frmSpellEditor.frx":0041
          Style           =   2  'Dropdown List
          TabIndex        =   15
          ToolTipText     =   "Sélectionner un type de sort"
-         Top             =   720
+         Top             =   480
          Width           =   5655
       End
       Begin VB.HScrollBar scrlVitalMod 
@@ -327,7 +340,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          Max             =   10000
          TabIndex        =   14
-         Top             =   1860
+         Top             =   2040
          Width           =   5655
       End
       Begin VB.HScrollBar scrlSound 
@@ -336,7 +349,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          Max             =   100
          TabIndex        =   13
-         Top             =   2460
+         Top             =   2640
          Width           =   5655
       End
       Begin VB.Frame Frame1 
@@ -564,6 +577,25 @@ Begin VB.Form frmSpellEditor
             Width           =   480
          End
       End
+      Begin VB.Label Label12 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Buff /Debuff"
+         BeginProperty Font 
+            Name            =   "Segoe UI"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   10080
+         TabIndex        =   44
+         ToolTipText     =   "Nombre de points que va perdre/gagner le joueur dans toutes ses caratéristiques"
+         Top             =   840
+         Width           =   1380
+      End
       Begin VB.Label Label11 
          Caption         =   "Icone :"
          BeginProperty Font 
@@ -597,7 +629,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          TabIndex        =   37
          ToolTipText     =   "Nombre de points que va perdre/gagner le joueur dans toutes ses caratéristiques"
-         Top             =   1080
+         Top             =   1200
          Visible         =   0   'False
          Width           =   1980
       End
@@ -618,7 +650,7 @@ Begin VB.Form frmSpellEditor
          Left            =   8040
          TabIndex        =   36
          ToolTipText     =   "Modifie les points correspondants aux types de cette valeur"
-         Top             =   1080
+         Top             =   1200
          Visible         =   0   'False
          Width           =   75
       End
@@ -639,7 +671,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          TabIndex        =   28
          ToolTipText     =   "Nombre de fois que l'animation va se répéter"
-         Top             =   4980
+         Top             =   5160
          Width           =   1455
       End
       Begin VB.Label lblSpellTime 
@@ -659,7 +691,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          TabIndex        =   27
          ToolTipText     =   "Intervalle de l'animation plus le chiffre et grand plus l'animation est lente"
-         Top             =   4380
+         Top             =   4560
          Width           =   660
       End
       Begin VB.Label lblSpellAnim 
@@ -679,7 +711,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          TabIndex        =   26
          ToolTipText     =   "Numéros de l'animation du sort"
-         Top             =   3480
+         Top             =   3720
          Width           =   2115
       End
       Begin VB.Label lblRange 
@@ -699,7 +731,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6720
          TabIndex        =   24
          ToolTipText     =   "Distance en cases de l'effet du sort "
-         Top             =   2820
+         Top             =   3000
          Width           =   75
       End
       Begin VB.Label Label2 
@@ -718,7 +750,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          TabIndex        =   23
          ToolTipText     =   "Distance en cases de l'effet du sort "
-         Top             =   2820
+         Top             =   3000
          Width           =   705
       End
       Begin VB.Label Label7 
@@ -736,7 +768,7 @@ Begin VB.Form frmSpellEditor
          Height          =   255
          Left            =   6000
          TabIndex        =   20
-         Top             =   480
+         Top             =   240
          Width           =   840
       End
       Begin VB.Label lblVitalMod 
@@ -756,7 +788,7 @@ Begin VB.Form frmSpellEditor
          Left            =   8040
          TabIndex        =   19
          ToolTipText     =   "Modifie les points correspondants aux types de cette valeur"
-         Top             =   1620
+         Top             =   1800
          Width           =   75
       End
       Begin VB.Label Label4 
@@ -775,7 +807,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          TabIndex        =   18
          ToolTipText     =   "Modifie les points correspondants aux types de cette valeur"
-         Top             =   1620
+         Top             =   1800
          Width           =   1980
       End
       Begin VB.Label Label8 
@@ -794,7 +826,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6000
          TabIndex        =   17
          ToolTipText     =   "Nom de l'effet sonore sélectionner"
-         Top             =   2220
+         Top             =   2400
          Width           =   900
       End
       Begin VB.Label lblSound 
@@ -814,7 +846,7 @@ Begin VB.Form frmSpellEditor
          Left            =   6960
          TabIndex        =   16
          ToolTipText     =   "Nom de l'effet sonore sélectionner"
-         Top             =   2220
+         Top             =   2400
          Width           =   390
       End
    End
@@ -854,15 +886,20 @@ Label10.Visible = False
 Label9.Visible = False
 
 If cmbType.ListIndex = SPELL_TYPE_SCRIPT Then
+    HScroll2.Enabled = False
     Label4.Caption = "Numéro de la case :"
     Label4.ToolTipText = "Numéro de la case de script qui va s'exécuter"
 ElseIf cmbType.ListIndex = SPELL_TYPE_PARALY Then
+    HScroll2.Enabled = True
+    HScroll2.value = 13
     Label4.Caption = "Temps de paralysie(seconde) :"
     Label4.ToolTipText = "Nombre de seconde(s) que va durée la paralysie"
 ElseIf cmbType.ListIndex = SPELL_TYPE_DEFENC Then
     Label4.Caption = "Temps de protéction(seconde) :"
     Label4.ToolTipText = "Nombre de seconde(s) que va durée le bouclier contre les sorts"
 ElseIf cmbType.ListIndex = SPELL_TYPE_AMELIO Then
+    HScroll2.Enabled = True
+    HScroll2.value = 1
     Label4.Caption = "Durée du gain(seconde) :"
     Label4.ToolTipText = "Nombre de seconde(s) que va durée le gain de points de caractéristique"
     Label10.Caption = "Nombre de points gagner :"
@@ -870,6 +907,8 @@ ElseIf cmbType.ListIndex = SPELL_TYPE_AMELIO Then
     Label10.Visible = True
     Label9.Visible = True
 ElseIf cmbType.ListIndex = SPELL_TYPE_DECONC Then
+    HScroll2.value = 7
+    HScroll2.Enabled = True
     Label4.Caption = "Durée de la perte(seconde) :"
     Label4.ToolTipText = "Nombre de seconde(s) que va durée la perte de points de caractéristique"
     Label10.Caption = "Nombre de points perdu :"
@@ -877,6 +916,8 @@ ElseIf cmbType.ListIndex = SPELL_TYPE_DECONC Then
     Label10.Visible = True
     Label9.Visible = True
 Else
+    HScroll2.Enabled = False
+    HScroll2.value = 0
     Label4.Caption = "Modifie les points de :"
     Label4.ToolTipText = "Modifie les points correspondants aux types de cette valeur"
 End If
@@ -902,6 +943,41 @@ End Sub
 
 Private Sub HScroll1_Change()
     Label9.Caption = CStr(HScroll1.value)
+End Sub
+
+Private Sub HScroll2_Change()
+Select Case HScroll2.value
+        Case 0
+            Label12.Caption = "AUCUN"
+        Case 1
+            Label12.Caption = "Bonus: HP"
+        Case 2
+            Label12.Caption = "Bonus: MP"
+        Case 3
+            Label12.Caption = "Bonus: Force"
+        Case 4
+            Label12.Caption = "Bonus: Endurance"
+        Case 5
+            Label12.Caption = "Bonus: Vitesse"
+        Case 6
+            Label12.Caption = "Bonus: Magie"
+        Case 7
+            Label12.Caption = "Malus: HP"
+        Case 8
+            Label12.Caption = "Malus: MP"
+        Case 9
+            Label12.Caption = "Malus: Force"
+        Case 10
+            Label12.Caption = "Malus: Endurane"
+        Case 11
+            Label12.Caption = "Malus: Vitesse"
+        Case 12
+            Label12.Caption = "Malus: Magie"
+        Case 13
+            Label12.Caption = "Malus: Paralysie"
+
+
+End Select
 End Sub
 
 Private Sub picPic_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)

@@ -618,6 +618,7 @@ Type SpellRec
     SpellIco As Long
     
     AE As Long
+    Buff As Byte
 End Type
 
 Type TempTileRec
@@ -790,6 +791,7 @@ Sub ClearSpell(ByVal Index As Long)
     Spell(Index).SpellIco = 0
     
     Spell(Index).AE = 0
+    Spell(Index).Buff = 0
 End Sub
 
 Sub ClearShop(ByVal Index As Long)

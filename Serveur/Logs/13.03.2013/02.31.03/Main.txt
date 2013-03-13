@@ -1,0 +1,15 @@
+
+Connexion reçue depuis l'ip 127.0.0.1.
+Connexion de 127.0.0.1 est terminée.
+Connexion reçue depuis l'ip 127.0.0.1.
+Goell s'est connecté depuis 127.0.0.1.
+Goell/Goell est en train de jouer à Chroniques de Revivesco.
+Goell est déconnecté de Chroniques de Revivesco.
+Connexion de 127.0.0.1 est terminée.
+Connexion reçue depuis l'ip 127.0.0.1.
+Connexion de 127.0.0.1 est terminée.
+Connexion reçue depuis l'ip 127.0.0.1.
+Goell s'est connecté depuis 127.0.0.1.
+Goell/Goell est en train de jouer à Chroniques de Revivesco.
+Goell est déconnecté de Chroniques de Revivesco.
+Connexion de 127.0.0.1 est terminée.

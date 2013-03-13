@@ -1333,11 +1333,7 @@ mont:
             Npc(n).ItemNPC(i).ItemValue = Val(Parse(z + 2))
             z = z + 3
         Next i
-        ReDim Npc(n).Spell(1 To MAX_NPC_SPELLS) As Integer
-        For i = 1 To MAX_NPC_SPELLS
-            Npc(n).Spell(i) = Val(Parse(z))
-            z = z + 1
-        Next i
+
         
         ' Initialize the npc editor
         Call NpcEditorInit
@@ -1613,6 +1609,7 @@ mont:
         Spell(n).AE = Val(Parse(15))
         Spell(n).Big = Val(Parse(16))
         Spell(n).SpellIco = Val(Parse(17))
+        Spell(n).Buff = Val(Parse(18))
         ' Initialize the spell editor
         Call SpellEditorInit
         Exit Sub
@@ -2805,7 +2802,7 @@ Dim f As Long
     
     If HORS_LIGNE = 1 Then Exit Sub
     
-    Packet = "SAVESPELL" & SEP_CHAR & SpellNum & SEP_CHAR & Trim$(Spell(SpellNum).name) & SEP_CHAR & Spell(SpellNum).ClassReq & SEP_CHAR & Spell(SpellNum).LevelReq & SEP_CHAR & Spell(SpellNum).Type & SEP_CHAR & Spell(SpellNum).Data1 & SEP_CHAR & Spell(SpellNum).Data2 & SEP_CHAR & Spell(SpellNum).Data3 & SEP_CHAR & Spell(SpellNum).MPCost & SEP_CHAR & Trim$(Spell(SpellNum).Sound) & SEP_CHAR & Spell(SpellNum).Range & SEP_CHAR & Spell(SpellNum).SpellAnim & SEP_CHAR & Spell(SpellNum).SpellTime & SEP_CHAR & Spell(SpellNum).SpellDone & SEP_CHAR & Spell(SpellNum).AE & SEP_CHAR & Spell(SpellNum).Big & SEP_CHAR & Spell(SpellNum).SpellIco
+    Packet = "SAVESPELL" & SEP_CHAR & SpellNum & SEP_CHAR & Trim$(Spell(SpellNum).name) & SEP_CHAR & Spell(SpellNum).ClassReq & SEP_CHAR & Spell(SpellNum).LevelReq & SEP_CHAR & Spell(SpellNum).Type & SEP_CHAR & Spell(SpellNum).Data1 & SEP_CHAR & Spell(SpellNum).Data2 & SEP_CHAR & Spell(SpellNum).Data3 & SEP_CHAR & Spell(SpellNum).MPCost & SEP_CHAR & Trim$(Spell(SpellNum).Sound) & SEP_CHAR & Spell(SpellNum).Range & SEP_CHAR & Spell(SpellNum).SpellAnim & SEP_CHAR & Spell(SpellNum).SpellTime & SEP_CHAR & Spell(SpellNum).SpellDone & SEP_CHAR & Spell(SpellNum).AE & SEP_CHAR & Spell(SpellNum).Big & SEP_CHAR & Spell(SpellNum).SpellIco & SEP_CHAR & Spell(SpellNum).Buff
     Call SendData(Packet)
     Call EcrireEtat("Sauvegarde des sorts")
 End Sub

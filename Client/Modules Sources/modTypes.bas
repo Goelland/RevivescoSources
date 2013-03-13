@@ -24,7 +24,7 @@ Public Const MAX_PLAYER_ARROWS As Byte = 100
 Public MAX_INV As Integer
 Public Const MAX_PARTY_MEMBERS As Byte = 4
 Public Const MAX_MAP_NPCS As Byte = 15
-Public Const MAX_PLAYER_SPELLS As Byte = 20
+Public Const MAX_PLAYER_SPELLS As Byte = 60
 Public Const MAX_TRADES As Byte = 66
 Public Const MAX_PLAYER_TRADES As Byte = 8
 Public Const MAX_NPC_DROPS As Byte = 10
@@ -624,6 +624,7 @@ Type SpellRec
     SpellIco As Long
     
     AE As Long
+    Buff As Byte
 End Type
 
 Type TempTileRec

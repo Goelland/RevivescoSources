@@ -1,0 +1,36 @@
+00:17:43: Goell edite le sorrt #1.
+00:17:54: Goell edite le sorrt #2.
+00:18:01: Goell edite le sorrt #1.
+00:20:00: Goell edite le sorrt #1.
+00:21:43: Goell edite le sorrt #1.
+00:26:58: Goell sauvegarde le sort #1.
+00:26:59: Goell edite le sorrt #2.
+00:29:28: Goell sauvegarde le sort #2.
+00:29:30: Goell edite le sorrt #3.
+00:31:23: Goell sauvegarde le sort #3.
+00:31:28: Goell edite le sorrt #4.
+00:31:30: Goell edite le sorrt #5.
+00:31:32: Goell edite le sorrt #6.
+00:31:35: Goell edite le sorrt #7.
+00:31:38: Goell edite le sorrt #8.
+00:31:41: Goell edite le sorrt #9.
+00:31:43: Goell edite le sorrt #10.
+00:31:45: Goell edite le sorrt #11.
+00:31:48: Goell edite le sorrt #12.
+01:10:16: Goell edite le magasin #50.
+01:11:23: Goell edite l'objet #200.
+01:11:42: Goell sauvegarde l'objet #200.
+01:11:50: Goell edite le magasin #50.
+01:12:09: Goell sauvegarde le magasin #50.
+01:12:13: Goell edite le magasin #50.
+01:12:49: Goell sauvegarde le magasin #50.
+01:14:53: Goell edite le PNJ #300.
+01:15:42: Goell edite le PNJ #300.
+01:36:07: Goell edite le sorrt #2.
+01:37:16: Goell sauvegarde le sort #2.
+01:37:19: Goell edite le sorrt #3.
+01:48:55: Goell edite le sorrt #3.
+01:49:33: Goell sauvegarde le sort #3.
+01:49:34: Goell edite le sorrt #4.
+01:49:38: Goell edite le sorrt #5.
+01:49:40: Goell edite le sorrt #6.

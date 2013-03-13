@@ -326,8 +326,7 @@ End Sub
 
 Sub CheckAll()
 Dim I2 As Integer, i As Integer, s As Byte, S1 As Byte, S2 As Byte, DiffMoney As Long
-Dim ObjV As Cls
-Child, ObjA As clsHdVChild
+Dim ObjV As clsHdVChild, ObjA As clsHdVChild
     
     For i = Achats.Count To 1 Step -1
         Set ObjA = Achats.item(i)

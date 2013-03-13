@@ -127,6 +127,9 @@ Public MouseDownY As Long
 
 Public LocalTarget As Long
 Public LocalTargetType As Long
+Public Buff(1 To 6) As Long '1=HP 2=MP 3=STR 4=Endu 5=Vitesse 6=Magie
+Public Buff2(1 To 6) As Long 'timer pour les buffs
+Public Debuff(7 To 13) As Long '7=HP 8=MP 9=STR 10=Endu 11=Vitesse 12=Magie 13 = root
 
 Public SpritePic As Long
 Public SpriteItem As Long
@@ -350,7 +353,6 @@ On Error GoTo er:
         .Picture11.BackColor = RGB(R1, G1, B1)
         .Picture13.BackColor = RGB(R1, G1, B1)
         .picEquip.BackColor = RGB(R1, G1, B1)
-        .picPlayerSpells.BackColor = RGB(R1, G1, B1)
         .picOptions.BackColor = RGB(R1, G1, B1)
         .pictTouche.BackColor = RGB(R1, G1, B1)
         .chkbubblebar.BackColor = RGB(R1, G1, B1)
@@ -437,7 +439,7 @@ On Error GoTo er:
 
 Exit Sub
 er:
-Call MsgBox("Une erreur d'initialisation du logiciel s'est produite(Numéros de l'erreur : " & Err.Number & " Description : " & Err.description & " Source : " & Err.Source & "). Si le probléme pérsiste veulliez contacter un administrateur.", vbCritical, "Erreur")
+Call MsgBox("Une erreur d'initialisation du logiciel s'est produite(Numéros de l'erreur : " & Err.Number & " Description : " & Err.description & " Source : " & Err.Source & "). Si le probléme persiste veuillez contacter un administrateur.", vbCritical, "Erreur")
 Call GameDestroy
 End
 End Sub
@@ -844,11 +846,11 @@ rest:
              Next i
 
              ' Dessiner le haut des npc apres le bas des joueurs
-              ligne = "Bltplayer 2"
+              ligne = "BltNPCTOP 2"
              For i = 1 To MAX_MAP_NPCS
                  If MapNpc(i).num > 0 And MapNpc(i).num < MAX_NPCS Then If CLng(Npc(MapNpc(i).num).Vol) = 0 Then If PIC_PL > 1 Then Call BltNpcTop(i)
              Next i
-             
+              ligne = "BltPlayer 2"
              For i = 1 To MAX_PLAYERS
                  If IsPlaying(i) And GetPlayerMap(i) = GetPlayerMap(MyIndex) Then
                      'Ajout du haut du personnage pour le 32*64
@@ -861,13 +863,12 @@ rest:
                             Call BltPlayerTop(i)
                         End If
                      End If
-                     
                      Call BltBlood(i, PIC_X, PIC_Y, 40)
                      ' Call BltBlood(i) ferais aussi l'affaire car les autres paramètres peuvent être modifier selon le blood.png.
                      ' Le premier et le second paramètre sont la taille X et Y ce qui permet d'avoir des animations de sang 96X96 exemple.
                      ' Il se peux que le code demande à être modifié dans cette condition.
                      ' Le dernier paramètre est le temps de chaque image en ms (1000 ms = 1 seconde).
-                     
+                      ligne = "BltSpell2" & i
                      Call BltSpell(i)
                      
                      If Player(i).LevelUpT + 3000 > Tick Then Call BltPlayerLevelUp(i) Else Player(i).LevelUpT = 0
@@ -1123,7 +1124,7 @@ rest:
 Exit Sub
 er:
 If Val(Mid(Err.Number, 1, 9)) = -200553208 Then GoTo rest:
-Call MsgBox("Une erreur interne au logiciel c'est produite(Numéros de l'erreur : " & Err.Number & " Description : " & Err.description & " Source : " & Err.Source & "). Si le probléme pérsiste veulliez contacter un administrateur.", vbCritical, "Erreur")
+Call MsgBox("Une erreur interne au logiciel c'est produite(Numéros de l'erreur : " & Err.Number & " Description : " & Err.description & " Source : " & Err.Source & "). Si le probléme persiste veuillez contacter un administrateur.", vbCritical, "Erreur")
 Call GameDestroy
 End
 End Sub
@@ -4109,5 +4110,12 @@ End Sub
 Public Function Rand(ByVal Low As Long, ByVal High As Long) As Long
   Rand = Int((High - Low + 1) * Rnd) + Low
 End Function
-
+Public Sub UpdateBuff()
+If Buff(1) > GetTickCount And Buff2(1) > 0 Then FrmMirage.lblvie.ForeColor = vbGreen: FrmMirage.Picture1(0).Visible = True Else FrmMirage.lblvie.ForeColor = &H5982C4: FrmMirage.Picture1(0).Visible = False
+If Buff(2) > GetTickCount And Buff2(2) > 0 Then FrmMirage.lblmana.ForeColor = vbGreen: FrmMirage.Picture1(1).Visible = True Else FrmMirage.lblmana.ForeColor = &H5982C4: FrmMirage.Picture1(1).Visible = False
+If Buff(3) > GetTickCount And Buff2(3) > 0 Then FrmMirage.lblSTR.ForeColor = vbGreen: FrmMirage.Picture1(2).Visible = True Else FrmMirage.lblSTR.ForeColor = &H5982C4: FrmMirage.Picture1(2).Visible = False
+If Buff(4) > GetTickCount And Buff2(4) > 0 Then FrmMirage.lblDEF.ForeColor = vbGreen: FrmMirage.Picture1(3).Visible = True Else FrmMirage.lblDEF.ForeColor = &H5982C4: FrmMirage.Picture1(3).Visible = False
+If Buff(5) > GetTickCount And Buff2(5) > 0 Then FrmMirage.lblSPEED.ForeColor = vbGreen: FrmMirage.Picture1(4).Visible = True Else FrmMirage.lblSPEED.ForeColor = &H5982C4: FrmMirage.Picture1(4).Visible = False
+If Buff(6) > GetTickCount And Buff2(6) > 0 Then FrmMirage.lblMAGI.ForeColor = vbGreen: FrmMirage.Picture1(5).Visible = True Else FrmMirage.lblMAGI.ForeColor = &H5982C4: FrmMirage.Picture1(5).Visible = False
+End Sub
 

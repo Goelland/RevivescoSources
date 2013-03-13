@@ -727,6 +727,7 @@ Call conseil
         
 End Sub
 Private Sub conseil()
+On Error Resume Next
 Dim i, j As Long
     Texte = ""
    For j = 1 To 30

@@ -440,9 +440,9 @@ Dim Msg As String
                         Msg = "Vous ramassez un " & Trim$(item(GetPlayerInvItemNum(Index, n)).Name) & "."
                     End If
                     
-                    If Player(Index).Char(Player(Index).CharNum).QueteEnCour > 0 Then
-                        If quete(Player(Index).Char(Player(Index).CharNum).QueteEnCour).type = QUETE_TYPE_RECUP Then
-                            Call PlayerQueteTypeRecup(Index, Player(Index).Char(Player(Index).CharNum).QueteEnCour, GetPlayerInvItemNum(Index, n), GetPlayerInvItemValue(Index, n))
+                    If Player(Index).Char(Player(Index).charnum).QueteEnCour > 0 Then
+                        If quete(Player(Index).Char(Player(Index).charnum).QueteEnCour).type = QUETE_TYPE_RECUP Then
+                            Call PlayerQueteTypeRecup(Index, Player(Index).Char(Player(Index).charnum).QueteEnCour, GetPlayerInvItemNum(Index, n), GetPlayerInvItemValue(Index, n))
                         End If
                     End If
                                             
@@ -522,7 +522,7 @@ Dim i As Long
                         Call SetPlayerArmorSlot(Index, 0)
                         Call SendInventory(Index)
                         Call SendWornEquipment(Index)
-                        s = Val(GetVar(App.Path & "\accounts\" & Trim$(Player(Index).Login) & ".ini", "CHAR" & Player(Index).CharNum, "monture"))
+                        s = Val(GetVar(App.Path & "\accounts\" & Trim$(Player(Index).Login) & ".ini", "CHAR" & Player(Index).charnum, "monture"))
                         Call SetPlayerSprite(Index, s)
                         Call SendPlayerData(Index)
                     End If
@@ -590,25 +590,25 @@ If GetPlayerQueteEtat(Index, Queteec) Then Exit Sub
 For i = 1 To 15
     n = AObjet(Index, quete(Queteec).indexe(i).data1)
     If n > 0 Then
-        Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data1 = 1
-        Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data2 = NbObjet(Index, quete(Queteec).indexe(i).data1)
+        Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data1 = 1
+        Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data2 = NbObjet(Index, quete(Queteec).indexe(i).data1)
     End If
 
     If quete(Queteec).indexe(i).data2 <= 0 Then
-        Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data1 = 1
-        Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data2 = 1
+        Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data1 = 1
+        Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data2 = 1
     End If
 Next i
     
 n = 0
 For i = 1 To 15
-    If Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data1 = 1 And Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data2 >= Val(quete(Queteec).indexe(i).data2) Then
+    If Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data1 = 1 And Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data2 >= Val(quete(Queteec).indexe(i).data2) Then
         n = n + 1
     End If
 Next i
 
-If n = 15 And Player(Index).Char(Player(Index).CharNum).QueteStatut(Queteec) = 0 Then
-    Player(Index).Char(Player(Index).CharNum).QueteStatut(Queteec) = 1
+If n = 15 And Player(Index).Char(Player(Index).charnum).QueteStatut(Queteec) = 0 Then
+    Player(Index).Char(Player(Index).charnum).QueteStatut(Queteec) = 1
     Call SendDataTo(Index, "FINQUETE" & END_CHAR)
 End If
 
@@ -625,7 +625,7 @@ If quete(Queteec).data1 <= 0 Or quete(Queteec).data1 > MAX_ITEMS Then Exit Sub
 If GetPlayerQueteEtat(Index, Queteec) Then Exit Sub
 
 For i = 1 To 24
-    If Player(Index).Char(Player(Index).CharNum).Inv(i).Num = quete(Queteec).data1 Then
+    If Player(Index).Char(Player(Index).charnum).Inv(i).Num = quete(Queteec).data1 Then
         Call SetPlayerInvItemNum(Index, i, 0)
         Call SetPlayerInvItemValue(Index, i, 0)
         Call SetPlayerInvItemDur(Index, i, 0)
@@ -635,9 +635,9 @@ For i = 1 To 24
     End If
 Next i
 
-If n = 1 And Player(Index).Char(Player(Index).CharNum).QueteStatut(Queteec) = 0 Then
-    Call QueteMsg(Index, Trim$(quete(Player(Index).Char(Player(Index).CharNum).QueteEnCour).String1))
-    Player(Index).Char(Player(Index).CharNum).QueteStatut(Queteec) = 1
+If n = 1 And Player(Index).Char(Player(Index).charnum).QueteStatut(Queteec) = 0 Then
+    Call QueteMsg(Index, Trim$(quete(Player(Index).Char(Player(Index).charnum).QueteEnCour).String1))
+    Player(Index).Char(Player(Index).charnum).QueteStatut(Queteec) = 1
     Call SendDataTo(Index, "FINQUETE" & END_CHAR)
 Else
     Call QueteMsg(Index, "Je suis désolé tu n'as pas l'objet que je cherche.")
@@ -656,27 +656,27 @@ If GetPlayerQueteEtat(Index, Queteec) = True Then Exit Sub
 
 For i = 1 To 15
     
-    If NpcTnum = quete(Queteec).indexe(i).data1 And quete(Queteec).indexe(i).data2 > 0 And Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data2 < quete(Queteec).indexe(i).data2 Then
-        Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data1 = 1
-        Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data2 = Val(Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data2) + 1
+    If NpcTnum = quete(Queteec).indexe(i).data1 And quete(Queteec).indexe(i).data2 > 0 And Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data2 < quete(Queteec).indexe(i).data2 Then
+        Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data1 = 1
+        Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data2 = Val(Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data2) + 1
         Call SendDataTo(Index, "TUERQUETE" & END_CHAR)
     End If
     
     If quete(Queteec).indexe(i).data2 <= 0 Then
-        Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data1 = 1
-        Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data2 = 0
+        Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data1 = 1
+        Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data2 = 0
     End If
 Next i
 
 n = 0
 For i = 1 To 15
-    If Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data1 = 1 And Player(Index).Char(Player(Index).CharNum).Quetep.indexe(i).data2 >= quete(Queteec).indexe(i).data2 Then
+    If Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data1 = 1 And Player(Index).Char(Player(Index).charnum).Quetep.indexe(i).data2 >= quete(Queteec).indexe(i).data2 Then
         n = n + 1
     End If
 Next i
 
-If n = 15 And Player(Index).Char(Player(Index).CharNum).QueteStatut(Queteec) = 0 Then
-    Player(Index).Char(Player(Index).CharNum).QueteStatut(Queteec) = 1
+If n = 15 And Player(Index).Char(Player(Index).charnum).QueteStatut(Queteec) = 0 Then
+    Player(Index).Char(Player(Index).charnum).QueteStatut(Queteec) = 1
     Call SendDataTo(Index, "FINQUETE" & END_CHAR)
 End If
 
@@ -692,11 +692,11 @@ If GetPlayerQueteEtat(Index, Queteec) = True Then Exit Sub
 
 If Xp > GetPlayerExp(Index) Then Xp = Xp - GetPlayerExp(Index)
 
-Player(Index).Char(Player(Index).CharNum).Quetep.data1 = Val(Player(Index).Char(Player(Index).CharNum).Quetep.data1) + Val(Xp)
-Call SendDataTo(Index, "XPQUETE" & SEP_CHAR & Player(Index).Char(Player(Index).CharNum).Quetep.data1 & END_CHAR)
+Player(Index).Char(Player(Index).charnum).Quetep.data1 = Val(Player(Index).Char(Player(Index).charnum).Quetep.data1) + Val(Xp)
+Call SendDataTo(Index, "XPQUETE" & SEP_CHAR & Player(Index).Char(Player(Index).charnum).Quetep.data1 & END_CHAR)
 
-If Val(Player(Index).Char(Player(Index).CharNum).Quetep.data1) >= Val(quete(Queteec).data1) And Player(Index).Char(Player(Index).CharNum).QueteStatut(Queteec) = 0 Then
-    Player(Index).Char(Player(Index).CharNum).QueteStatut(Queteec) = 1
+If Val(Player(Index).Char(Player(Index).charnum).Quetep.data1) >= Val(quete(Queteec).data1) And Player(Index).Char(Player(Index).charnum).QueteStatut(Queteec) = 0 Then
+    Player(Index).Char(Player(Index).charnum).QueteStatut(Queteec) = 1
     Call SendDataTo(Index, "FINQUETE" & END_CHAR)
 End If
 
@@ -720,7 +720,7 @@ If GetPlayerLevel(Index) = MAX_LEVEL Then
     End If
 Else
     If quete(QueteTindex).Recompence.Exp > 0 Then
-        Call SetPlayerExp(Index, Player(Index).Char(Player(Index).CharNum).Exp + quete(QueteTindex).Recompence.Exp)
+        Call SetPlayerExp(Index, Player(Index).Char(Player(Index).charnum).Exp + quete(QueteTindex).Recompence.Exp)
         Call BattleMsg(Index, "Tu as gagné " & quete(QueteTindex).Recompence.Exp & "pts d'expérience.", BrightBlue, 0)
     End If
 End If
@@ -738,7 +738,7 @@ Call SendInventory(Index)
 
 If quete(QueteTindex).Case > 0 Then MyScript.ExecuteStatement "Scripts\Main.txt", "ScriptedTile " & Index & "," & Val(quete(QueteTindex).Case)
 
-Player(Index).Char(Player(Index).CharNum).QueteStatut(QueteTindex) = 2
+Player(Index).Char(Player(Index).charnum).QueteStatut(QueteTindex) = 2
 
 packet = "TERMINEQUETE" & END_CHAR
 Call SendDataTo(Index, packet)
@@ -1017,7 +1017,7 @@ npcnum = MapNpc(MapNum, MapNpcNum).Num
 If GetPlayerWeaponSlot(Attacker) > 0 Then
     If Npc(npcnum).Behavior = NPC_BEHAVIOR_ATTACKONSIGHT Or Npc(npcnum).Behavior = NPC_BEHAVIOR_ATTACKWHENATTACKED Then
         If Npc(npcnum).QueteNum > 11 Then
-            If Npc(npcnum).QueteNum - 11 <> Player(Attacker).Char(Player(Attacker).CharNum).metier Then
+            If Npc(npcnum).QueteNum - 11 <> Player(Attacker).Char(Player(Attacker).charnum).metier Then
                 CanAttackNpc = False
                 Exit Function
             End If
@@ -1031,7 +1031,7 @@ If GetPlayerWeaponSlot(Attacker) > 0 Then
 Else
     If Npc(npcnum).Behavior = NPC_BEHAVIOR_ATTACKONSIGHT Or Npc(npcnum).Behavior = NPC_BEHAVIOR_ATTACKWHENATTACKED Then
         If Npc(npcnum).QueteNum > 11 Then
-            If Npc(npcnum).QueteNum - 11 <> Player(Attacker).Char(Player(Attacker).CharNum).metier Then
+            If Npc(npcnum).QueteNum - 11 <> Player(Attacker).Char(Player(Attacker).charnum).metier Then
                 CanAttackNpc = False
                 Exit Function
             End If
@@ -1083,8 +1083,8 @@ If IsPlaying(Attacker) Then
                 End If
                 
                 If Npc(npcnum).Behavior = NPC_BEHAVIOR_QUETEUR Then
-                    If Player(Attacker).Char(Player(Attacker).CharNum).QueteStatut(Npc(npcnum).QueteNum) <> 2 Then
-                        If Player(Attacker).Char(Player(Attacker).CharNum).QueteStatut(Npc(npcnum).QueteNum) = 1 Then
+                    If Player(Attacker).Char(Player(Attacker).charnum).QueteStatut(Npc(npcnum).QueteNum) <> 2 Then
+                        If Player(Attacker).Char(Player(Attacker).charnum).QueteStatut(Npc(npcnum).QueteNum) = 1 Then
                             If Val(Scripting) = 1 And IsNumeric(Trim$(quete(Npc(npcnum).QueteNum).reponse)) Then
                                 MyScript.ExecuteStatement "Scripts\Main.txt", "ScriptedTile " & Attacker & "," & Val(Trim$(quete(Npc(npcnum).QueteNum).reponse))
                                 Exit Function
@@ -1094,7 +1094,7 @@ If IsPlaying(Attacker) Then
                             Call TerminerPlayerQuete(Attacker, Npc(npcnum).QueteNum)
                         Else
                             Call SendDataTo(Attacker, "QUETECOUR" & SEP_CHAR & Npc(npcnum).QueteNum & END_CHAR)
-                            Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour = Npc(npcnum).QueteNum
+                            Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour = Npc(npcnum).QueteNum
                             Call QueteMsg(Attacker, Trim$(quete(Npc(npcnum).QueteNum).nom) & " : " & Trim$(quete(Npc(npcnum).QueteNum).Description))
                         End If
                     End If
@@ -1107,15 +1107,15 @@ If IsPlaying(Attacker) Then
                         Exit Function
                     End If
                 Else
-                    If Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour > 0 Then
-                        If quete(Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour).type = QUETE_TYPE_APORT And quete(Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour).data2 = npcnum Then
-                            If GetPlayerQueteEtat(Attacker, Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour) Then Exit Function
-                            Call PlayerQueteTypeAport(Attacker, Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour)
+                    If Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour > 0 Then
+                        If quete(Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour).type = QUETE_TYPE_APORT And quete(Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour).data2 = npcnum Then
+                            If GetPlayerQueteEtat(Attacker, Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour) Then Exit Function
+                            Call PlayerQueteTypeAport(Attacker, Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour)
                         End If
-                            If quete(Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour).type = QUETE_TYPE_PARLER And quete(Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour).data1 = npcnum Then
-                                If GetPlayerQueteEtat(Attacker, Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour) Then Exit Function
-                                If Player(Attacker).Char(Player(Attacker).CharNum).QueteStatut(Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour) > 0 Then Exit Function
-                                Player(Attacker).Char(Player(Attacker).CharNum).QueteStatut(Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour) = 1
+                            If quete(Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour).type = QUETE_TYPE_PARLER And quete(Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour).data1 = npcnum Then
+                                If GetPlayerQueteEtat(Attacker, Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour) Then Exit Function
+                                If Player(Attacker).Char(Player(Attacker).charnum).QueteStatut(Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour) > 0 Then Exit Function
+                                Player(Attacker).Char(Player(Attacker).charnum).QueteStatut(Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour) = 1
                                 Call QueteMsg(Attacker, Trim$(Npc(npcnum).Name) & " : " & Trim$(Npc(npcnum).AttackSay))
                                 Call SendDataTo(Attacker, "FINQUETE" & END_CHAR)
                         End If
@@ -1547,12 +1547,12 @@ Dim STR As Long, def As Long, MapNum As Long, npcnum As Long
         End If
                                 
         ' Metier chasseur
-        If Player(Attacker).Char(Player(Attacker).CharNum).metier > 0 Then
-            n = Player(Attacker).Char(Player(Attacker).CharNum).metier
+        If Player(Attacker).Char(Player(Attacker).charnum).metier > 0 Then
+            n = Player(Attacker).Char(Player(Attacker).charnum).metier
             If metier(n).type = METIER_CHASSEUR Then
                 If InMetier(n, npcnum) <> 10 Then
-                    If Player(Attacker).Char(Player(Attacker).CharNum).MetierLvl < 200 Then
-                        Player(Attacker).Char(Player(Attacker).CharNum).MetierExp = Player(Attacker).Char(Player(Attacker).CharNum).MetierExp + metier(n).Data(InMetier(n, npcnum), 1)
+                    If Player(Attacker).Char(Player(Attacker).charnum).MetierLvl < 200 Then
+                        Player(Attacker).Char(Player(Attacker).charnum).MetierExp = Player(Attacker).Char(Player(Attacker).charnum).MetierExp + metier(n).Data(InMetier(n, npcnum), 1)
                         Call BattleMsg(Attacker, "(Metier) Vous avez gagné " & metier(n).Data(InMetier(n, npcnum), 1) & " pts d'expérience.", BrightBlue, 0)
                     Else
                         Call BattleMsg(Attacker, "(Metier) Vous ne pouver plus gagner d'expérience", BrightBlue, 0)
@@ -1589,7 +1589,7 @@ Dim STR As Long, def As Long, MapNum As Long, npcnum As Long
             If Party.ShareExp(Player(Attacker).InParty) = 2 Then
                 For x = 1 To q
                     n = Party.PlayerIndex(Player(Attacker).InParty, x)
-                    i = i + Player(n).Char(Player(n).CharNum).Level
+                    i = i + Player(n).Char(Player(n).charnum).Level
                 Next x
             Else
                 ExpG = Exp / q
@@ -1597,7 +1597,7 @@ Dim STR As Long, def As Long, MapNum As Long, npcnum As Long
             
             For x = 1 To q
                 n = Party.PlayerIndex(Player(Attacker).InParty, x)
-                If Party.ShareExp(Player(Attacker).InParty) = 2 Then ExpG = Exp * (Player(n).Char(Player(n).CharNum).Level / i)
+                If Party.ShareExp(Player(Attacker).InParty) = 2 Then ExpG = Exp * (Player(n).Char(Player(n).charnum).Level / i)
                 If GetPlayerLevel(n) = MAX_LEVEL Then
                     Call SetPlayerExp(n, experience(MAX_LEVEL))
                     Call BattleMsg(n, "Vous ne pouvez pas gagner plus d'expérience.", BrightBlue, 0)
@@ -1617,8 +1617,8 @@ Dim STR As Long, def As Long, MapNum As Long, npcnum As Long
             
             If n = 1 Then
                 'Call SpawnItem(Npc(npcnum).ItemNPC(i).ItemNum, Npc(npcnum).ItemNPC(i).ItemValue, MapNum, MapNpc(MapNum, MapNpcNum).X, MapNpc(MapNum, MapNpcNum).Y)
-                If Player(Attacker).Char(Player(Attacker).CharNum).metier > 0 Then
-                    n = Player(Attacker).Char(Player(Attacker).CharNum).metier
+                If Player(Attacker).Char(Player(Attacker).charnum).metier > 0 Then
+                    n = Player(Attacker).Char(Player(Attacker).charnum).metier
                     If metier(n).type = METIER_CHASSEUR Then
                         If InMetier(n, npcnum) <> 10 Then
                             Math.Randomize
@@ -1648,17 +1648,17 @@ Dim STR As Long, def As Long, MapNum As Long, npcnum As Long
         
         
         Call SendDataToMap(MapNum, "NPCDEAD" & SEP_CHAR & MapNpcNum & END_CHAR)
-        Player(Attacker).Char(Player(Attacker).CharNum).mobs = Player(Attacker).Char(Player(Attacker).CharNum).mobs + 1
-        Call PutVar(App.Path & "\classement.ini", "classement", Trim$(Player(Attacker).Char(Player(Attacker).CharNum).Name), (Player(Attacker).Char(Player(Attacker).CharNum).mobs))
-        Player(Attacker).Char(Player(Attacker).CharNum).Kills(npcnum) = Player(Attacker).Char(Player(Attacker).CharNum).Kills(npcnum) + 1
-        Call MapPlayerMsg(Attacker, Player(Attacker).Char(Player(Attacker).CharNum).Kills(npcnum), 0)
+        Player(Attacker).Char(Player(Attacker).charnum).mobs = Player(Attacker).Char(Player(Attacker).charnum).mobs + 1
+        Call PutVar(App.Path & "\classement.ini", "classement", Trim$(Player(Attacker).Char(Player(Attacker).charnum).Name), (Player(Attacker).Char(Player(Attacker).charnum).mobs))
+        Player(Attacker).Char(Player(Attacker).charnum).Kills(npcnum) = Player(Attacker).Char(Player(Attacker).charnum).Kills(npcnum) + 1
+        Call MapPlayerMsg(Attacker, Player(Attacker).Char(Player(Attacker).charnum).Kills(npcnum), 0)
         If Val(Scripting) = 1 Then
             MyScript.ExecuteStatement "Scripts\Main.txt", "KillNPC " & Attacker & "," & npcnum
         End If
         
-        If Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour > 0 Then
-            If quete(Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour).type = QUETE_TYPE_TUER And Player(Attacker).Char(Player(Attacker).CharNum).QueteStatut(Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour) = 0 Then
-                Call PlayerQueteTypeTuer(Attacker, Player(Attacker).Char(Player(Attacker).CharNum).QueteEnCour, npcnum)
+        If Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour > 0 Then
+            If quete(Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour).type = QUETE_TYPE_TUER And Player(Attacker).Char(Player(Attacker).charnum).QueteStatut(Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour) = 0 Then
+                Call PlayerQueteTypeTuer(Attacker, Player(Attacker).Char(Player(Attacker).charnum).QueteEnCour, npcnum)
             End If
         End If
         
@@ -1762,7 +1762,7 @@ On Error Resume Next
 If Index < 0 Or Index > MAX_PLAYERS Then Exit Sub
 Call AddLog("le : " & Date & "     à : " & time & "...Erreur pendant la téléportation du joueur : " & GetPlayerName(Index) & ",Compte : " & GetPlayerLogin(Index) & ",Carte : " & MapNum & "(" & x & "," & y & "). Détails : Num :" & Err.Number & " Description : " & Err.Description & " Source : " & Err.Source & "...", "logs\Err.txt")
 If IBErr Then Call IBMsg("Erreur pendant la téléportation du joueur : " & GetPlayerName(Index), BrightRed)
-Call PlainMsg(Index, "Erreur du serveur, relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
+Call PlainMsg(Index, "Erreur du serveur(7), relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
 End Sub
 
 
@@ -1780,8 +1780,8 @@ Dim Moved As Byte
     Call SetPlayerDir(Index, Dir)
     
     Moved = NO
-    Player(Index).Char(Player(Index).CharNum).LastX = GetPlayerX(Index)
-    Player(Index).Char(Player(Index).CharNum).LastY = GetPlayerY(Index)
+    Player(Index).Char(Player(Index).charnum).LastX = GetPlayerX(Index)
+    Player(Index).Char(Player(Index).charnum).LastY = GetPlayerY(Index)
 '    Stop
     Select Case Dir
         Case DIR_UP
@@ -2084,7 +2084,7 @@ Dim Moved As Byte
     ' Check for shop
     If Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).type = TILE_TYPE_SHOP Then
        If Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1 > 0 Then
-            If (GetPlayerX(Index) = Player(Index).Char(Player(Index).CharNum).LastX) And (GetPlayerY(Index) <> Player(Index).Char(Player(Index).CharNum).y) Then
+            If (GetPlayerX(Index) = Player(Index).Char(Player(Index).charnum).LastX) And (GetPlayerY(Index) <> Player(Index).Char(Player(Index).charnum).y) Then
                 Call QueteMsg(Index, Shop(Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1).JoinSay)
                 Call SendTrade(Index, Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1)
             End If
@@ -2129,7 +2129,7 @@ Dim Moved As Byte
         If GetPlayerClass(Index) = Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1 Then
            Call MapPlayerMsg(Index, "Tu as déjà cette classe.", BrightRed)
         Else
-            If Player(Index).Char(Player(Index).CharNum).Sex = 0 Then
+            If Player(Index).Char(Player(Index).charnum).Sex = 0 Then
                 If GetPlayerSprite(Index) = Classe(GetPlayerClass(Index)).MaleSprite Then
                     Call SetPlayerSprite(Index, Classe(Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1).MaleSprite)
                 End If
@@ -2139,17 +2139,17 @@ Dim Moved As Byte
                 End If
             End If
             
-            Call SetPlayerStr(Index, (Player(Index).Char(Player(Index).CharNum).STR - Classe(GetPlayerClass(Index)).STR))
-            Call SetPlayerDEF(Index, (Player(Index).Char(Player(Index).CharNum).def - Classe(GetPlayerClass(Index)).def))
-            Call SetPlayerMAGI(Index, (Player(Index).Char(Player(Index).CharNum).magi - Classe(GetPlayerClass(Index)).magi))
-            Call SetPlayerSPEED(Index, (Player(Index).Char(Player(Index).CharNum).Speed - Classe(GetPlayerClass(Index)).Speed))
+            Call SetPlayerStr(Index, (Player(Index).Char(Player(Index).charnum).STR - Classe(GetPlayerClass(Index)).STR))
+            Call SetPlayerDEF(Index, (Player(Index).Char(Player(Index).charnum).def - Classe(GetPlayerClass(Index)).def))
+            Call SetPlayerMAGI(Index, (Player(Index).Char(Player(Index).charnum).magi - Classe(GetPlayerClass(Index)).magi))
+            Call SetPlayerSPEED(Index, (Player(Index).Char(Player(Index).charnum).Speed - Classe(GetPlayerClass(Index)).Speed))
             
             Call SetPlayerClass(Index, Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1)
 
-            Call SetPlayerStr(Index, (Player(Index).Char(Player(Index).CharNum).STR + Classe(GetPlayerClass(Index)).STR + GetVar("Classes\Class" & GetPlayerClass(Index) & ".ini", "CLASSCHANGE", "AddStr")))
-            Call SetPlayerDEF(Index, (Player(Index).Char(Player(Index).CharNum).def + Classe(GetPlayerClass(Index)).def + GetVar("Classes\Class" & GetPlayerClass(Index) & ".ini", "CLASSCHANGE", "AddDef")))
-            Call SetPlayerMAGI(Index, (Player(Index).Char(Player(Index).CharNum).magi + Classe(GetPlayerClass(Index)).magi + GetVar("Classes\Class" & GetPlayerClass(Index) & ".ini", "CLASSCHANGE", "AddMagi")))
-            Call SetPlayerSPEED(Index, (Player(Index).Char(Player(Index).CharNum).Speed + Classe(GetPlayerClass(Index)).Speed + GetVar("Classes\Class" & GetPlayerClass(Index) & ".ini", "CLASSCHANGE", "AddSpeed")))
+            Call SetPlayerStr(Index, (Player(Index).Char(Player(Index).charnum).STR + Classe(GetPlayerClass(Index)).STR + GetVar("Classes\Class" & GetPlayerClass(Index) & ".ini", "CLASSCHANGE", "AddStr")))
+            Call SetPlayerDEF(Index, (Player(Index).Char(Player(Index).charnum).def + Classe(GetPlayerClass(Index)).def + GetVar("Classes\Class" & GetPlayerClass(Index) & ".ini", "CLASSCHANGE", "AddDef")))
+            Call SetPlayerMAGI(Index, (Player(Index).Char(Player(Index).charnum).magi + Classe(GetPlayerClass(Index)).magi + GetVar("Classes\Class" & GetPlayerClass(Index) & ".ini", "CLASSCHANGE", "AddMagi")))
+            Call SetPlayerSPEED(Index, (Player(Index).Char(Player(Index).charnum).Speed + Classe(GetPlayerClass(Index)).Speed + GetVar("Classes\Class" & GetPlayerClass(Index) & ".ini", "CLASSCHANGE", "AddSpeed")))
             
             Dim ItemNum As Long
             ItemNum = Val(GetVar(App.Path & "\" & "Classes\Class" & GetPlayerClass(Index) & ".ini", "STARTUP", "Weapon"))
@@ -2226,8 +2226,8 @@ Dim Moved As Byte
     End If
     
     If Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).type = TILE_TYPE_CRAFT Then
-        If Player(Index).Char(Player(Index).CharNum).metier > 0 Then
-            If metier(Player(Index).Char(Player(Index).CharNum).metier).type = METIER_CRAFT Then
+        If Player(Index).Char(Player(Index).charnum).metier > 0 Then
+            If metier(Player(Index).Char(Player(Index).charnum).metier).type = METIER_CRAFT Then
                 packet = "CRAFT" & SEP_CHAR & Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1 & END_CHAR
                 Call SendDataTo(Index, packet)
             Else
@@ -2239,10 +2239,10 @@ Dim Moved As Byte
     End If
     
     If Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).type = TILE_TYPE_METIER Then
-        If Player(Index).Char(Player(Index).CharNum).metier = 0 Then
+        If Player(Index).Char(Player(Index).charnum).metier = 0 Then
             packet = "NEWMETIER" & SEP_CHAR & (Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1) & END_CHAR
         Else
-            If Player(Index).Char(Player(Index).CharNum).metier <> Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1 Then
+            If Player(Index).Char(Player(Index).charnum).metier <> Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1 Then
                 packet = "REMPLACEMETIER" & SEP_CHAR & Map(GetPlayerMap(Index)).Tile(GetPlayerX(Index), GetPlayerY(Index)).data1 & END_CHAR
             Else
                Call MapPlayerMsg(Index, "Vous avez déjà ce métier .", Red)
@@ -2259,10 +2259,10 @@ Dim Moved As Byte
     End If
         
     ' verifier si le joueure marche sur une case de fin de donjon
-    If Player(Index).Char(Player(Index).CharNum).QueteEnCour > 0 Then
-        If quete(Player(Index).Char(Player(Index).CharNum).QueteEnCour).type = QUETE_TYPE_FINIR And Player(Index).Char(Player(Index).CharNum).QueteStatut(Player(Index).Char(Player(Index).CharNum).QueteEnCour) = 0 Then
-            If GetPlayerMap(Index) = quete(Player(Index).Char(Player(Index).CharNum).QueteEnCour).data3 And GetPlayerX(Index) = quete(Player(Index).Char(Player(Index).CharNum).QueteEnCour).data1 And GetPlayerY(Index) = quete(Player(Index).Char(Player(Index).CharNum).QueteEnCour).data2 Then
-                Player(Index).Char(Player(Index).CharNum).QueteStatut(Player(Index).Char(Player(Index).CharNum).QueteEnCour) = 1
+    If Player(Index).Char(Player(Index).charnum).QueteEnCour > 0 Then
+        If quete(Player(Index).Char(Player(Index).charnum).QueteEnCour).type = QUETE_TYPE_FINIR And Player(Index).Char(Player(Index).charnum).QueteStatut(Player(Index).Char(Player(Index).charnum).QueteEnCour) = 0 Then
+            If GetPlayerMap(Index) = quete(Player(Index).Char(Player(Index).charnum).QueteEnCour).data3 And GetPlayerX(Index) = quete(Player(Index).Char(Player(Index).charnum).QueteEnCour).data1 And GetPlayerY(Index) = quete(Player(Index).Char(Player(Index).charnum).QueteEnCour).data2 Then
+                Player(Index).Char(Player(Index).charnum).QueteStatut(Player(Index).Char(Player(Index).charnum).QueteEnCour) = 1
                 Call SendDataTo(Index, "FINQUETE" & END_CHAR)
             End If
         End If
@@ -2274,7 +2274,7 @@ On Error Resume Next
 If Index < 0 Or Index > MAX_PLAYERS Then Exit Sub
 Call AddLog("le : " & Date & "     à : " & time & "...Erreur pendant le mouvement du joueur : " & GetPlayerName(Index) & ",Compte : " & GetPlayerLogin(Index) & ",Direction : " & Dir & "(" & Movement & "). Détails : Num :" & Err.Number & " Description : " & Err.Description & " Source : " & Err.Source & "...", "logs\Err.txt")
 If IBErr Then Call IBMsg("Erreur pendant le mouvement du joueur : " & GetPlayerName(Index), BrightRed)
-Call PlainMsg(Index, "Erreur du serveur, relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
+Call PlainMsg(Index, "Erreur du serveur(8), relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
 End Sub
 
 Function CanNpcMove(ByVal MapNum As Long, ByVal MapNpcNum As Long, ByVal Dir) As Boolean
@@ -2647,7 +2647,7 @@ On Error Resume Next
 If Index < 0 Or Index > MAX_PLAYERS Then Exit Sub
 Call AddLog("le : " & Date & "     à : " & time & "...Erreur de connexion au jeu, joueur : " & GetPlayerName(Index) & ",Compte : " & GetPlayerLogin(Index) & ". Détails : Num :" & Err.Number & " Description : " & Err.Description & " Source : " & Err.Source & "...", "logs\Err.txt")
 If IBErr Then Call IBMsg("Erreur de connexion au jeu, joueur : " & GetPlayerName(Index), BrightRed)
-Call PlainMsg(Index, "Erreur du serveur, relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
+Call PlainMsg(Index, "Erreur du serveur(6), relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
 End Sub
 
 Sub LeftGame(ByVal Index As Long, Optional ByVal Bypass As Boolean = False)
@@ -2659,25 +2659,25 @@ Dim n As Long
         
     If bouclier(Index) Then bouclier(Index) = False: BouclierT(Index) = 0
     If Para(Index) Then Call Paralyse(Index): Para(Index) = False: ParaT(Index) = 0
-    If Point(Index) > 0 And Point(Index) < MAX_SPELLS Then
-        If Spell(Point(Index)).type = SPELL_TYPE_AMELIO Then
-            Player(Index).Char(Player(Index).CharNum).def = Player(Index).Char(Player(Index).CharNum).def - Val(Spell(Point(Index)).data3)
-            Player(Index).Char(Player(Index).CharNum).magi = Player(Index).Char(Player(Index).CharNum).magi - Val(Spell(Point(Index)).data3)
-            Player(Index).Char(Player(Index).CharNum).STR = Player(Index).Char(Player(Index).CharNum).STR - Val(Spell(Point(Index)).data3)
-            Player(Index).Char(Player(Index).CharNum).Speed = Player(Index).Char(Player(Index).CharNum).Speed - Val(Spell(Point(Index)).data3)
-            Call SendStats(Index)
-            Point(Index) = 0
-            PointT(Index) = 0
-        ElseIf Spell(Point(Index)).type = SPELL_TYPE_DECONC And GetTickCount >= PointT(Index) Then
-            Player(Index).Char(Player(Index).CharNum).def = Player(Index).Char(Player(Index).CharNum).def + Val(Spell(Point(Index)).data3)
-            Player(Index).Char(Player(Index).CharNum).magi = Player(Index).Char(Player(Index).CharNum).magi + Val(Spell(Point(Index)).data3)
-            Player(Index).Char(Player(Index).CharNum).STR = Player(Index).Char(Player(Index).CharNum).STR + Val(Spell(Point(Index)).data3)
-            Player(Index).Char(Player(Index).CharNum).Speed = Player(Index).Char(Player(Index).CharNum).Speed + Val(Spell(Point(Index)).data3)
-            Call SendStats(Index)
-            Point(Index) = 0
-            PointT(Index) = 0
-        End If
-    End If
+  '  If Point(Index) > 0 And Point(Index) < MAX_SPELLS Then
+  '      If Spell(Point(Index)).type = SPELL_TYPE_AMELIO Then
+  '          Player(Index).Char(Player(Index).charnum).def = Player(Index).Char(Player(Index).charnum).def - Val(Spell(Point(Index)).data3)
+  '          Player(Index).Char(Player(Index).charnum).magi = Player(Index).Char(Player(Index).charnum).magi - Val(Spell(Point(Index)).data3)
+  '          Player(Index).Char(Player(Index).charnum).STR = Player(Index).Char(Player(Index).charnum).STR - Val(Spell(Point(Index)).data3)
+   '         Player(Index).Char(Player(Index).charnum).Speed = Player(Index).Char(Player(Index).charnum).Speed - Val(Spell(Point(Index)).data3)
+  '          Call SendStats(Index)
+  '          Point(Index) = 0
+  '          PointT(Index) = 0
+  '      ElseIf Spell(Point(Index)).type = SPELL_TYPE_DECONC And GetTickCount >= PointT(Index) Then
+  '          Player(Index).Char(Player(Index).charnum).def = Player(Index).Char(Player(Index).charnum).def + Val(Spell(Point(Index)).data3)
+  '          Player(Index).Char(Player(Index).charnum).magi = Player(Index).Char(Player(Index).charnum).magi + Val(Spell(Point(Index)).data3)
+  '          Player(Index).Char(Player(Index).charnum).STR = Player(Index).Char(Player(Index).charnum).STR + Val(Spell(Point(Index)).data3)
+  '          Player(Index).Char(Player(Index).charnum).Speed = Player(Index).Char(Player(Index).charnum).Speed + Val(Spell(Point(Index)).data3)
+  '          Call SendStats(Index)
+  '          Point(Index) = 0
+  '          PointT(Index) = 0
+  '      End If
+  '  End If
     
     If Player(Index).InGame Then
         
@@ -2713,7 +2713,7 @@ Dim n As Long
         'End If
         If Not Bypass Then
         Call SavePlayerOptim(Index)
-        ElseIf Player(Index).CharNum <> vbNullString Then
+        ElseIf Player(Index).charnum <> vbNullString Then
         SavePlayerOptim (Index)
         Else
         SavePlayer (Index)
@@ -2735,7 +2735,7 @@ On Error Resume Next
 If Index < 0 Or Index > MAX_PLAYERS Then Exit Sub
 Call AddLog("le : " & Date & "     à : " & time & "...Erreur de déconnexion au jeu, joueur : " & GetPlayerName(Index) & ",Compte : " & GetPlayerLogin(Index) & ". Détails : Num :" & Err.Number & " Description : " & Err.Description & " Source : " & Err.Source & "...", "logs\Err.txt")
 If IBErr Then Call IBMsg("Erreur de déconnexion au jeu, joueur : " & GetPlayerName(Index), BrightRed)
-Call PlainMsg(Index, "Erreur du serveur, relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
+Call PlainMsg(Index, "Erreur(1) du serveur, relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
 End Sub
 
 Function GetTotalMapPlayers(ByVal MapNum As Long) As Long
@@ -3033,21 +3033,19 @@ If Spell(SpellNum).AE = 1 Then
                                         BouclierT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
                                     
                                     Case SPELL_TYPE_AMELIO
-                                        If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
-                                        Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed + Val(Spell(SpellNum).data3)
-                                        Call SendStats(n)
+                                        'If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                                    
+                                        Player(n).Char(Player(n).charnum).Buff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Buff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendStats(n)
+                                        Call SendBuff(Index)
                                     Case SPELL_TYPE_DECONC
                                         If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
-                                        Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
                                         Call SendStats(n)
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
@@ -3086,21 +3084,20 @@ If Spell(SpellNum).AE = 1 Then
                                         BouclierT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
                                     
                                     Case SPELL_TYPE_AMELIO
-                                        If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
-                                        Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed + Val(Spell(SpellNum).data3)
-                                        Call SendStats(n)
+                                        'If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
+                                        
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                                    
+                                        Player(n).Char(Player(n).charnum).Buff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Buff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendStats(n)
+                                        Call SendBuff(Index)
                                     Case SPELL_TYPE_DECONC
                                         If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
-                                        Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
                                         Call SendStats(n)
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
@@ -3234,21 +3231,21 @@ Else
                                         BouclierT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
                                     
                                     Case SPELL_TYPE_AMELIO
-                                        If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
-                                        Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR + Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed + Val(Spell(SpellNum).data3)
+                                        'If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
+       
                                         Call SendStats(n)
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                                    
+                                        Player(n).Char(Player(n).charnum).Buff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Buff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendStats(n)
+                                        Call SendBuff(Index)
                                     Case SPELL_TYPE_DECONC
                                         If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
-                                        Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
+                                        Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
                                         Call SendStats(n)
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
@@ -3276,23 +3273,14 @@ Else
                     Case SPELL_TYPE_DEFENC
                         bouclier(n) = True
                         BouclierT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                    
-                    Case SPELL_TYPE_AMELIO
-                        If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
-                        Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def + Val(Spell(SpellNum).data3)
-                        Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi + Val(Spell(SpellNum).data3)
-                        Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR + Val(Spell(SpellNum).data3)
-                        Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed + Val(Spell(SpellNum).data3)
-                        Call SendStats(n)
-                        Point(n) = SpellNum
-                        PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+
                                     
                     Case SPELL_TYPE_DECONC
                         If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
-                        Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def - Val(Spell(SpellNum).data3)
-                        Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi - Val(Spell(SpellNum).data3)
-                        Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR - Val(Spell(SpellNum).data3)
-                        Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed - Val(Spell(SpellNum).data3)
+                        Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
+                        Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
+                        Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
+                        Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
                         Call SendStats(n)
                         Point(n) = SpellNum
                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
@@ -3333,21 +3321,20 @@ Else
                             BouclierT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
                             
                         Case SPELL_TYPE_AMELIO
-                            If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
-                            Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def + Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi + Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR + Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed + Val(Spell(SpellNum).data3)
-                            Call SendStats(n)
-                            Point(n) = SpellNum
-                            PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                                    
+                            'If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort d'amélioration.", BrightRed)
+                                        
+                                        Point(n) = SpellNum
+                                        PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Buff(Val(Spell(SpellNum).Buff)) = GetTickCount + 30000 ' Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Buff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendStats(n)
+                                        Call SendBuff(Index)
                         Case SPELL_TYPE_DECONC
                             If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration", BrightRed)
-                            Player(n).Char(Player(n).CharNum).def = Player(n).Char(Player(n).CharNum).def - Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).CharNum).magi = Player(n).Char(Player(n).CharNum).magi - Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).CharNum).STR = Player(n).Char(Player(n).CharNum).STR - Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).CharNum).Speed = Player(n).Char(Player(n).CharNum).Speed - Val(Spell(SpellNum).data3)
+                            Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
+                            Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
+                            Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
+                            Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
                             Call SendStats(n)
                             Point(n) = SpellNum
                             PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
@@ -3728,7 +3715,7 @@ End Function
 
 Sub EnMonture(ByVal Index As Long)
 Dim s As Long
-s = Val(GetVar(App.Path & "\accounts\" & Trim$(Player(Index).Login) & ".ini", "CHAR" & Player(Index).CharNum, "monture"))
+s = Val(GetVar(App.Path & "\accounts\" & Trim$(Player(Index).Login) & ".ini", "CHAR" & Player(Index).charnum, "monture"))
 Call SetPlayerSprite(Index, s)
 Call SendPlayerData(Index)
 End Sub

@@ -271,6 +271,10 @@ Dim n As Integer
             Call PutVar(FileName, "CHAR" & i, "quete" & n, STR$(Player(Index).Char(i).QueteStatut(n)))
         NewDoEvents
         Next
+        For n = 1 To 6
+            Call PutVar(FileName, "CHAR" & i, "buff" & n, Val(Player(Index).Char(i).Buff(n)) - GetTickCount)
+            Call PutVar(FileName, "CHAR" & i, "buff2" & n, STR$(Player(Index).Char(i).Buff2(n)))
+        Next
         
     Next
         Dim f As Long
@@ -289,7 +293,7 @@ Dim n As Integer
   If Len(Trim$(Player(Index).Login)) <= 1 Then Exit Sub
     
     FileName = App.Path & "\accounts\" & Trim$(Player(Index).Login) & ".ini"
-    i = Player(Index).CharNum
+    i = Player(Index).charnum
         ' General
         Call PutVar(FileName, "CHAR" & i, "ID", Trim$(Player(Index).Char(i).ID))
         Call PutVar(FileName, "CHAR" & i, "Name", Trim$(Player(Index).Char(i).Name))
@@ -373,6 +377,11 @@ Dim n As Integer
         For n = 1 To MAX_QUETES
             Call PutVar(FileName, "CHAR" & i, "quete" & n, STR$(Player(Index).Char(i).QueteStatut(n)))
         DoEvents
+        Next
+        
+        For n = 1 To 6
+            Call PutVar(FileName, "CHAR" & i, "buff" & n, Val(Player(Index).Char(i).Buff(n)) - GetTickCount)
+            Call PutVar(FileName, "CHAR" & i, "buff2" & n, STR$(Player(Index).Char(i).Buff2(n)))
         Next
         
         Dim f As Long
@@ -475,23 +484,28 @@ suite:
         For n = 1 To MAX_QUETES
             .QueteStatut(n) = Val(GetVar(FileName, "CHAR" & i, "quete" & n))
         Next n
+        
+        For n = 1 To 6
+            .Buff(n) = Val(GetVar(FileName, "CHAR" & i, "buff" & n)) + GetTickCount
+            .Buff2(n) = Val(GetVar(FileName, "CHAR" & i, "buff2" & n))
+        Next n
     
         End With
     Next i
 End With
-        Dim f As Long
-        f = FreeFile
-        FileName = App.Path & "\accounts\" & Trim$(Name) & ".chdr"
-        Open FileName For Binary As #f
-            Get #f, , Player(Index)
-        Close f
+       ' Dim f As Long
+       ' f = FreeFile
+       ' FileName = App.Path & "\accounts\" & Trim$(Name) & ".chdr"
+       ' Open FileName For Binary As #f
+       '     Get #f, , Player(Index)
+       ' Close f
 Exit Sub
 er:
 On Error Resume Next
 If Index < 0 Or Index > MAX_PLAYERS Then Exit Sub
 Call AddLog("le : " & Date & "     à : " & time & "...Erreur pendant le chargement du joueur : " & Name & ",Compte : " & GetPlayerLogin(Index) & ". Détails : Num :" & Err.Number & " Description : " & Err.Description & " Source : " & Err.Source & "...", "logs\Err.txt")
 If IBErr Then Call IBMsg("Erreur pendant le chargement du joueur : " & Name, BrightRed)
-Call PlainMsg(Index, "Erreur du serveur, relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
+Call PlainMsg(Index, "Erreur du serveur(6), relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
 End Sub
 
 Sub LoadPlayerQuete(ByVal Index As Long)
@@ -499,7 +513,7 @@ Dim FileName As String
  If Len(Player(Index).Login) = 0 Then Exit Sub
 With Player(Index)
     FileName = App.Path & "\accounts\" & Trim$(.Login) & ".ini"
-    .Char(.CharNum).QueteEnCour = Val(GetVar(FileName, "CHAR" & .CharNum, "QueteC"))
+    .Char(.charnum).QueteEnCour = Val(GetVar(FileName, "CHAR" & .charnum, "QueteC"))
 End With
 End Sub
 
@@ -519,8 +533,8 @@ Dim FileName As String
     If FileExist(FileName) Then AccountExist = True Else AccountExist = False
 End Function
 
-Function CharExist(ByVal Index As Long, ByVal CharNum As Long) As Boolean
-    If Trim$(Player(Index).Char(CharNum).Name) <> vbNullString Then CharExist = True Else CharExist = False
+Function CharExist(ByVal Index As Long, ByVal charnum As Long) As Boolean
+    If Trim$(Player(Index).Char(charnum).Name) <> vbNullString Then CharExist = True Else CharExist = False
 End Function
 
 Function PasswordOK(ByVal Name As String, ByVal Password As String) As Boolean
@@ -555,41 +569,41 @@ Dim hash As New clsMD5
     Call SavePlayer(Index)
 End Sub
 
-Sub AddChar(ByVal Index As Long, ByVal Name As String, ByVal Sex As Byte, ByVal ClassNum As Byte, ByVal CharNum As Long)
+Sub AddChar(ByVal Index As Long, ByVal Name As String, ByVal Sex As Byte, ByVal ClassNum As Byte, ByVal charnum As Long)
 Dim f As Long
 
-    If Trim$(Player(Index).Char(CharNum).Name) = vbNullString Then
+    If Trim$(Player(Index).Char(charnum).Name) = vbNullString Then
     With Player(Index)
-        .CharNum = CharNum
+        .charnum = charnum
         
-        .Char(CharNum).ID = Day(Now) & Hour(Now) & Minute(Now) & Second(Now) & Rand(1000, 1)
-        .Char(CharNum).Name = Name
-        .Char(CharNum).Sex = Sex
-        .Char(CharNum).Class = ClassNum
+        .Char(charnum).ID = Day(Now) & Hour(Now) & Minute(Now) & Second(Now) & Rand(1000, 1)
+        .Char(charnum).Name = Name
+        .Char(charnum).Sex = Sex
+        .Char(charnum).Class = ClassNum
         
-        If .Char(CharNum).Sex = SEX_MALE Then
-            .Char(CharNum).sprite = Classe(ClassNum).MaleSprite
+        If .Char(charnum).Sex = SEX_MALE Then
+            .Char(charnum).sprite = Classe(ClassNum).MaleSprite
         Else
-            .Char(CharNum).sprite = Classe(ClassNum).FemaleSprite
+            .Char(charnum).sprite = Classe(ClassNum).FemaleSprite
         End If
         
-        .Char(CharNum).Level = 1
+        .Char(charnum).Level = 1
                     
-        .Char(CharNum).STR = Classe(ClassNum).STR
-        .Char(CharNum).def = Classe(ClassNum).def
-        .Char(CharNum).Speed = Classe(ClassNum).Speed
-        .Char(CharNum).magi = Classe(ClassNum).magi
+        .Char(charnum).STR = Classe(ClassNum).STR
+        .Char(charnum).def = Classe(ClassNum).def
+        .Char(charnum).Speed = Classe(ClassNum).Speed
+        .Char(charnum).magi = Classe(ClassNum).magi
         
         If Classe(ClassNum).Map <= 0 Then Classe(ClassNum).Map = 1
         If Classe(ClassNum).x < 0 Or Classe(ClassNum).x > MAX_MAPX Then Classe(ClassNum).x = Int(Classe(ClassNum).x / 2)
         If Classe(ClassNum).y < 0 Or Classe(ClassNum).y > MAX_MAPY Then Classe(ClassNum).y = Int(Classe(ClassNum).y / 2)
-        .Char(CharNum).Map = Classe(ClassNum).Map
-        .Char(CharNum).x = Classe(ClassNum).x
-        .Char(CharNum).y = Classe(ClassNum).y
+        .Char(charnum).Map = Classe(ClassNum).Map
+        .Char(charnum).x = Classe(ClassNum).x
+        .Char(charnum).y = Classe(ClassNum).y
             
-        .Char(CharNum).HP = GetPlayerMaxHP(Index)
-        .Char(CharNum).MP = GetPlayerMaxMP(Index)
-        .Char(CharNum).SP = GetPlayerMaxSP(Index)
+        .Char(charnum).HP = GetPlayerMaxHP(Index)
+        .Char(charnum).MP = GetPlayerMaxMP(Index)
+        .Char(charnum).SP = GetPlayerMaxSP(Index)
         
         'Objet de classe
         Dim ItemNum As Long
@@ -640,12 +654,12 @@ Dim f As Long
     End If
 End Sub
 
-Sub DelChar(ByVal Index As Long, ByVal CharNum As Long)
+Sub DelChar(ByVal Index As Long, ByVal charnum As Long)
 Dim f1 As Long, f2 As Long
 Dim s As String
 
-    Call DeleteName(Player(Index).Char(CharNum).Name)
-    Call ClearChar(Index, CharNum)
+    Call DeleteName(Player(Index).Char(charnum).Name)
+    Call ClearChar(Index, charnum)
     Call SavePlayer(Index, True)
 End Sub
 
@@ -758,7 +772,7 @@ Dim i As Long
         
     Call SetStatus("Sauvegarde des objets... ")
     For i = 1 To MAX_ITEMS
-        If Not FileExist("items\item" & i & ".fco") Then
+        If Not FileExist("items\item" & i & ".Chdr") Then
             Call SetStatus("Sauvegarde l'objet... " & i & "/" & MAX_ITEMS)
             NewDoEvents
             Call SaveItem(i)
@@ -769,7 +783,7 @@ End Sub
 Sub SaveItem(ByVal ItemNum As Long)
 Dim FileName As String
 Dim f  As Long
-FileName = App.Path & "\items\item" & ItemNum & ".fco"
+FileName = App.Path & "\items\item" & ItemNum & ".Chdr"
         
     f = FreeFile
     Open FileName For Binary As #f
@@ -788,7 +802,7 @@ Dim f As Long
     For i = 1 To MAX_ITEMS
         'Call SetStatus("Chargement des objets... " & i & "/" & MAX_ITEMS)
         
-        FileName = App.Path & "\Items\Item" & i & ".fco"
+        FileName = App.Path & "\Items\Item" & i & ".chdr"
         If FileExist(FileName, False) Then
             f = FreeFile
             Open FileName For Binary Access Read As #f
@@ -800,6 +814,7 @@ Dim f As Long
         NewDoEvents
         loading (72.2 + (5.8 / MAX_ITEMS) * i)
     Next i
+    
 End Sub
 
 Sub CheckItems()
@@ -812,7 +827,7 @@ Dim i As Long
         
     Call SetStatus("Sauvegarde des Metiers... ")
     For i = 1 To MAX_METIER
-        If Not FileExist("Metiers\Metier" & i & ".fcm") Then
+        If Not FileExist("Metiers\Metier" & i & ".Chdr") Then
             Call SetStatus("Sauvegarde du Metiers... " & i & "/" & MAX_METIER)
             NewDoEvents
             Call SaveMetier(i)
@@ -823,7 +838,7 @@ End Sub
 Sub SaveMetier(ByVal metiernum As Long)
 Dim FileName As String
 Dim f  As Long
-FileName = App.Path & "\Metiers\Metier" & metiernum & ".fcm"
+FileName = App.Path & "\Metiers\Metier" & metiernum & ".Chdr"
     f = FreeFile
     Open FileName For Binary As #f
         Put #f, , metier(metiernum)
@@ -842,7 +857,7 @@ Dim f  As Long
     For i = 1 To MAX_METIER
         'Call SetStatus("Chargement des Metiers... " & i & "/" & MAX_METIER)
         
-        FileName = App.Path & "\Metiers\Metier" & i & ".fcm"
+        FileName = App.Path & "\Metiers\Metier" & i & ".Chdr"
         If FileExist(FileName, False) Then
             f = FreeFile
             Open FileName For Binary Access Read As #f
@@ -861,7 +876,7 @@ Dim i As Long
         
     Call SetStatus("Sauvegarde des recettes... ")
     For i = 1 To MAX_RECETTE
-        If Not FileExist("recettes\recette" & i & ".fcr") Then
+        If Not FileExist("recettes\recette" & i & ".Chdr") Then
             Call SetStatus("Sauvegarde du recettes... " & i & "/" & MAX_RECETTE)
             NewDoEvents
             Call Saverecette(i)
@@ -872,7 +887,7 @@ End Sub
 Sub Saverecette(ByVal recettenum As Long)
 Dim FileName As String
 Dim f  As Long
-FileName = App.Path & "\recettes\recette" & recettenum & ".fcr"
+FileName = App.Path & "\recettes\recette" & recettenum & ".Chdr"
         
     f = FreeFile
     Open FileName For Binary As #f
@@ -891,7 +906,7 @@ Dim f  As Long
     For i = 1 To MAX_RECETTE
         'Call SetStatus("Chargement des recettes... " & i & "/" & MAX_RECETTE)
         
-        FileName = App.Path & "\recettes\recette" & i & ".fcr"
+        FileName = App.Path & "\recettes\recette" & i & ".Chdr"
         If FileExist(FileName, False) Then
             f = FreeFile
             Open FileName For Binary Access Read As #f
@@ -910,7 +925,7 @@ Dim i As Long
 
     Call SetStatus("Sauvegarde des magasins... ")
     For i = 1 To MAX_SHOPS
-        If Not FileExist("shops\shop" & i & ".fcm") Then
+        If Not FileExist("shops\shop" & i & ".Chdr") Then
             Call SetStatus("Sauvegarde des magasins... " & i & "/" & MAX_SHOPS)
             NewDoEvents
             Call SaveShop(i)
@@ -922,7 +937,7 @@ Sub SaveShop(ByVal ShopNum As Long)
 Dim FileName As String
 Dim f As Long
 
-    FileName = App.Path & "\shops\shop" & ShopNum & ".fcm"
+    FileName = App.Path & "\shops\shop" & ShopNum & ".Chdr"
         
     f = FreeFile
     Open FileName For Binary As #f
@@ -939,7 +954,7 @@ Dim i As Long, f As Long
     
     For i = 1 To MAX_SHOPS
         'Call SetStatus("Chargement des magasins " & i & "/" & MAX_SHOPS)
-        FileName = App.Path & "\shops\shop" & i & ".fcm"
+        FileName = App.Path & "\shops\shop" & i & ".Chdr"
         If FileExist(FileName, False) Then
             f = FreeFile
             Open FileName For Binary Access Read As #f
@@ -961,7 +976,7 @@ Sub SaveSpell(ByVal SpellNum As Long)
 Dim FileName As String
 Dim f As Long
 
-    FileName = App.Path & "\spells\spells" & SpellNum & ".fcg"
+    FileName = App.Path & "\spells\spells" & SpellNum & ".Chdr"
         
     f = FreeFile
     Open FileName For Binary As #f
@@ -973,7 +988,7 @@ Sub SaveQuete(ByVal QueteNum As Long)
 Dim FileName As String
 Dim f As Long
 
-    FileName = App.Path & "\quetes\quete" & QueteNum & ".fcq"
+    FileName = App.Path & "\quetes\quete" & QueteNum & ".Chdr"
         
     f = FreeFile
     Open FileName For Binary As #f
@@ -986,7 +1001,7 @@ Dim i As Long
 
     Call SetStatus("Sauvegarde des sorts... ")
     For i = 1 To MAX_SPELLS
-        If Not FileExist("spells\spells" & i & ".fcg") Then
+        If Not FileExist("spells\spells" & i & ".Chdr") Then
             Call SetStatus("Sauvegarde des sorts... " & i & "/" & MAX_SPELLS)
             NewDoEvents
             Call SaveSpell(i)
@@ -1005,7 +1020,7 @@ Dim f As Long
     For i = 1 To MAX_SPELLS
         'Call SetStatus("Chargement des sorts... " & i & "/" & MAX_SPELLS)
         
-        FileName = App.Path & "\spells\spells" & i & ".fcg"
+        FileName = App.Path & "\spells\spells" & i & ".Chdr"
         If FileExist(FileName, False) Then
             f = FreeFile
             Open FileName For Binary Access Read As #f
@@ -1029,7 +1044,7 @@ Dim i As Long
     Call SetStatus("Sauvegarde des NPCs... ")
     
     For i = 1 To MAX_NPCS
-        If Not FileExist("npcs\npc" & i & ".fcp") Then
+        If Not FileExist("npcs\npc" & i & ".Chdr") Then
             Call SetStatus("Sauvegarde des NPCs... " & i & "/" & MAX_NPCS)
             NewDoEvents
             Call SaveNpc(i)
@@ -1040,7 +1055,7 @@ End Sub
 Sub SaveNpc(ByVal npcnum As Long)
 Dim FileName As String
 Dim f As Long
-FileName = App.Path & "\npcs\npc" & npcnum & ".fcp"
+FileName = App.Path & "\npcs\npc" & npcnum & ".Chdr"
         
     f = FreeFile
     Open FileName For Binary As #f
@@ -1149,7 +1164,7 @@ Dim f As Long
     
     For i = 1 To MAX_QUETES
         'Call SetStatus("Chargement des Quetes " & i & "/" & MAX_QUETES)
-        FileName = App.Path & "\quetes\quete" & i & ".fcq"
+        FileName = App.Path & "\quetes\quete" & i & ".Chdr"
         If FileExist(FileName, False) Then
             f = FreeFile
             Open FileName For Binary Access Read As #f
@@ -1174,7 +1189,7 @@ Dim n As Long
     Call ClearQuetes
         
     For i = 1 To MAX_QUETES
-        FileName = "quetes\quete" & i & ".fcq"
+        FileName = "quetes\quete" & i & ".Chdr"
         
         ' Check to see if map exists, if it doesn't, create it.
         If Not FileExist(FileName) Then
@@ -1368,7 +1383,7 @@ Dim FileName As String
 Dim i As Long
 
     'Call CheckArrows
-    Call ClearArrows
+    'Call ClearArrows
     
     FileName = App.Path & "\Arrows.ini"
     
@@ -1418,35 +1433,35 @@ End Sub
 
 Public Function GetPlayerQueteEtat(ByVal PIndex As Long, ByVal qindex As Long) As Boolean
     GetPlayerQueteEtat = False
-    If Player(PIndex).Char(Player(PIndex).CharNum).QueteStatut(qindex) = 2 Then GetPlayerQueteEtat = True
+    If Player(PIndex).Char(Player(PIndex).charnum).QueteStatut(qindex) = 2 Then GetPlayerQueteEtat = True
 End Function
 
 Public Sub Setclassement()
 Dim packet As String
-Dim J As Long
+Dim j As Long
 On Error GoTo suite
    Dim s As String: s = ReadIniSection(App.Path & "\classement.ini", "classement")
     Dim vLines As Variant: vLines = Split(s, Chr$(0))
     Dim vLine As Variant
     For Each vLine In vLines
-       J = InStr(1, vLine, "=")
+       j = InStr(1, vLine, "=")
        
-        If Val(Mid(vLine, J + 1, Len(vLine) - J)) >= Top(1).mobs Then
-            If Top(1).nom = Mid(vLine, 1, J - 1) Then Top(1).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite
+        If Val(Mid(vLine, j + 1, Len(vLine) - j)) >= Top(1).mobs Then
+            If Top(1).nom = Mid(vLine, 1, j - 1) Then Top(1).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite
            Top(3).nom = Top(2).nom: Top(3).mobs = Top(2).mobs
            Top(2).nom = Top(1).nom: Top(2).mobs = Top(1).mobs
-           Top(1).nom = Mid(vLine, 1, J - 1)
-           Top(1).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
-        ElseIf Val(Mid(vLine, J + 1, Len(vLine) - J)) >= Top(2).mobs Then
-            If Top(2).nom = Mid(vLine, 1, J - 1) Then Top(2).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite
+           Top(1).nom = Mid(vLine, 1, j - 1)
+           Top(1).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
+        ElseIf Val(Mid(vLine, j + 1, Len(vLine) - j)) >= Top(2).mobs Then
+            If Top(2).nom = Mid(vLine, 1, j - 1) Then Top(2).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite
            Top(3).nom = Top(2).nom: Top(3).mobs = Top(2).mobs
-           Top(2).nom = Mid(vLine, 1, J - 1)
-           Top(2).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
+           Top(2).nom = Mid(vLine, 1, j - 1)
+           Top(2).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
            
-        ElseIf Val(Mid(vLine, J + 1, Len(vLine) - J)) >= Top(3).mobs Then
-            If Top(3).nom = Mid(vLine, 1, J - 1) Then Top(3).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite
-           Top(3).nom = Mid(vLine, 1, J - 1)
-           Top(3).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
+        ElseIf Val(Mid(vLine, j + 1, Len(vLine) - j)) >= Top(3).mobs Then
+            If Top(3).nom = Mid(vLine, 1, j - 1) Then Top(3).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite
+           Top(3).nom = Mid(vLine, 1, j - 1)
+           Top(3).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
         End If
 suite:
     Next vLine
@@ -1458,24 +1473,24 @@ On Error GoTo suite2
      s = ReadIniSection(App.Path & "\classement.ini", "classementgvg")
     vLines = Split(s, Chr$(0))
     For Each vLine In vLines
-       J = InStr(1, vLine, "=")
+       j = InStr(1, vLine, "=")
        
-        If Val(Mid(vLine, J + 1, Len(vLine) - J)) >= TopGvG(1).mobs Then
-            If TopGvG(1).nom = Mid(vLine, 1, J - 1) Then TopGvG(1).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite2
+        If Val(Mid(vLine, j + 1, Len(vLine) - j)) >= TopGvG(1).mobs Then
+            If TopGvG(1).nom = Mid(vLine, 1, j - 1) Then TopGvG(1).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite2
            TopGvG(3).nom = TopGvG(2).nom: TopGvG(3).mobs = TopGvG(2).mobs
            TopGvG(2).nom = Top(1).nom: TopGvG(2).mobs = TopGvG(1).mobs
-           TopGvG(1).nom = Mid(vLine, 1, J - 1)
-           TopGvG(1).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
-        ElseIf Val(Mid(vLine, J + 1, Len(vLine) - J)) >= TopGvG(2).mobs Then
-            If TopGvG(2).nom = Mid(vLine, 1, J - 1) Then TopGvG(2).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite2
+           TopGvG(1).nom = Mid(vLine, 1, j - 1)
+           TopGvG(1).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
+        ElseIf Val(Mid(vLine, j + 1, Len(vLine) - j)) >= TopGvG(2).mobs Then
+            If TopGvG(2).nom = Mid(vLine, 1, j - 1) Then TopGvG(2).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite2
            TopGvG(3).nom = Top(2).nom: TopGvG(3).mobs = TopGvG(2).mobs
-           TopGvG(2).nom = Mid(vLine, 1, J - 1)
-           TopGvG(2).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
+           TopGvG(2).nom = Mid(vLine, 1, j - 1)
+           TopGvG(2).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
            
-        ElseIf Val(Mid(vLine, J + 1, Len(vLine) - J)) >= TopGvG(3).mobs Then
-            If TopGvG(3).nom = Mid(vLine, 1, J - 1) Then TopGvG(3).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite2
-           TopGvG(3).nom = Mid(vLine, 1, J - 1)
-           TopGvG(3).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
+        ElseIf Val(Mid(vLine, j + 1, Len(vLine) - j)) >= TopGvG(3).mobs Then
+            If TopGvG(3).nom = Mid(vLine, 1, j - 1) Then TopGvG(3).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite2
+           TopGvG(3).nom = Mid(vLine, 1, j - 1)
+           TopGvG(3).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
         End If
 suite2:
     Next vLine
@@ -1490,7 +1505,7 @@ Dim packet As String
 Dim i As Long
 Dim FileName As String
 
-FileName = App.Path & "\Guildes\" & Player(Index).Char(Player(Index).CharNum).Guild & ".ini"
+FileName = App.Path & "\Guildes\" & Player(Index).Char(Player(Index).charnum).Guild & ".ini"
 packet = "guildupdate" & SEP_CHAR
 ListeSection FileName, Section
 

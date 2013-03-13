@@ -29,6 +29,21 @@ Begin VB.Form FrmMirage
    ScaleMode       =   0  'User
    ScaleWidth      =   1565
    Visible         =   0   'False
+   Begin VB.PictureBox Picture1 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   607
+      Index           =   1
+      Left            =   0
+      Picture         =   "frmMirage.frx":15B8
+      ScaleHeight     =   600
+      ScaleWidth      =   600
+      TabIndex        =   256
+      Top             =   1560
+      Width           =   600
+   End
    Begin VB.Frame fra_fenetre 
       BackColor       =   &H00004080&
       BorderStyle     =   0  'None
@@ -80,7 +95,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H80000008&
             Height          =   2.25000e5
             Left            =   2400
-            Picture         =   "frmMirage.frx":15B8
+            Picture         =   "frmMirage.frx":28BA
             ScaleHeight     =   2.23636e5
             ScaleMode       =   0  'User
             ScaleWidth      =   477.091
@@ -345,7 +360,7 @@ Begin VB.Form FrmMirage
          Appearance      =   0  'Flat
          Height          =   2985
          Left            =   4080
-         Picture         =   "frmMirage.frx":160EFA
+         Picture         =   "frmMirage.frx":1621FC
          Top             =   2880
          Width           =   2595
       End
@@ -402,7 +417,7 @@ Begin VB.Form FrmMirage
       ForeColor       =   &H80000008&
       Height          =   7155
       Left            =   1440
-      Picture         =   "frmMirage.frx":17A374
+      Picture         =   "frmMirage.frx":17B676
       ScaleHeight     =   475
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   609
@@ -410,6 +425,117 @@ Begin VB.Form FrmMirage
       Top             =   840
       Visible         =   0   'False
       Width           =   9165
+      Begin VB.PictureBox Picture13 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   3255
+         Left            =   720
+         ScaleHeight     =   3255
+         ScaleWidth      =   7455
+         TabIndex        =   247
+         Top             =   2760
+         Width           =   7455
+         Begin VB.PictureBox Picture17 
+            BorderStyle     =   0  'None
+            BeginProperty Font 
+               Name            =   "Segoe UI"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   270
+            Left            =   3480
+            Picture         =   "frmMirage.frx":250518
+            ScaleHeight     =   270
+            ScaleWidth      =   270
+            TabIndex        =   251
+            Top             =   2880
+            Width           =   270
+         End
+         Begin VB.PictureBox Picture18 
+            BorderStyle     =   0  'None
+            BeginProperty Font 
+               Name            =   "Segoe UI"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   270
+            Left            =   3840
+            Picture         =   "frmMirage.frx":2507B0
+            ScaleHeight     =   270
+            ScaleWidth      =   270
+            TabIndex        =   250
+            Top             =   2880
+            Width           =   270
+         End
+         Begin VB.PictureBox Picture11 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            BorderStyle     =   0  'None
+            BeginProperty Font 
+               Name            =   "Segoe UI"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   5000
+            Left            =   0
+            Picture         =   "frmMirage.frx":250A3B
+            ScaleHeight     =   333
+            ScaleMode       =   3  'Pixel
+            ScaleWidth      =   494
+            TabIndex        =   248
+            Top             =   0
+            Width           =   7410
+            Begin VB.PictureBox picspell 
+               Appearance      =   0  'Flat
+               AutoRedraw      =   -1  'True
+               BackColor       =   &H00000000&
+               BorderStyle     =   0  'None
+               BeginProperty Font 
+                  Name            =   "Segoe UI"
+                  Size            =   9.75
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H80000008&
+               Height          =   480
+               Index           =   0
+               Left            =   120
+               ScaleHeight     =   32
+               ScaleMode       =   3  'Pixel
+               ScaleWidth      =   32
+               TabIndex        =   249
+               Top             =   120
+               Width           =   480
+            End
+            Begin VB.Shape SDAD 
+               BorderColor     =   &H00008000&
+               BorderWidth     =   3
+               Height          =   510
+               Left            =   120
+               Top             =   105
+               Visible         =   0   'False
+               Width           =   510
+            End
+         End
+      End
       Begin VB.PictureBox tmpsquete 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
@@ -420,7 +546,7 @@ Begin VB.Form FrmMirage
          ScaleHeight     =   31
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   81
-         TabIndex        =   250
+         TabIndex        =   244
          Top             =   0
          Visible         =   0   'False
          Width           =   1215
@@ -438,7 +564,7 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   495
             Left            =   0
-            TabIndex        =   252
+            TabIndex        =   246
             ToolTipText     =   "Minutes restante avant la fin de la quête en cour"
             Top             =   0
             Width           =   600
@@ -457,138 +583,10 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   495
             Left            =   600
-            TabIndex        =   251
+            TabIndex        =   245
             ToolTipText     =   "Secondes restante avant la fin de la quête en cour"
             Top             =   0
             Width           =   450
-         End
-      End
-      Begin VB.PictureBox picPlayerSpells 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00FFFFFF&
-         BorderStyle     =   0  'None
-         CausesValidation=   0   'False
-         ForeColor       =   &H80000008&
-         Height          =   3585
-         Left            =   720
-         ScaleHeight     =   239
-         ScaleMode       =   3  'Pixel
-         ScaleWidth      =   513
-         TabIndex        =   244
-         TabStop         =   0   'False
-         Top             =   600
-         Visible         =   0   'False
-         Width           =   7695
-         Begin VB.PictureBox Picture18 
-            BorderStyle     =   0  'None
-            BeginProperty Font 
-               Name            =   "Segoe UI"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   270
-            Left            =   1200
-            Picture         =   "frmMirage.frx":24F216
-            ScaleHeight     =   270
-            ScaleWidth      =   270
-            TabIndex        =   249
-            Top             =   3240
-            Width           =   270
-         End
-         Begin VB.PictureBox Picture17 
-            BorderStyle     =   0  'None
-            BeginProperty Font 
-               Name            =   "Segoe UI"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   270
-            Left            =   840
-            Picture         =   "frmMirage.frx":24F4A1
-            ScaleHeight     =   270
-            ScaleWidth      =   270
-            TabIndex        =   248
-            Top             =   3240
-            Width           =   270
-         End
-         Begin VB.PictureBox Picture13 
-            Appearance      =   0  'Flat
-            BackColor       =   &H80000005&
-            BorderStyle     =   0  'None
-            ForeColor       =   &H80000008&
-            Height          =   3255
-            Left            =   -120
-            ScaleHeight     =   3255
-            ScaleWidth      =   7815
-            TabIndex        =   245
-            Top             =   0
-            Width           =   7815
-            Begin VB.PictureBox Picture11 
-               Appearance      =   0  'Flat
-               BackColor       =   &H00FFFFFF&
-               BorderStyle     =   0  'None
-               BeginProperty Font 
-                  Name            =   "Segoe UI"
-                  Size            =   9.75
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H80000008&
-               Height          =   7935
-               Left            =   120
-               ScaleHeight     =   529
-               ScaleMode       =   3  'Pixel
-               ScaleWidth      =   510
-               TabIndex        =   246
-               Top             =   120
-               Width           =   7650
-               Begin VB.PictureBox picspell 
-                  Appearance      =   0  'Flat
-                  AutoRedraw      =   -1  'True
-                  BackColor       =   &H00000000&
-                  BorderStyle     =   0  'None
-                  BeginProperty Font 
-                     Name            =   "Segoe UI"
-                     Size            =   9.75
-                     Charset         =   0
-                     Weight          =   400
-                     Underline       =   0   'False
-                     Italic          =   0   'False
-                     Strikethrough   =   0   'False
-                  EndProperty
-                  ForeColor       =   &H80000008&
-                  Height          =   480
-                  Index           =   0
-                  Left            =   120
-                  ScaleHeight     =   32
-                  ScaleMode       =   3  'Pixel
-                  ScaleWidth      =   32
-                  TabIndex        =   247
-                  Top             =   120
-                  Width           =   480
-               End
-               Begin VB.Shape SDAD 
-                  BorderColor     =   &H00008000&
-                  BorderWidth     =   3
-                  Height          =   510
-                  Left            =   120
-                  Top             =   105
-                  Visible         =   0   'False
-                  Width           =   510
-               End
-            End
          End
       End
       Begin VB.ListBox lstOnline 
@@ -604,9 +602,9 @@ Begin VB.Form FrmMirage
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2190
-         ItemData        =   "frmMirage.frx":24F739
+         ItemData        =   "frmMirage.frx":2A8BE5
          Left            =   5880
-         List            =   "frmMirage.frx":24F73B
+         List            =   "frmMirage.frx":2A8BE7
          TabIndex        =   243
          Top             =   4440
          Width           =   1860
@@ -641,7 +639,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   3600
          Left            =   780
-         Picture         =   "frmMirage.frx":24F73D
+         Picture         =   "frmMirage.frx":2A8BE9
          ScaleHeight     =   240
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   150
@@ -720,6 +718,7 @@ Begin VB.Form FrmMirage
             Height          =   510
             Left            =   0
             Top             =   0
+            Visible         =   0   'False
             Width           =   510
          End
          Begin VB.Shape EquipS 
@@ -1013,6 +1012,76 @@ Begin VB.Form FrmMirage
          Top             =   1800
          Width           =   495
       End
+      Begin VB.Label lblmana 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "0000/0000"
+         BeginProperty Font 
+            Name            =   "Dungeon"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H005982C4&
+         Height          =   180
+         Left            =   3120
+         TabIndex        =   255
+         Top             =   1080
+         Width           =   1020
+      End
+      Begin VB.Label lblvie 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "0000/0000"
+         BeginProperty Font 
+            Name            =   "Dungeon"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H005982C4&
+         Height          =   180
+         Left            =   3120
+         TabIndex        =   254
+         Top             =   840
+         Width           =   1020
+      End
+      Begin VB.Shape Shape1 
+         BorderColor     =   &H00000080&
+         BorderWidth     =   3
+         Height          =   300
+         Left            =   8700
+         Top             =   120
+         Width           =   300
+      End
+      Begin VB.Label Label2 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "X"
+         BeginProperty Font 
+            Name            =   "Dungeon"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000C0&
+         Height          =   270
+         Left            =   8760
+         TabIndex        =   252
+         Top             =   120
+         Width           =   180
+      End
       Begin VB.Label Label23 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
@@ -1258,12 +1327,12 @@ Begin VB.Form FrmMirage
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H005982C4&
-         Height          =   345
+         Height          =   225
          Left            =   5760
          TabIndex        =   197
          ToolTipText     =   "Points permettant d'augmenter vos dégâts et vos chances de coup critique"
          Top             =   1080
-         Width           =   450
+         Width           =   330
       End
       Begin VB.Label monnom 
          Appearance      =   0  'Flat
@@ -1282,9 +1351,9 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H005982C4&
          Height          =   180
-         Left            =   3240
+         Left            =   3360
          TabIndex        =   196
-         Top             =   720
+         Top             =   600
          Width           =   1350
       End
    End
@@ -1478,7 +1547,7 @@ Begin VB.Form FrmMirage
       ForeColor       =   &H80000008&
       Height          =   425
       Left            =   10200
-      Picture         =   "frmMirage.frx":2699F3
+      Picture         =   "frmMirage.frx":2C2E9F
       ScaleHeight     =   28
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   26
@@ -1493,7 +1562,7 @@ Begin VB.Form FrmMirage
       ForeColor       =   &H00808080&
       Height          =   10095
       Left            =   12000
-      Picture         =   "frmMirage.frx":26A2F5
+      Picture         =   "frmMirage.frx":2C37A1
       ScaleHeight     =   673
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   221
@@ -1528,11 +1597,10 @@ Begin VB.Form FrmMirage
          _Version        =   393217
          BackColor       =   8421504
          BorderStyle     =   0
-         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   2
          Appearance      =   0
-         TextRTF         =   $"frmMirage.frx":26C9ED
+         TextRTF         =   $"frmMirage.frx":2C5E99
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
             Size            =   9
@@ -1757,7 +1825,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   1695
          Left            =   25
-         Picture         =   "frmMirage.frx":26CA64
+         Picture         =   "frmMirage.frx":2C5F10
          ScaleHeight     =   1665
          ScaleWidth      =   3270
          TabIndex        =   101
@@ -2314,7 +2382,7 @@ Begin VB.Form FrmMirage
       ForeColor       =   &H80000008&
       Height          =   1995
       Left            =   4680
-      Picture         =   "frmMirage.frx":27E9A6
+      Picture         =   "frmMirage.frx":2D7E52
       ScaleHeight     =   1965
       ScaleWidth      =   3600
       TabIndex        =   89
@@ -2399,7 +2467,7 @@ Begin VB.Form FrmMirage
       ForeColor       =   &H80000008&
       Height          =   1965
       Left            =   6360
-      Picture         =   "frmMirage.frx":295A58
+      Picture         =   "frmMirage.frx":2EEF04
       ScaleHeight     =   1965
       ScaleWidth      =   3600
       TabIndex        =   62
@@ -2666,9 +2734,9 @@ Begin VB.Form FrmMirage
    Begin VB.ComboBox Canal 
       Appearance      =   0  'Flat
       Height          =   315
-      ItemData        =   "frmMirage.frx":29860A
+      ItemData        =   "frmMirage.frx":2F1AB6
       Left            =   120
-      List            =   "frmMirage.frx":29861A
+      List            =   "frmMirage.frx":2F1AC6
       Locked          =   -1  'True
       TabIndex        =   29
       Text            =   "Carte"
@@ -2751,6 +2819,81 @@ Begin VB.Form FrmMirage
       Top             =   0
       Visible         =   0   'False
       Width           =   12000
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   5
+         Left            =   0
+         Picture         =   "frmMirage.frx":2F1AE6
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   260
+         Top             =   3960
+         Width           =   600
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   4
+         Left            =   0
+         Picture         =   "frmMirage.frx":2F2DE8
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   259
+         Top             =   3360
+         Width           =   600
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   3
+         Left            =   0
+         Picture         =   "frmMirage.frx":2F40EA
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   258
+         Top             =   2760
+         Width           =   600
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   2
+         Left            =   0
+         Picture         =   "frmMirage.frx":2F53EC
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   257
+         Top             =   2160
+         Width           =   600
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   0
+         Left            =   0
+         Picture         =   "frmMirage.frx":2F66EE
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   253
+         Top             =   960
+         Width           =   600
+      End
       Begin VB.PictureBox pictTouche 
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
@@ -3645,7 +3788,7 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   270
             Left            =   1320
-            Picture         =   "frmMirage.frx":29863A
+            Picture         =   "frmMirage.frx":2F79F0
             ScaleHeight     =   270
             ScaleWidth      =   270
             TabIndex        =   77
@@ -3665,7 +3808,7 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   270
             Left            =   960
-            Picture         =   "frmMirage.frx":2988D2
+            Picture         =   "frmMirage.frx":2F7C88
             ScaleHeight     =   270
             ScaleWidth      =   270
             TabIndex        =   76
@@ -3859,7 +4002,7 @@ Begin VB.Form FrmMirage
          Begin VB.Image Image5 
             Height          =   2985
             Left            =   0
-            Picture         =   "frmMirage.frx":298B5D
+            Picture         =   "frmMirage.frx":2F7F13
             Top             =   0
             Width           =   2595
          End
@@ -3982,7 +4125,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   4290
          Left            =   480
-         Picture         =   "frmMirage.frx":2B1FD7
+         Picture         =   "frmMirage.frx":31138D
          ScaleHeight     =   286
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   223
@@ -4287,7 +4430,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   1575
          Left            =   5400
-         Picture         =   "frmMirage.frx":2E0ED9
+         Picture         =   "frmMirage.frx":34028F
          ScaleHeight     =   1545
          ScaleWidth      =   6510
          TabIndex        =   2
@@ -4303,7 +4446,7 @@ Begin VB.Form FrmMirage
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
             TabIndex        =   3
-            Text            =   "frmMirage.frx":310D2B
+            Text            =   "frmMirage.frx":3700E1
             Top             =   240
             Width           =   6285
          End
@@ -4471,7 +4614,7 @@ Begin VB.Form FrmMirage
    Begin VB.Image Interface 
       Height          =   900
       Left            =   0
-      Picture         =   "frmMirage.frx":310D31
+      Picture         =   "frmMirage.frx":3700E7
       Top             =   9120
       Width           =   12000
    End
@@ -5113,7 +5256,7 @@ If picInv3.Visible = True Then picInv3.Visible = False: PicInterface.Visible = F
 
     PicInterface.Visible = True
     picInv3.Visible = True
-    picPlayerSpells.Visible = False
+    Picture13.Visible = False
     Call UpdateVisInv
     
     PrepareSprite (Player(MyIndex).Sprite)
@@ -5255,11 +5398,11 @@ If PicMenuQuitter.Visible Then PicMenuQuitter.Visible = False Else PicMenuQuitte
 End Sub
 
 Private Sub menu_sort_Click()
-If picPlayerSpells.Visible = True Then picPlayerSpells.Visible = False: PicInterface.Visible = False: Exit Sub
+If Picture13.Visible = True Then Picture13.Visible = False: PicInterface.Visible = False: Exit Sub
 
 PicInterface.Visible = True
-picPlayerSpells.Visible = True
-picInv3.Visible = False
+Picture13.Visible = True
+
 Call ClearPic
 Call SendData("spells" & END_CHAR)
 End Sub
@@ -5794,7 +5937,6 @@ End Sub
 
 Private Sub Picture17_Click()
     Picture11.Top = Picture11.Top + 88
-    
 End Sub
 
 Private Sub Picture18_Click()
@@ -6051,5 +6193,4 @@ End Sub
 Public Sub ClearPic()
     picquete.Visible = False
     picEquip.Visible = False
-    picPlayerSpells.Visible = False
 End Sub

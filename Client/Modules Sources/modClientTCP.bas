@@ -616,6 +616,7 @@ ligne = ""
         Player(MyIndex).MaxHp = Val(Parse(1))
         Call SetPlayerHP(MyIndex, Val(Parse(2)))
         If GetPlayerMaxHP(MyIndex) > 0 Then FrmMirage.svie.Width = (((GetPlayerHP(MyIndex) / 1425) / (GetPlayerMaxHP(MyIndex) / 1425)) * 1425): FrmMirage.lvie.Caption = "PV : " & GetPlayerHP(MyIndex) & " / " & GetPlayerMaxHP(MyIndex)
+        FrmMirage.lblvie.Caption = FrmMirage.lvie.Caption
         Exit Sub
     End If
     ligne = "Party"
@@ -653,7 +654,8 @@ ligne = ""
     If LCase$(Parse(0)) = "playermp" Then
         Player(MyIndex).MaxMp = Val(Parse(1))
         Call SetPlayerMP(MyIndex, Val(Parse(2)))
-        If GetPlayerMaxMP(MyIndex) > 0 Then FrmMirage.smana.Width = (((GetPlayerMP(MyIndex) / 1425) / (GetPlayerMaxMP(MyIndex) / 1425)) * 1425): FrmMirage.lmana.Caption = "PM : " & GetPlayerMP(MyIndex) & " / " & GetPlayerMaxMP(MyIndex)
+        If GetPlayerMaxMP(MyIndex) > 0 Then FrmMirage.smana.Width = (((GetPlayerMP(MyIndex) / 1425) / (GetPlayerMaxMP(MyIndex) / 1425)) * 1425): FrmMirage.lmana.Caption = "MP : " & GetPlayerMP(MyIndex) & " / " & GetPlayerMaxMP(MyIndex)
+        FrmMirage.lblmana.Caption = FrmMirage.lmana.Caption
         Exit Sub
     End If
     
@@ -681,6 +683,17 @@ ligne = ""
     ' :::::::::::::::::::::::::
     ' :: Player Stats Packet ::
     ' :::::::::::::::::::::::::
+    If (LCase$(Parse(0)) = "playersbuffpacket") Then
+    z = 1
+    For i = 1 To 6
+        Buff(i) = Parse(z)
+        Buff2(i) = Parse(z + 1)
+        z = z + 2
+    Next i
+    Call UpdateBuff
+    Exit Sub
+    End If
+    
     ligne = "PlayerStats"
     If (LCase$(Parse(0)) = "playerstatspacket") Then
         Dim SubStr As Long, SubDef As Long, SubMagi As Long, SubSpeed As Long
@@ -1638,11 +1651,12 @@ mont:
     ligne = "Spell Data 2"
     If (LCase$(Parse(0)) = "spells") Then
         
-        FrmMirage.picPlayerSpells.Visible = True
+        FrmMirage.Picture13.Visible = True
         
         ' Put spells known in player record
-        For i = 1 To MAX_PLAYER_SPELLS
+        For i = 1 To MAX_PLAYER_SPELLS - 1
             Player(MyIndex).Spell(i) = Val(Parse(i))
+            ligne = "Spell Data 2 " & i
         Next i
         
         Call Affspell

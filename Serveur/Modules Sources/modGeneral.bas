@@ -945,30 +945,41 @@ Dim i As Long, n As Long
 End Sub
 
 Sub VerifEffetsJoueur()
-Dim i As Long
+Dim i, j As Long
 Dim z As Long
 For i = 1 To MAX_PLAYERS
     If bouclier(i) And GetTickCount >= BouclierT(i) Then bouclier(i) = False: BouclierT(i) = 0
     If Para(i) And GetTickCount >= ParaT(i) Then Call Paralyse(i): Para(i) = False: ParaT(i) = 0
-    If Point(i) > 0 And Point(i) < MAX_SPELLS Then
-    If Spell(Point(i)).type = SPELL_TYPE_AMELIO And GetTickCount >= PointT(i) Then
-        Player(i).Char(Player(i).CharNum).def = Player(i).Char(Player(i).CharNum).def - Val(Spell(Point(i)).data3)
-        Player(i).Char(Player(i).CharNum).magi = Player(i).Char(Player(i).CharNum).magi - Val(Spell(Point(i)).data3)
-        Player(i).Char(Player(i).CharNum).STR = Player(i).Char(Player(i).CharNum).STR - Val(Spell(Point(i)).data3)
-        Player(i).Char(Player(i).CharNum).Speed = Player(i).Char(Player(i).CharNum).Speed - Val(Spell(Point(i)).data3)
-        Call SendStats(i)
-        Point(i) = 0
-        PointT(i) = 0
-    ElseIf Spell(Point(i)).type = SPELL_TYPE_DECONC And GetTickCount >= PointT(i) Then
-        Player(i).Char(Player(i).CharNum).def = Player(i).Char(Player(i).CharNum).def + Val(Spell(Point(i)).data3)
-        Player(i).Char(Player(i).CharNum).magi = Player(i).Char(Player(i).CharNum).magi + Val(Spell(Point(i)).data3)
-        Player(i).Char(Player(i).CharNum).STR = Player(i).Char(Player(i).CharNum).STR + Val(Spell(Point(i)).data3)
-        Player(i).Char(Player(i).CharNum).Speed = Player(i).Char(Player(i).CharNum).Speed + Val(Spell(Point(i)).data3)
-        Call SendStats(i)
-        Point(i) = 0
-        PointT(i) = 0
+   ' If Point(i) > 0 And Point(i) < MAX_SPELLS Then
+   ' If Spell(Point(i)).type = SPELL_TYPE_AMELIO And GetTickCount >= PointT(i) Then
+   '     Player(i).Char(Player(i).CharNum).def = Player(i).Char(Player(i).CharNum).def - Val(Spell(Point(i)).data3)
+   '     Player(i).Char(Player(i).CharNum).magi = Player(i).Char(Player(i).CharNum).magi - Val(Spell(Point(i)).data3)
+   '     Player(i).Char(Player(i).CharNum).STR = Player(i).Char(Player(i).CharNum).STR - Val(Spell(Point(i)).data3)
+   '     Player(i).Char(Player(i).CharNum).Speed = Player(i).Char(Player(i).CharNum).Speed - Val(Spell(Point(i)).data3)
+   '     Call SendStats(i)
+   '     Point(i) = 0
+   '     PointT(i) = 0
+   ' ElseIf Spell(Point(i)).type = SPELL_TYPE_DECONC And GetTickCount >= PointT(i) Then
+   '     Player(i).Char(Player(i).CharNum).def = Player(i).Char(Player(i).CharNum).def + Val(Spell(Point(i)).data3)
+   '     Player(i).Char(Player(i).CharNum).magi = Player(i).Char(Player(i).CharNum).magi + Val(Spell(Point(i)).data3)
+   '     Player(i).Char(Player(i).CharNum).STR = Player(i).Char(Player(i).CharNum).STR + Val(Spell(Point(i)).data3)
+   '     Player(i).Char(Player(i).CharNum).Speed = Player(i).Char(Player(i).CharNum).Speed + Val(Spell(Point(i)).data3)
+   '     Call SendStats(i)
+    '    Point(i) = 0
+    '    PointT(i) = 0
+    'End If
+   ' End If
+   For j = 1 To 6
+    If Player(i).Char(Player(i).charnum).Buff(j) <= GetTickCount And Player(i).Char(Player(i).charnum).Buff(j) > 0 Then
+
+                                                    Player(i).Char(Player(i).charnum).Buff(j) = 0
+                                                    Player(i).Char(Player(i).charnum).Buff2(j) = 0
+                                                    Call SendStats(i)
+                                                    Call SendBuff(i)
+ 
+    
     End If
-    End If
+   Next j
 Next i
 For i = 1 To MAX_MAPS
     For z = 1 To MAX_MAP_NPCS
@@ -1366,8 +1377,8 @@ Dim Parse() As String, Answer As Integer
                             PlayerMsg Index, "Le nombre d'arguments fournit à " & Parse(0) & " n'est pas bon.", 4
                         End If
                     Else
-                        If Player(Index).Char(Player(Index).CharNum).Inv(Val(Parse(1))).Num > 0 Then
-                            Answer = HotelDeVente.AddVente(Index, Player(Index).Char(Player(Index).CharNum).Inv(Val(Parse(1))).Num, Player(Index).Char(Player(Index).CharNum).Inv(Val(Parse(1))).value, Player(Index).Char(Player(Index).CharNum).Inv(Val(Parse(1))).Dur, True)
+                        If Player(Index).Char(Player(Index).charnum).Inv(Val(Parse(1))).Num > 0 Then
+                            Answer = HotelDeVente.AddVente(Index, Player(Index).Char(Player(Index).charnum).Inv(Val(Parse(1))).Num, Player(Index).Char(Player(Index).charnum).Inv(Val(Parse(1))).value, Player(Index).Char(Player(Index).charnum).Inv(Val(Parse(1))).Dur, True)
                             PlayerMsg Index, "Votre vente a bien été effectué.", Green
                             PlayerMsg Index, "Veuillez prendre note du numéro " & Answer, White
                             PlayerMsg Index, "Il sera utile si vous souhaitez annuler votre vente.", White

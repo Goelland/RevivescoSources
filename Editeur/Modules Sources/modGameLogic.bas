@@ -103,6 +103,10 @@ Public KeyOpenEditorMsg As String
 Public SaveMapItem() As MapItemRec
 Public SaveMapNpc(1 To MAX_MAP_NPCS) As MapNpcRec
 
+'Buff / Debuff
+Public Buff(0 To 6) As Long '1=HP 2=MP 3=STR 4=Endu 5=Vitesse 6=Magie
+Public Debuff(7 To 13) As Long '7=HP 8=MP 9=STR 10=Endu 11=Vitesse 12=Magie 13 = root
+
 ' Used for index based editors
 Public InItemsEditor As Boolean
 Public InNpcEditor As Boolean
@@ -5893,6 +5897,7 @@ If Not FileExist("spells\spells" & EditorIndex & ".fcg") And HORS_LIGNE = 1 Then
     frmSpellEditor.scrlSpellDone.value = Spell(EditorIndex).SpellDone
     
     frmSpellEditor.chkArea.value = Spell(EditorIndex).AE
+    frmSpellEditor.HScroll2.value = Spell(EditorIndex).Buff
     frmSpellEditor.scrlLevelReq.Max = MAX_LEVEL
     
     frmSpellEditor.Show vbModeless, frmMirage
@@ -6061,6 +6066,7 @@ Public Sub SpellEditorOk()
     Spell(EditorIndex).SpellDone = frmSpellEditor.scrlSpellDone.value
     
     Spell(EditorIndex).AE = frmSpellEditor.chkArea.value
+    Spell(EditorIndex).Buff = frmSpellEditor.HScroll2.value
     
     Call SendSaveSpell(EditorIndex)
     InShopEditor = False
