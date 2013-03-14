@@ -945,8 +945,9 @@ Dim i As Long, n As Long
 End Sub
 
 Sub VerifEffetsJoueur()
-Dim i, j As Long
+Dim i, J As Long
 Dim z As Long
+Dim B As Boolean
 For i = 1 To MAX_PLAYERS
     If bouclier(i) And GetTickCount >= BouclierT(i) Then bouclier(i) = False: BouclierT(i) = 0
     If Para(i) And GetTickCount >= ParaT(i) Then Call Paralyse(i): Para(i) = False: ParaT(i) = 0
@@ -969,17 +970,27 @@ For i = 1 To MAX_PLAYERS
     '    PointT(i) = 0
     'End If
    ' End If
-   For j = 1 To 6
-    If Player(i).Char(Player(i).charnum).Buff(j) <= GetTickCount And Player(i).Char(Player(i).charnum).Buff(j) > 0 Then
+   For J = 1 To 6
+    If Player(i).Char(Player(i).charnum).Buff(J) <= GetTickCount And Player(i).Char(Player(i).charnum).Buff(J) > 0 Then
 
-                                                    Player(i).Char(Player(i).charnum).Buff(j) = 0
-                                                    Player(i).Char(Player(i).charnum).Buff2(j) = 0
-                                                    Call SendStats(i)
-                                                    Call SendBuff(i)
- 
-    
+                                                    Player(i).Char(Player(i).charnum).Buff(J) = 0
+                                                    Player(i).Char(Player(i).charnum).Buff2(J) = 0
+                                                    B = True
+  
     End If
-   Next j
+   Next J
+   
+    For J = 7 To 13
+    If Player(i).Char(Player(i).charnum).Debuff(J) <= GetTickCount And Player(i).Char(Player(i).charnum).Debuff(J) > 0 Then
+
+                                                    Player(i).Char(Player(i).charnum).Debuff(J) = 0
+                                                    Player(i).Char(Player(i).charnum).Debuff2(J) = 0
+                                                    B = True
+    End If
+   Next J
+   If B = True Then
+   Call SendStats(i): Call SendBuff(i): B = False
+   End If
 Next i
 For i = 1 To MAX_MAPS
     For z = 1 To MAX_MAP_NPCS

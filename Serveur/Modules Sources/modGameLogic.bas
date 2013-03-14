@@ -2647,7 +2647,7 @@ On Error Resume Next
 If Index < 0 Or Index > MAX_PLAYERS Then Exit Sub
 Call AddLog("le : " & Date & "     à : " & time & "...Erreur de connexion au jeu, joueur : " & GetPlayerName(Index) & ",Compte : " & GetPlayerLogin(Index) & ". Détails : Num :" & Err.Number & " Description : " & Err.Description & " Source : " & Err.Source & "...", "logs\Err.txt")
 If IBErr Then Call IBMsg("Erreur de connexion au jeu, joueur : " & GetPlayerName(Index), BrightRed)
-Call PlainMsg(Index, "Erreur du serveur(6), relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
+Call PlainMsg(Index, "Erreur du serveur(7), relancer s'il vous plait.(Pour tous problème récurent visiter " & Trim$(GetVar(App.Path & "\Config\.ini", "CONFIG", "WebSite")) & ").", 3)
 End Sub
 
 Sub LeftGame(ByVal Index As Long, Optional ByVal Bypass As Boolean = False)
@@ -2658,7 +2658,7 @@ Dim n As Long
     On Error GoTo er:
         
     If bouclier(Index) Then bouclier(Index) = False: BouclierT(Index) = 0
-    If Para(Index) Then Call Paralyse(Index): Para(Index) = False: ParaT(Index) = 0
+    If Para(Index) Then Call Paralyse(Index): Para(Index) = False: ParaT(Index) = 0: Player(Index).Char(Player(Index).charnum).Debuff(13) = 0
   '  If Point(Index) > 0 And Point(Index) < MAX_SPELLS Then
   '      If Spell(Point(Index)).type = SPELL_TYPE_AMELIO Then
   '          Player(Index).Char(Player(Index).charnum).def = Player(Index).Char(Player(Index).charnum).def - Val(Spell(Point(Index)).data3)
@@ -3027,7 +3027,10 @@ If Spell(SpellNum).AE = 1 Then
                                         If Not Para(n) Then Call Paralyse(n)
                                         Para(n) = True
                                         ParaT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                                    
+                                        Player(n).Char(Player(n).charnum).Debuff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendBuff(Index)
+                                        
                                     Case SPELL_TYPE_DEFENC
                                         bouclier(n) = True
                                         BouclierT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
@@ -3041,14 +3044,13 @@ If Spell(SpellNum).AE = 1 Then
                                         Call SendStats(n)
                                         Call SendBuff(Index)
                                     Case SPELL_TYPE_DECONC
-                                        If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
-                                        Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
-                                        Call SendStats(n)
+                                        'If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendStats(n)
+                                        Call SendBuff(Index)
                                     
                                     
                             End Select
@@ -3078,7 +3080,10 @@ If Spell(SpellNum).AE = 1 Then
                                         If Not Para(n) Then Call Paralyse(n)
                                         Para(n) = True
                                         ParaT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                                    
+                                        Player(n).Char(Player(n).charnum).Debuff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendBuff(Index)
+                                        
                                     Case SPELL_TYPE_DEFENC
                                         bouclier(n) = True
                                         BouclierT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
@@ -3093,14 +3098,13 @@ If Spell(SpellNum).AE = 1 Then
                                         Call SendStats(n)
                                         Call SendBuff(Index)
                                     Case SPELL_TYPE_DECONC
-                                        If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
-                                        Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
-                                        Call SendStats(n)
+                                        'If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendStats(n)
+                                        Call SendBuff(Index)
                                     
                                 End Select
                                 
@@ -3225,6 +3229,9 @@ Else
                                         If Not Para(n) Then Call Paralyse(n)
                                         Para(n) = True
                                         ParaT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendBuff(Index)
                                     
                                     Case SPELL_TYPE_DEFENC
                                         bouclier(n) = True
@@ -3242,13 +3249,12 @@ Else
                                         Call SendBuff(Index)
                                     Case SPELL_TYPE_DECONC
                                         If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration.", BrightRed)
-                                        Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
-                                        Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
-                                        Call SendStats(n)
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        Call SendStats(n)
+                                        Call SendBuff(Index)
                                     
                     Case SPELL_TYPE_SUBHP
                         Damage = ((GetPlayerMAGI(Index) \ 4) + Spell(SpellNum).data1) - GetPlayerProtection(n)
@@ -3315,7 +3321,7 @@ Else
                             If Not Para(n) Then Call Paralyse(n)
                             Para(n) = True
                             ParaT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                            
+
                         Case SPELL_TYPE_DEFENC
                             bouclier(n) = True
                             BouclierT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
@@ -3325,19 +3331,25 @@ Else
                                         
                                         Point(n) = SpellNum
                                         PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
-                                        Player(n).Char(Player(n).charnum).Buff(Val(Spell(SpellNum).Buff)) = GetTickCount + 30000 ' Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Buff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
                                         Player(n).Char(Player(n).charnum).Buff2(Val(Spell(SpellNum).Buff)) = SpellNum
                                         Call SendStats(n)
                                         Call SendBuff(Index)
                         Case SPELL_TYPE_DECONC
-                            If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration", BrightRed)
-                            Player(n).Char(Player(n).charnum).def = Player(n).Char(Player(n).charnum).def - Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).charnum).magi = Player(n).Char(Player(n).charnum).magi - Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).charnum).STR = Player(n).Char(Player(n).charnum).STR - Val(Spell(SpellNum).data3)
-                            Player(n).Char(Player(n).charnum).Speed = Player(n).Char(Player(n).charnum).Speed - Val(Spell(SpellNum).data3)
-                            Call SendStats(n)
-                            Point(n) = SpellNum
-                            PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                            'If Point(n) > 0 Or PointT(n) > 0 Then Call MapPlayerMsg(Index, "Le joueur est déjà la cible d'un sort de déconcentration", BrightRed)
+                                        Point(n) = SpellNum
+                                        PointT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                        Player(n).Char(Player(n).charnum).Debuff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        If Val(Spell(SpellNum).Buff) = 13 Then
+                                            If Not Para(n) Then Call Paralyse(n)
+                                                Para(n) = True
+                                                ParaT(n) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                                Player(n).Char(Player(n).charnum).Debuff(Val(Spell(SpellNum).Buff)) = GetTickCount + Val(Spell(SpellNum).data1 * 1000)
+                                                Player(n).Char(Player(n).charnum).Debuff2(Val(Spell(SpellNum).Buff)) = SpellNum
+                                        End If
+                                        Call SendStats(n)
+                                        Call SendBuff(Index)
                                     
                     End Select
                     

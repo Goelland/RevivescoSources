@@ -381,7 +381,7 @@ Begin VB.Form frmMainMenu
          ForeColor       =   &H00FFFFFF&
          Height          =   195
          Left            =   120
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   720
          Width           =   1275
       End
@@ -401,7 +401,7 @@ Begin VB.Form frmMainMenu
          Height          =   285
          Left            =   0
          MaxLength       =   20
-         TabIndex        =   6
+         TabIndex        =   5
          ToolTipText     =   "Login"
          Top             =   0
          Width           =   1635
@@ -424,7 +424,7 @@ Begin VB.Form frmMainMenu
          Left            =   0
          MaxLength       =   20
          PasswordChar    =   "*"
-         TabIndex        =   5
+         TabIndex        =   7
          ToolTipText     =   "Mot de passe"
          Top             =   360
          Width           =   1635

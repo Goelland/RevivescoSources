@@ -1,7 +1,7 @@
-modDatabase = 159, 160, 741, 486, 
+modDatabase = 159, 160, 741, 486, Z
 modTypes = 156, 156, 738, 482, 
 modGameLogic = 22, 29, 811, 641, 
-modGeneral = 156, 156, 1036, 482, Z
+modGeneral = 156, 156, 1036, 482, 
 modText = 100, 100, 819, 610, C
 frmLoad = 104, 104, 712, 369, C, 78, 78, 660, 404, C
 clsCommands = 0, 0, 582, 326, 

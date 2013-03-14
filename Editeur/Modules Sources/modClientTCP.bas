@@ -459,7 +459,9 @@ Dim z As Long
         'End If
         'Exit Sub
     'End If
-    
+    If (LCase$(Parse(0)) = "playersbuffpacket") Then
+    Exit Sub
+    End If
     ' :::::::::::::::::::::::::
     ' :: Player Stats Packet ::
     ' :::::::::::::::::::::::::
@@ -674,6 +676,7 @@ mont:
     ' ::::::::::::::::::::::::::
     If (LCase$(Parse(0)) = "conoff") Then If Not ConOff Then ConOff = True Else ConOff = False: Exit Sub
     
+
     ' :::::::::::::::::::::::
     ' :: NPC attack packet ::
     ' :::::::::::::::::::::::

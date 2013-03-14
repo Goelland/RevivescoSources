@@ -271,11 +271,20 @@ Dim n As Integer
             Call PutVar(FileName, "CHAR" & i, "quete" & n, STR$(Player(Index).Char(i).QueteStatut(n)))
         NewDoEvents
         Next
+    Dim temp As Long
         For n = 1 To 6
-            Call PutVar(FileName, "CHAR" & i, "buff" & n, Val(Player(Index).Char(i).Buff(n)) - GetTickCount)
+            temp = Val(Player(Index).Char(i).Buff(n)) - GetTickCount
+            If temp < 0 Then temp = 0
+            Call PutVar(FileName, "CHAR" & i, "buff" & n, STR(temp))
             Call PutVar(FileName, "CHAR" & i, "buff2" & n, STR$(Player(Index).Char(i).Buff2(n)))
         Next
-        
+
+        For n = 7 To 13
+            temp = Val(Player(Index).Char(i).Debuff(n)) - GetTickCount
+            If temp < 0 Then temp = 0
+            Call PutVar(FileName, "CHAR" & i, "buff" & n, STR(temp))
+            Call PutVar(FileName, "CHAR" & i, "buff2" & n, STR$(Player(Index).Char(i).Debuff2(n)))
+        Next
     Next
         Dim f As Long
         FileName = App.Path & "\accounts\" & Trim$(Player(Index).Login) & ".Chdr"
@@ -378,12 +387,20 @@ Dim n As Integer
             Call PutVar(FileName, "CHAR" & i, "quete" & n, STR$(Player(Index).Char(i).QueteStatut(n)))
         DoEvents
         Next
-        
+        Dim temp As Long
+
         For n = 1 To 6
-            Call PutVar(FileName, "CHAR" & i, "buff" & n, Val(Player(Index).Char(i).Buff(n)) - GetTickCount)
+            temp = Int((Val(Player(Index).Char(i).Buff(n)) - GetTickCount) / 1000)
+            If temp < 0 Then temp = 0
+            Call PutVar(FileName, "CHAR" & i, "buff" & n, STR(temp))
             Call PutVar(FileName, "CHAR" & i, "buff2" & n, STR$(Player(Index).Char(i).Buff2(n)))
         Next
-        
+        For n = 7 To 13
+                temp = Int((Val(Player(Index).Char(i).Debuff(n)) - GetTickCount) / 1000)
+            If temp < 0 Then temp = 0
+            Call PutVar(FileName, "CHAR" & i, "buff" & n, STR(temp))
+            Call PutVar(FileName, "CHAR" & i, "buff2" & n, STR$(Player(Index).Char(i).Debuff2(n)))
+        Next
         Dim f As Long
         FileName = App.Path & "\accounts\" & Trim$(Player(Index).Login) & ".Chdr"
         f = FreeFile
@@ -486,10 +503,15 @@ suite:
         Next n
         
         For n = 1 To 6
-            .Buff(n) = Val(GetVar(FileName, "CHAR" & i, "buff" & n)) + GetTickCount
+            .Buff(n) = (Val(GetVar(FileName, "CHAR" & i, "buff" & n)) * 1000) + GetTickCount
             .Buff2(n) = Val(GetVar(FileName, "CHAR" & i, "buff2" & n))
+            If .Buff(n) < 0 Then .Buff(n) = 0: .Buff2(n) = 0
         Next n
-    
+        For n = 7 To 13
+            .Debuff(n) = (Val(GetVar(FileName, "CHAR" & i, "buff" & n)) * 1000) + GetTickCount
+            .Debuff2(n) = Val(GetVar(FileName, "CHAR" & i, "buff2" & n))
+            If .Debuff(n) < 0 Then .Debuff(n) = 0: .Debuff2(n) = 0
+        Next n
         End With
     Next i
 End With
@@ -1438,30 +1460,30 @@ End Function
 
 Public Sub Setclassement()
 Dim packet As String
-Dim j As Long
+Dim J As Long
 On Error GoTo suite
    Dim s As String: s = ReadIniSection(App.Path & "\classement.ini", "classement")
     Dim vLines As Variant: vLines = Split(s, Chr$(0))
     Dim vLine As Variant
     For Each vLine In vLines
-       j = InStr(1, vLine, "=")
+       J = InStr(1, vLine, "=")
        
-        If Val(Mid(vLine, j + 1, Len(vLine) - j)) >= Top(1).mobs Then
-            If Top(1).nom = Mid(vLine, 1, j - 1) Then Top(1).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite
+        If Val(Mid(vLine, J + 1, Len(vLine) - J)) >= Top(1).mobs Then
+            If Top(1).nom = Mid(vLine, 1, J - 1) Then Top(1).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite
            Top(3).nom = Top(2).nom: Top(3).mobs = Top(2).mobs
            Top(2).nom = Top(1).nom: Top(2).mobs = Top(1).mobs
-           Top(1).nom = Mid(vLine, 1, j - 1)
-           Top(1).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
-        ElseIf Val(Mid(vLine, j + 1, Len(vLine) - j)) >= Top(2).mobs Then
-            If Top(2).nom = Mid(vLine, 1, j - 1) Then Top(2).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite
+           Top(1).nom = Mid(vLine, 1, J - 1)
+           Top(1).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
+        ElseIf Val(Mid(vLine, J + 1, Len(vLine) - J)) >= Top(2).mobs Then
+            If Top(2).nom = Mid(vLine, 1, J - 1) Then Top(2).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite
            Top(3).nom = Top(2).nom: Top(3).mobs = Top(2).mobs
-           Top(2).nom = Mid(vLine, 1, j - 1)
-           Top(2).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
+           Top(2).nom = Mid(vLine, 1, J - 1)
+           Top(2).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
            
-        ElseIf Val(Mid(vLine, j + 1, Len(vLine) - j)) >= Top(3).mobs Then
-            If Top(3).nom = Mid(vLine, 1, j - 1) Then Top(3).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite
-           Top(3).nom = Mid(vLine, 1, j - 1)
-           Top(3).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
+        ElseIf Val(Mid(vLine, J + 1, Len(vLine) - J)) >= Top(3).mobs Then
+            If Top(3).nom = Mid(vLine, 1, J - 1) Then Top(3).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite
+           Top(3).nom = Mid(vLine, 1, J - 1)
+           Top(3).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
         End If
 suite:
     Next vLine
@@ -1473,24 +1495,24 @@ On Error GoTo suite2
      s = ReadIniSection(App.Path & "\classement.ini", "classementgvg")
     vLines = Split(s, Chr$(0))
     For Each vLine In vLines
-       j = InStr(1, vLine, "=")
+       J = InStr(1, vLine, "=")
        
-        If Val(Mid(vLine, j + 1, Len(vLine) - j)) >= TopGvG(1).mobs Then
-            If TopGvG(1).nom = Mid(vLine, 1, j - 1) Then TopGvG(1).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite2
+        If Val(Mid(vLine, J + 1, Len(vLine) - J)) >= TopGvG(1).mobs Then
+            If TopGvG(1).nom = Mid(vLine, 1, J - 1) Then TopGvG(1).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite2
            TopGvG(3).nom = TopGvG(2).nom: TopGvG(3).mobs = TopGvG(2).mobs
            TopGvG(2).nom = Top(1).nom: TopGvG(2).mobs = TopGvG(1).mobs
-           TopGvG(1).nom = Mid(vLine, 1, j - 1)
-           TopGvG(1).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
-        ElseIf Val(Mid(vLine, j + 1, Len(vLine) - j)) >= TopGvG(2).mobs Then
-            If TopGvG(2).nom = Mid(vLine, 1, j - 1) Then TopGvG(2).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite2
+           TopGvG(1).nom = Mid(vLine, 1, J - 1)
+           TopGvG(1).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
+        ElseIf Val(Mid(vLine, J + 1, Len(vLine) - J)) >= TopGvG(2).mobs Then
+            If TopGvG(2).nom = Mid(vLine, 1, J - 1) Then TopGvG(2).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite2
            TopGvG(3).nom = Top(2).nom: TopGvG(3).mobs = TopGvG(2).mobs
-           TopGvG(2).nom = Mid(vLine, 1, j - 1)
-           TopGvG(2).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
+           TopGvG(2).nom = Mid(vLine, 1, J - 1)
+           TopGvG(2).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
            
-        ElseIf Val(Mid(vLine, j + 1, Len(vLine) - j)) >= TopGvG(3).mobs Then
-            If TopGvG(3).nom = Mid(vLine, 1, j - 1) Then TopGvG(3).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j)): GoTo suite2
-           TopGvG(3).nom = Mid(vLine, 1, j - 1)
-           TopGvG(3).mobs = Val(Mid(vLine, j + 1, Len(vLine) - j))
+        ElseIf Val(Mid(vLine, J + 1, Len(vLine) - J)) >= TopGvG(3).mobs Then
+            If TopGvG(3).nom = Mid(vLine, 1, J - 1) Then TopGvG(3).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J)): GoTo suite2
+           TopGvG(3).nom = Mid(vLine, 1, J - 1)
+           TopGvG(3).mobs = Val(Mid(vLine, J + 1, Len(vLine) - J))
         End If
 suite2:
     Next vLine

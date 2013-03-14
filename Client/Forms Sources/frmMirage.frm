@@ -3,12 +3,13 @@ Object = "{6BF52A50-394A-11D3-B153-00C04F79FAA6}#1.0#0"; "wmp.dll"
 Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "Mswinsck.ocx"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "Richtx32.ocx"
 Begin VB.Form FrmMirage 
-   BackColor       =   &H00FFFFFF&
-   BorderStyle     =   1  'Fixed Single
-   ClientHeight    =   13320
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   BorderStyle     =   4  'Fixed ToolWindow
+   ClientHeight    =   11565
    ClientLeft      =   8040
-   ClientTop       =   3210
-   ClientWidth     =   23475
+   ClientTop       =   3150
+   ClientWidth     =   22665
    FillColor       =   &H00FFFFFF&
    BeginProperty Font 
       Name            =   "Segoe UI"
@@ -24,11 +25,237 @@ Begin VB.Form FrmMirage
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
+   MinButton       =   0   'False
    MouseIcon       =   "frmMirage.frx":08EE
-   ScaleHeight     =   877.365
+   ScaleHeight     =   761.766
    ScaleMode       =   0  'User
-   ScaleWidth      =   1565
+   ScaleWidth      =   1511
+   ShowInTaskbar   =   0   'False
    Visible         =   0   'False
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   0
+      Left            =   300
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   281
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   1
+      Left            =   840
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   280
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   2
+      Left            =   1380
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   279
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   3
+      Left            =   1920
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   278
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   4
+      Left            =   2460
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   277
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   5
+      Left            =   3000
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   276
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   6
+      Left            =   3540
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   275
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   7
+      Left            =   4080
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   274
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   8
+      Left            =   4620
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   273
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   9
+      Left            =   5160
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   272
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   10
+      Left            =   5700
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   271
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   11
+      Left            =   6240
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   270
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   12
+      Left            =   6780
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   269
+      Top             =   9428
+      Width           =   480
+   End
+   Begin VB.PictureBox picRac 
+      Appearance      =   0  'Flat
+      AutoRedraw      =   -1  'True
+      BackColor       =   &H00000000&
+      BorderStyle     =   0  'None
+      ForeColor       =   &H80000008&
+      Height          =   480
+      Index           =   13
+      Left            =   7320
+      ScaleHeight     =   32
+      ScaleMode       =   3  'Pixel
+      ScaleWidth      =   32
+      TabIndex        =   268
+      Top             =   9428
+      Width           =   480
+   End
    Begin VB.PictureBox Picture1 
       Appearance      =   0  'Flat
       BackColor       =   &H80000005&
@@ -40,16 +267,39 @@ Begin VB.Form FrmMirage
       Picture         =   "frmMirage.frx":15B8
       ScaleHeight     =   600
       ScaleWidth      =   600
-      TabIndex        =   256
+      TabIndex        =   242
       Top             =   1560
+      Visible         =   0   'False
       Width           =   600
+      Begin VB.Shape shapestat 
+         BorderStyle     =   0  'Transparent
+         FillColor       =   &H005982C4&
+         FillStyle       =   0  'Solid
+         Height          =   75
+         Index           =   1
+         Left            =   0
+         Top             =   540
+         Width           =   615
+      End
+      Begin VB.Label lblstat2 
+         Alignment       =   2  'Center
+         BackStyle       =   0  'Transparent
+         Caption         =   "000"
+         ForeColor       =   &H00FFFFFF&
+         Height          =   195
+         Index           =   1
+         Left            =   0
+         TabIndex        =   248
+         Top             =   360
+         Width           =   615
+      End
    End
    Begin VB.Frame fra_fenetre 
       BackColor       =   &H00004080&
       BorderStyle     =   0  'None
       Height          =   8625
-      Left            =   15360
-      TabIndex        =   223
+      Left            =   17400
+      TabIndex        =   209
       Top             =   120
       Width           =   8955
       Begin VB.PictureBox picEquip 
@@ -72,7 +322,7 @@ Begin VB.Form FrmMirage
          ScaleHeight     =   167
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   159
-         TabIndex        =   225
+         TabIndex        =   211
          TabStop         =   0   'False
          Top             =   0
          Visible         =   0   'False
@@ -99,7 +349,7 @@ Begin VB.Form FrmMirage
             ScaleHeight     =   2.23636e5
             ScaleMode       =   0  'User
             ScaleWidth      =   477.091
-            TabIndex        =   236
+            TabIndex        =   222
             Top             =   2760
             Visible         =   0   'False
             Width           =   480
@@ -122,7 +372,7 @@ Begin VB.Form FrmMirage
             ScaleHeight     =   35
             ScaleMode       =   3  'Pixel
             ScaleWidth      =   35
-            TabIndex        =   234
+            TabIndex        =   220
             Top             =   1320
             Visible         =   0   'False
             Width           =   555
@@ -146,7 +396,7 @@ Begin VB.Form FrmMirage
                Left            =   15
                ScaleHeight     =   495
                ScaleWidth      =   495
-               TabIndex        =   235
+               TabIndex        =   221
                Top             =   15
                Width           =   495
             End
@@ -169,7 +419,7 @@ Begin VB.Form FrmMirage
             ScaleHeight     =   35
             ScaleMode       =   3  'Pixel
             ScaleWidth      =   35
-            TabIndex        =   232
+            TabIndex        =   218
             Top             =   1920
             Visible         =   0   'False
             Width           =   555
@@ -193,7 +443,7 @@ Begin VB.Form FrmMirage
                Left            =   15
                ScaleHeight     =   495
                ScaleWidth      =   495
-               TabIndex        =   233
+               TabIndex        =   219
                Top             =   15
                Width           =   495
             End
@@ -216,7 +466,7 @@ Begin VB.Form FrmMirage
             ScaleHeight     =   35
             ScaleMode       =   3  'Pixel
             ScaleWidth      =   35
-            TabIndex        =   230
+            TabIndex        =   216
             Top             =   1320
             Visible         =   0   'False
             Width           =   555
@@ -240,7 +490,7 @@ Begin VB.Form FrmMirage
                Left            =   15
                ScaleHeight     =   495
                ScaleWidth      =   495
-               TabIndex        =   231
+               TabIndex        =   217
                Top             =   15
                Width           =   495
             End
@@ -263,7 +513,7 @@ Begin VB.Form FrmMirage
             ScaleHeight     =   35
             ScaleMode       =   3  'Pixel
             ScaleWidth      =   35
-            TabIndex        =   228
+            TabIndex        =   214
             Top             =   1320
             Visible         =   0   'False
             Width           =   555
@@ -287,7 +537,7 @@ Begin VB.Form FrmMirage
                Left            =   15
                ScaleHeight     =   495
                ScaleWidth      =   495
-               TabIndex        =   229
+               TabIndex        =   215
                Top             =   15
                Width           =   495
             End
@@ -310,7 +560,7 @@ Begin VB.Form FrmMirage
             ScaleHeight     =   35
             ScaleMode       =   3  'Pixel
             ScaleWidth      =   35
-            TabIndex        =   226
+            TabIndex        =   212
             Top             =   1920
             Visible         =   0   'False
             Width           =   555
@@ -334,7 +584,7 @@ Begin VB.Form FrmMirage
                Left            =   15
                ScaleHeight     =   495
                ScaleWidth      =   495
-               TabIndex        =   227
+               TabIndex        =   213
                Top             =   15
                Width           =   495
             End
@@ -345,7 +595,7 @@ Begin VB.Form FrmMirage
          BorderStyle     =   0  'None
          Height          =   2415
          Left            =   840
-         TabIndex        =   224
+         TabIndex        =   210
          Top             =   4320
          Visible         =   0   'False
          Width           =   2295
@@ -369,7 +619,7 @@ Begin VB.Form FrmMirage
          Caption         =   "                                   "
          Height          =   375
          Left            =   1920
-         TabIndex        =   241
+         TabIndex        =   227
          Top             =   0
          Width           =   375
       End
@@ -378,7 +628,7 @@ Begin VB.Form FrmMirage
          Caption         =   "                                   "
          Height          =   375
          Left            =   2280
-         TabIndex        =   240
+         TabIndex        =   226
          Top             =   0
          Width           =   375
       End
@@ -388,7 +638,7 @@ Begin VB.Form FrmMirage
          Height          =   375
          Left            =   480
          MousePointer    =   5  'Size
-         TabIndex        =   239
+         TabIndex        =   225
          Top             =   600
          Width           =   2655
       End
@@ -397,7 +647,7 @@ Begin VB.Form FrmMirage
          Caption         =   "                                   "
          Height          =   375
          Left            =   2040
-         TabIndex        =   238
+         TabIndex        =   224
          Top             =   0
          Width           =   255
       End
@@ -406,7 +656,7 @@ Begin VB.Form FrmMirage
          Caption         =   "                                   "
          Height          =   375
          Left            =   2280
-         TabIndex        =   237
+         TabIndex        =   223
          Top             =   0
          Width           =   255
       End
@@ -421,22 +671,22 @@ Begin VB.Form FrmMirage
       ScaleHeight     =   475
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   609
-      TabIndex        =   190
+      TabIndex        =   176
       Top             =   840
       Visible         =   0   'False
       Width           =   9165
       Begin VB.PictureBox Picture13 
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
-         BorderStyle     =   0  'None
          ForeColor       =   &H80000008&
-         Height          =   3255
-         Left            =   720
-         ScaleHeight     =   3255
-         ScaleWidth      =   7455
-         TabIndex        =   247
-         Top             =   2760
-         Width           =   7455
+         Height          =   3885
+         Left            =   600
+         ScaleHeight     =   3855
+         ScaleWidth      =   7875
+         TabIndex        =   233
+         Top             =   480
+         Visible         =   0   'False
+         Width           =   7905
          Begin VB.PictureBox Picture17 
             BorderStyle     =   0  'None
             BeginProperty Font 
@@ -453,7 +703,7 @@ Begin VB.Form FrmMirage
             Picture         =   "frmMirage.frx":250518
             ScaleHeight     =   270
             ScaleWidth      =   270
-            TabIndex        =   251
+            TabIndex        =   237
             Top             =   2880
             Width           =   270
          End
@@ -473,7 +723,7 @@ Begin VB.Form FrmMirage
             Picture         =   "frmMirage.frx":2507B0
             ScaleHeight     =   270
             ScaleWidth      =   270
-            TabIndex        =   250
+            TabIndex        =   236
             Top             =   2880
             Width           =   270
          End
@@ -496,10 +746,10 @@ Begin VB.Form FrmMirage
             Picture         =   "frmMirage.frx":250A3B
             ScaleHeight     =   333
             ScaleMode       =   3  'Pixel
-            ScaleWidth      =   494
-            TabIndex        =   248
+            ScaleWidth      =   527
+            TabIndex        =   234
             Top             =   0
-            Width           =   7410
+            Width           =   7900
             Begin VB.PictureBox picspell 
                Appearance      =   0  'Flat
                AutoRedraw      =   -1  'True
@@ -521,7 +771,7 @@ Begin VB.Form FrmMirage
                ScaleHeight     =   32
                ScaleMode       =   3  'Pixel
                ScaleWidth      =   32
-               TabIndex        =   249
+               TabIndex        =   235
                Top             =   120
                Width           =   480
             End
@@ -546,7 +796,7 @@ Begin VB.Form FrmMirage
          ScaleHeight     =   31
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   81
-         TabIndex        =   244
+         TabIndex        =   230
          Top             =   0
          Visible         =   0   'False
          Width           =   1215
@@ -564,7 +814,7 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   495
             Left            =   0
-            TabIndex        =   246
+            TabIndex        =   232
             ToolTipText     =   "Minutes restante avant la fin de la quête en cour"
             Top             =   0
             Width           =   600
@@ -583,7 +833,7 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   495
             Left            =   600
-            TabIndex        =   245
+            TabIndex        =   231
             ToolTipText     =   "Secondes restante avant la fin de la quête en cour"
             Top             =   0
             Width           =   450
@@ -591,23 +841,24 @@ Begin VB.Form FrmMirage
       End
       Begin VB.ListBox lstOnline 
          Appearance      =   0  'Flat
-         BackColor       =   &H00E0E0E0&
+         BackColor       =   &H00000000&
          BeginProperty Font 
-            Name            =   "Segoe UI"
-            Size            =   6.75
+            Name            =   "Dungeon"
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   2190
-         ItemData        =   "frmMirage.frx":2A8BE5
-         Left            =   5880
-         List            =   "frmMirage.frx":2A8BE7
-         TabIndex        =   243
-         Top             =   4440
-         Width           =   1860
+         ForeColor       =   &H80000005&
+         Height          =   1470
+         ItemData        =   "frmMirage.frx":363BD1
+         Left            =   5850
+         List            =   "frmMirage.frx":363BD3
+         TabIndex        =   229
+         Top             =   5100
+         Width           =   1365
       End
       Begin VB.PictureBox AmuletImage 
          Appearance      =   0  'Flat
@@ -625,10 +876,10 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   495
-         Left            =   3240
+         Left            =   3360
          ScaleHeight     =   465
          ScaleWidth      =   465
-         TabIndex        =   242
+         TabIndex        =   228
          Top             =   1320
          Width           =   495
       End
@@ -639,12 +890,13 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   3600
          Left            =   780
-         Picture         =   "frmMirage.frx":2A8BE9
+         Picture         =   "frmMirage.frx":363BD5
          ScaleHeight     =   240
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   150
-         TabIndex        =   217
+         TabIndex        =   203
          Top             =   630
+         Visible         =   0   'False
          Width           =   2250
          Begin VB.PictureBox picInv 
             Appearance      =   0  'Flat
@@ -667,7 +919,7 @@ Begin VB.Form FrmMirage
             ScaleHeight     =   32
             ScaleMode       =   3  'Pixel
             ScaleWidth      =   32
-            TabIndex        =   219
+            TabIndex        =   205
             Top             =   15
             Width           =   480
          End
@@ -675,7 +927,7 @@ Begin VB.Form FrmMirage
             Height          =   330
             Left            =   2640
             Max             =   100
-            TabIndex        =   218
+            TabIndex        =   204
             Top             =   2400
             Visible         =   0   'False
             Width           =   255
@@ -716,8 +968,8 @@ Begin VB.Form FrmMirage
          Begin VB.Shape SelectedItem 
             BorderColor     =   &H000000FF&
             Height          =   510
-            Left            =   0
-            Top             =   0
+            Left            =   30
+            Top             =   30
             Visible         =   0   'False
             Width           =   510
          End
@@ -757,7 +1009,7 @@ Begin VB.Form FrmMirage
          ScaleHeight     =   145
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   319
-         TabIndex        =   206
+         TabIndex        =   192
          Top             =   4440
          Width           =   4785
          Begin VB.Label descName 
@@ -770,7 +1022,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H80000005&
             Height          =   240
             Left            =   120
-            TabIndex        =   216
+            TabIndex        =   202
             ToolTipText     =   "Nom de l'objet"
             Top             =   0
             Width           =   4560
@@ -793,7 +1045,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H80000005&
             Height          =   855
             Left            =   120
-            TabIndex        =   215
+            TabIndex        =   201
             ToolTipText     =   "Description de l'objet"
             Top             =   1200
             Width           =   4575
@@ -806,7 +1058,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H00E0E0E0&
             Height          =   210
             Left            =   0
-            TabIndex        =   214
+            TabIndex        =   200
             Top             =   960
             Width           =   2655
          End
@@ -818,7 +1070,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H00E0E0E0&
             Height          =   210
             Left            =   0
-            TabIndex        =   213
+            TabIndex        =   199
             Top             =   720
             Width           =   2655
          End
@@ -830,7 +1082,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H00E0E0E0&
             Height          =   210
             Left            =   0
-            TabIndex        =   212
+            TabIndex        =   198
             Top             =   480
             Width           =   2655
          End
@@ -842,7 +1094,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H00FFFFFF&
             Height          =   210
             Left            =   360
-            TabIndex        =   211
+            TabIndex        =   197
             ToolTipText     =   "Se que vous apporte l'objet"
             Top             =   240
             Width           =   1815
@@ -855,7 +1107,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H00E0E0E0&
             Height          =   210
             Left            =   2760
-            TabIndex        =   210
+            TabIndex        =   196
             Top             =   960
             Width           =   1815
          End
@@ -867,7 +1119,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H00E0E0E0&
             Height          =   210
             Left            =   2760
-            TabIndex        =   209
+            TabIndex        =   195
             Top             =   720
             Width           =   1815
          End
@@ -879,7 +1131,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H00E0E0E0&
             Height          =   210
             Left            =   2760
-            TabIndex        =   208
+            TabIndex        =   194
             Top             =   480
             Width           =   1815
          End
@@ -891,7 +1143,7 @@ Begin VB.Form FrmMirage
             ForeColor       =   &H00FFFFFF&
             Height          =   210
             Left            =   2760
-            TabIndex        =   207
+            TabIndex        =   193
             ToolTipText     =   "Force/défense/vitesse requise pour équipper l'objet"
             Top             =   240
             Width           =   1815
@@ -913,10 +1165,10 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   720
-         Left            =   3720
+         Left            =   3840
          ScaleHeight     =   690
          ScaleWidth      =   465
-         TabIndex        =   195
+         TabIndex        =   181
          Top             =   1800
          Width           =   495
       End
@@ -936,10 +1188,10 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   495
-         Left            =   3720
+         Left            =   3840
          ScaleHeight     =   465
          ScaleWidth      =   465
-         TabIndex        =   194
+         TabIndex        =   180
          Top             =   2520
          Width           =   495
       End
@@ -959,10 +1211,10 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   495
-         Left            =   4200
+         Left            =   4320
          ScaleHeight     =   465
          ScaleWidth      =   465
-         TabIndex        =   193
+         TabIndex        =   179
          Top             =   1800
          Width           =   495
       End
@@ -982,10 +1234,10 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   495
-         Left            =   3720
+         Left            =   3840
          ScaleHeight     =   465
          ScaleWidth      =   465
-         TabIndex        =   192
+         TabIndex        =   178
          Top             =   1320
          Width           =   495
       End
@@ -1005,14 +1257,23 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   495
-         Left            =   3240
+         Left            =   3360
          ScaleHeight     =   465
          ScaleWidth      =   465
-         TabIndex        =   191
+         TabIndex        =   177
          Top             =   1800
          Width           =   495
       End
-      Begin VB.Label lblmana 
+      Begin VB.Label lblWho 
+         BackStyle       =   0  'Transparent
+         Height          =   435
+         Index           =   0
+         Left            =   7470
+         TabIndex        =   267
+         Top             =   6180
+         Width           =   435
+      End
+      Begin VB.Label lblStat 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "0000/0000"
@@ -1027,12 +1288,13 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H005982C4&
          Height          =   180
-         Left            =   3120
-         TabIndex        =   255
+         Index           =   1
+         Left            =   3360
+         TabIndex        =   241
          Top             =   1080
          Width           =   1020
       End
-      Begin VB.Label lblvie 
+      Begin VB.Label lblStat 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "0000/0000"
@@ -1047,8 +1309,9 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H005982C4&
          Height          =   180
-         Left            =   3120
-         TabIndex        =   254
+         Index           =   0
+         Left            =   3360
+         TabIndex        =   240
          Top             =   840
          Width           =   1020
       End
@@ -1056,8 +1319,9 @@ Begin VB.Form FrmMirage
          BorderColor     =   &H00000080&
          BorderWidth     =   3
          Height          =   300
-         Left            =   8700
-         Top             =   120
+         Left            =   8325
+         Shape           =   3  'Circle
+         Top             =   6465
          Width           =   300
       End
       Begin VB.Label Label2 
@@ -1077,9 +1341,9 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H000000C0&
          Height          =   270
-         Left            =   8760
-         TabIndex        =   252
-         Top             =   120
+         Left            =   8400
+         TabIndex        =   238
+         Top             =   6480
          Width           =   180
       End
       Begin VB.Label Label23 
@@ -1101,7 +1365,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   28
          Left            =   3345
-         TabIndex        =   222
+         TabIndex        =   208
          Top             =   3360
          Width           =   855
       End
@@ -1121,7 +1385,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00FFFFFF&
          Height          =   210
          Left            =   1080
-         TabIndex        =   221
+         TabIndex        =   207
          Top             =   4200
          Width           =   690
       End
@@ -1141,7 +1405,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00FFFFFF&
          Height          =   210
          Left            =   2040
-         TabIndex        =   220
+         TabIndex        =   206
          Top             =   4200
          Width           =   555
       End
@@ -1162,7 +1426,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H005982C4&
          Height          =   300
          Left            =   4200
-         TabIndex        =   205
+         TabIndex        =   191
          Top             =   3480
          Width           =   435
       End
@@ -1181,7 +1445,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H000000C0&
          Height          =   300
          Left            =   6480
-         TabIndex        =   204
+         TabIndex        =   190
          Top             =   1920
          Width           =   195
       End
@@ -1200,7 +1464,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H000000C0&
          Height          =   300
          Left            =   6480
-         TabIndex        =   203
+         TabIndex        =   189
          Top             =   2640
          Width           =   195
       End
@@ -1219,7 +1483,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H000000C0&
          Height          =   300
          Left            =   6480
-         TabIndex        =   202
+         TabIndex        =   188
          Top             =   3480
          Width           =   195
       End
@@ -1238,11 +1502,11 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H000000C0&
          Height          =   300
          Left            =   6480
-         TabIndex        =   201
+         TabIndex        =   187
          Top             =   1080
          Width           =   195
       End
-      Begin VB.Label lblSPEED 
+      Begin VB.Label lblStat 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H80000005&
@@ -1259,13 +1523,14 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H005982C4&
          Height          =   345
+         Index           =   5
          Left            =   5760
-         TabIndex        =   200
+         TabIndex        =   186
          ToolTipText     =   "Points permettant d'augmenter vos chances d'esquive"
          Top             =   3480
          Width           =   450
       End
-      Begin VB.Label lblMAGI 
+      Begin VB.Label lblStat 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H80000005&
@@ -1282,13 +1547,14 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H005982C4&
          Height          =   345
+         Index           =   4
          Left            =   5760
-         TabIndex        =   199
+         TabIndex        =   185
          ToolTipText     =   "Points permettant d'augmenter vos sorts disponibles "
          Top             =   2760
          Width           =   450
       End
-      Begin VB.Label lblDEF 
+      Begin VB.Label lblStat 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H80000005&
@@ -1305,16 +1571,17 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H005982C4&
          Height          =   345
+         Index           =   3
          Left            =   5760
-         TabIndex        =   198
+         TabIndex        =   184
          ToolTipText     =   "Points permettant d'augmenter votre résistance et vos chances de bloquer"
          Top             =   1920
          Width           =   450
       End
-      Begin VB.Label lblSTR 
+      Begin VB.Label lblStat 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
+         BackColor       =   &H00FFFFFF&
          BackStyle       =   0  'Transparent
          Caption         =   "00"
          BeginProperty Font 
@@ -1328,8 +1595,9 @@ Begin VB.Form FrmMirage
          EndProperty
          ForeColor       =   &H005982C4&
          Height          =   225
+         Index           =   2
          Left            =   5760
-         TabIndex        =   197
+         TabIndex        =   183
          ToolTipText     =   "Points permettant d'augmenter vos dégâts et vos chances de coup critique"
          Top             =   1080
          Width           =   330
@@ -1352,7 +1620,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H005982C4&
          Height          =   180
          Left            =   3360
-         TabIndex        =   196
+         TabIndex        =   182
          Top             =   600
          Width           =   1350
       End
@@ -1370,7 +1638,7 @@ Begin VB.Form FrmMirage
       Left            =   15840
       ScaleHeight     =   1785
       ScaleWidth      =   1425
-      TabIndex        =   150
+      TabIndex        =   136
       Top             =   1680
       Visible         =   0   'False
       Width           =   1455
@@ -1382,7 +1650,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   5
          Left            =   0
-         TabIndex        =   156
+         TabIndex        =   142
          Top             =   1200
          Width           =   1575
       End
@@ -1394,7 +1662,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   4
          Left            =   0
-         TabIndex        =   155
+         TabIndex        =   141
          Top             =   960
          Width           =   1575
       End
@@ -1406,7 +1674,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   3
          Left            =   0
-         TabIndex        =   154
+         TabIndex        =   140
          Top             =   720
          Width           =   1575
       End
@@ -1418,7 +1686,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   2
          Left            =   0
-         TabIndex        =   153
+         TabIndex        =   139
          Top             =   480
          Width           =   1575
       End
@@ -1430,7 +1698,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   1
          Left            =   0
-         TabIndex        =   152
+         TabIndex        =   138
          Top             =   240
          Width           =   1575
       End
@@ -1442,7 +1710,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   0
          Left            =   0
-         TabIndex        =   151
+         TabIndex        =   137
          Top             =   0
          Width           =   1575
       End
@@ -1455,7 +1723,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00C0C0C0&
          Height          =   195
          Left            =   960
-         TabIndex        =   157
+         TabIndex        =   143
          Top             =   1560
          Width           =   345
       End
@@ -1469,7 +1737,7 @@ Begin VB.Form FrmMirage
       Height          =   258
       Left            =   15960
       MaxLength       =   9
-      TabIndex        =   149
+      TabIndex        =   135
       Top             =   960
       Visible         =   0   'False
       Width           =   855
@@ -1480,10 +1748,10 @@ Begin VB.Form FrmMirage
       FillColor       =   &H00FFFFFF&
       ForeColor       =   &H00E0E0E0&
       Height          =   1095
-      Left            =   15360
+      Left            =   15840
       ScaleHeight     =   1065
       ScaleWidth      =   1185
-      TabIndex        =   145
+      TabIndex        =   131
       Top             =   3960
       Visible         =   0   'False
       Width           =   1215
@@ -1496,7 +1764,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   3
          Left            =   0
-         TabIndex        =   185
+         TabIndex        =   171
          Top             =   600
          Width           =   1215
       End
@@ -1509,7 +1777,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   2
          Left            =   0
-         TabIndex        =   148
+         TabIndex        =   134
          Top             =   840
          Width           =   1215
       End
@@ -1522,7 +1790,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   1
          Left            =   0
-         TabIndex        =   147
+         TabIndex        =   133
          Top             =   240
          Width           =   1215
       End
@@ -1535,7 +1803,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   0
          Left            =   0
-         TabIndex        =   146
+         TabIndex        =   132
          Top             =   0
          Width           =   1215
       End
@@ -1546,12 +1814,12 @@ Begin VB.Form FrmMirage
       BorderStyle     =   0  'None
       ForeColor       =   &H80000008&
       Height          =   425
-      Left            =   10200
-      Picture         =   "frmMirage.frx":2C2E9F
+      Left            =   10260
+      Picture         =   "frmMirage.frx":37DE8B
       ScaleHeight     =   28
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   26
-      TabIndex        =   113
+      TabIndex        =   99
       Top             =   9413
       Width           =   390
    End
@@ -1562,48 +1830,46 @@ Begin VB.Form FrmMirage
       ForeColor       =   &H00808080&
       Height          =   10095
       Left            =   12000
-      Picture         =   "frmMirage.frx":2C37A1
+      Picture         =   "frmMirage.frx":37E78D
       ScaleHeight     =   673
       ScaleMode       =   3  'Pixel
-      ScaleWidth      =   221
-      TabIndex        =   111
+      ScaleWidth      =   242
+      TabIndex        =   97
       Top             =   0
-      Width           =   3315
+      Width           =   3630
       Begin VB.TextBox classement 
          Appearance      =   0  'Flat
          BackColor       =   &H80000001&
-         BorderStyle     =   0  'None
          Enabled         =   0   'False
          ForeColor       =   &H80000000&
          Height          =   855
          Index           =   1
-         Left            =   0
+         Left            =   360
          Locked          =   -1  'True
          MultiLine       =   -1  'True
-         TabIndex        =   186
-         Top             =   9240
+         TabIndex        =   172
+         Top             =   8880
          Visible         =   0   'False
          Width           =   3255
       End
       Begin RichTextLib.RichTextBox RTBChat 
          Height          =   7695
          Index           =   0
-         Left            =   0
-         TabIndex        =   140
-         Top             =   1320
+         Left            =   360
+         TabIndex        =   126
+         Top             =   960
          Width           =   3255
          _ExtentX        =   5741
          _ExtentY        =   13573
          _Version        =   393217
-         BackColor       =   8421504
-         BorderStyle     =   0
+         BackColor       =   0
          ReadOnly        =   -1  'True
          ScrollBars      =   2
          Appearance      =   0
-         TextRTF         =   $"frmMirage.frx":2C5E99
+         TextRTF         =   $"frmMirage.frx":3F544F
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   9
+            Name            =   "Dungeon"
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1614,16 +1880,15 @@ Begin VB.Form FrmMirage
       Begin VB.TextBox classement 
          Appearance      =   0  'Flat
          BackColor       =   &H80000001&
-         BorderStyle     =   0  'None
          Enabled         =   0   'False
          ForeColor       =   &H80000000&
          Height          =   855
          Index           =   0
-         Left            =   0
+         Left            =   360
          Locked          =   -1  'True
          MultiLine       =   -1  'True
-         TabIndex        =   112
-         Top             =   9240
+         TabIndex        =   98
+         Top             =   8880
          Width           =   3255
       End
       Begin VB.Label Label23 
@@ -1641,10 +1906,10 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00808080&
          Height          =   255
          Index           =   27
-         Left            =   120
-         TabIndex        =   189
-         Top             =   9000
-         Width           =   855
+         Left            =   480
+         TabIndex        =   175
+         Top             =   8640
+         Width           =   1695
       End
       Begin VB.Label Label1 
          Alignment       =   2  'Center
@@ -1655,9 +1920,9 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00808080&
          Height          =   255
          Index           =   1
-         Left            =   2520
-         TabIndex        =   188
-         Top             =   9000
+         Left            =   2880
+         TabIndex        =   174
+         Top             =   8640
          Width           =   735
       End
       Begin VB.Label Label1 
@@ -1669,9 +1934,9 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00808080&
          Height          =   255
          Index           =   0
-         Left            =   1800
-         TabIndex        =   187
-         Top             =   9000
+         Left            =   2160
+         TabIndex        =   173
+         Top             =   8640
          Width           =   735
       End
       Begin VB.Label Onglet 
@@ -1683,9 +1948,9 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00E0E0E0&
          Height          =   255
          Index           =   1
-         Left            =   360
-         TabIndex        =   144
-         Top             =   960
+         Left            =   720
+         TabIndex        =   130
+         Top             =   690
          Width           =   855
       End
       Begin VB.Label Onglet 
@@ -1697,9 +1962,9 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00E0E0E0&
          Height          =   255
          Index           =   3
-         Left            =   2040
-         TabIndex        =   143
-         Top             =   960
+         Left            =   2400
+         TabIndex        =   129
+         Top             =   690
          Width           =   855
       End
       Begin VB.Label Onglet 
@@ -1711,9 +1976,9 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00E0E0E0&
          Height          =   255
          Index           =   2
-         Left            =   1200
-         TabIndex        =   142
-         Top             =   960
+         Left            =   1560
+         TabIndex        =   128
+         Top             =   690
          Width           =   855
       End
       Begin VB.Label Onglet 
@@ -1725,9 +1990,9 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00E0E0E0&
          Height          =   255
          Index           =   0
-         Left            =   960
-         TabIndex        =   141
-         Top             =   720
+         Left            =   1380
+         TabIndex        =   127
+         Top             =   450
          Width           =   1215
       End
    End
@@ -1742,7 +2007,7 @@ Begin VB.Form FrmMirage
       ScaleHeight     =   247
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   224
-      TabIndex        =   100
+      TabIndex        =   86
       Top             =   5280
       Visible         =   0   'False
       Width           =   3390
@@ -1754,7 +2019,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   5
          Left            =   600
-         TabIndex        =   110
+         TabIndex        =   96
          Top             =   3000
          Value           =   -1  'True
          Width           =   2175
@@ -1767,7 +2032,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   4
          Left            =   600
-         TabIndex        =   109
+         TabIndex        =   95
          Top             =   2760
          Width           =   2175
       End
@@ -1779,7 +2044,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   3
          Left            =   600
-         TabIndex        =   105
+         TabIndex        =   91
          Top             =   2520
          Width           =   2175
       End
@@ -1791,7 +2056,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   2
          Left            =   600
-         TabIndex        =   104
+         TabIndex        =   90
          Top             =   2280
          Width           =   2175
       End
@@ -1803,7 +2068,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   1
          Left            =   600
-         TabIndex        =   103
+         TabIndex        =   89
          Top             =   2040
          Width           =   2175
       End
@@ -1815,7 +2080,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   0
          Left            =   600
-         TabIndex        =   102
+         TabIndex        =   88
          Top             =   1800
          Width           =   2175
       End
@@ -1825,10 +2090,10 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   1695
          Left            =   25
-         Picture         =   "frmMirage.frx":2C5F10
+         Picture         =   "frmMirage.frx":3F54CB
          ScaleHeight     =   1665
          ScaleWidth      =   3270
-         TabIndex        =   101
+         TabIndex        =   87
          Top             =   25
          Width           =   3300
       End
@@ -1867,7 +2132,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   255
          Left            =   1920
-         TabIndex        =   107
+         TabIndex        =   93
          Top             =   3360
          Width           =   1215
       End
@@ -1890,7 +2155,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   255
          Left            =   240
-         TabIndex        =   106
+         TabIndex        =   92
          Top             =   3360
          Width           =   1215
       End
@@ -1942,7 +2207,7 @@ Begin VB.Form FrmMirage
       ScaleHeight     =   405
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   173
-      TabIndex        =   45
+      TabIndex        =   31
       Top             =   3000
       Visible         =   0   'False
       Width           =   2625
@@ -1950,7 +2215,7 @@ Begin VB.Form FrmMirage
          Caption         =   "Couleurs du T'chat"
          Height          =   255
          Left            =   120
-         TabIndex        =   108
+         TabIndex        =   94
          Top             =   5520
          Width           =   2415
       End
@@ -1958,7 +2223,7 @@ Begin VB.Form FrmMirage
          Appearance      =   0  'Flat
          Height          =   285
          Left            =   120
-         TabIndex        =   98
+         TabIndex        =   84
          Top             =   3600
          Width           =   2295
       End
@@ -1975,7 +2240,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   46
+         TabIndex        =   32
          Top             =   5760
          Width           =   2415
       End
@@ -1983,7 +2248,7 @@ Begin VB.Form FrmMirage
          Caption         =   "Configurer les touches"
          Height          =   255
          Left            =   120
-         TabIndex        =   47
+         TabIndex        =   33
          Top             =   5280
          Width           =   2415
       End
@@ -2001,7 +2266,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   315
          Left            =   120
-         TabIndex        =   60
+         TabIndex        =   46
          ToolTipText     =   "Petite barre affichée au dessus de vous"
          Top             =   960
          Value           =   1  'Checked
@@ -2021,7 +2286,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   195
          Left            =   120
-         TabIndex        =   59
+         TabIndex        =   45
          Top             =   720
          Value           =   1  'Checked
          Width           =   1440
@@ -2040,7 +2305,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   195
          Left            =   120
-         TabIndex        =   58
+         TabIndex        =   44
          Top             =   240
          Value           =   1  'Checked
          Width           =   765
@@ -2059,7 +2324,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   225
          Left            =   120
-         TabIndex        =   57
+         TabIndex        =   43
          Top             =   1440
          Value           =   1  'Checked
          Width           =   765
@@ -2078,7 +2343,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   195
          Left            =   120
-         TabIndex        =   56
+         TabIndex        =   42
          Top             =   3120
          Value           =   1  'Checked
          Width           =   1725
@@ -2097,7 +2362,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   225
          Left            =   120
-         TabIndex        =   55
+         TabIndex        =   41
          Top             =   1920
          Value           =   1  'Checked
          Width           =   2400
@@ -2116,7 +2381,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   195
          Left            =   120
-         TabIndex        =   54
+         TabIndex        =   40
          Top             =   480
          Value           =   1  'Checked
          Width           =   2565
@@ -2135,7 +2400,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   225
          Left            =   120
-         TabIndex        =   53
+         TabIndex        =   39
          Top             =   1680
          Value           =   1  'Checked
          Width           =   2595
@@ -2154,7 +2419,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   225
          Left            =   120
-         TabIndex        =   52
+         TabIndex        =   38
          Top             =   2400
          Value           =   1  'Checked
          Width           =   1335
@@ -2173,7 +2438,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   225
          Left            =   120
-         TabIndex        =   51
+         TabIndex        =   37
          Top             =   2640
          Value           =   1  'Checked
          Width           =   1365
@@ -2192,7 +2457,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   195
          Left            =   120
-         TabIndex        =   50
+         TabIndex        =   36
          Top             =   4440
          Value           =   1  'Checked
          Width           =   1845
@@ -2202,7 +2467,7 @@ Begin VB.Form FrmMirage
          Left            =   240
          Max             =   20
          Min             =   4
-         TabIndex        =   49
+         TabIndex        =   35
          Top             =   4125
          Value           =   6
          Width           =   2055
@@ -2221,7 +2486,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   195
          Left            =   120
-         TabIndex        =   48
+         TabIndex        =   34
          Top             =   4680
          Width           =   2325
       End
@@ -2244,7 +2509,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   26
          Left            =   0
-         TabIndex        =   184
+         TabIndex        =   170
          Top             =   2880
          Width           =   2535
       End
@@ -2267,7 +2532,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   25
          Left            =   0
-         TabIndex        =   183
+         TabIndex        =   169
          Top             =   2160
          Width           =   2535
       End
@@ -2290,7 +2555,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   24
          Left            =   0
-         TabIndex        =   182
+         TabIndex        =   168
          Top             =   1275
          Width           =   2535
       End
@@ -2313,7 +2578,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   23
          Left            =   0
-         TabIndex        =   181
+         TabIndex        =   167
          Top             =   0
          Width           =   2535
       End
@@ -2333,7 +2598,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H00FF0000&
          Height          =   210
          Left            =   -120
-         TabIndex        =   180
+         TabIndex        =   166
          Top             =   0
          Width           =   2655
       End
@@ -2351,7 +2616,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   97
+         TabIndex        =   83
          Top             =   3360
          Width           =   2175
       End
@@ -2370,7 +2635,7 @@ Begin VB.Form FrmMirage
          EndProperty
          Height          =   165
          Left            =   120
-         TabIndex        =   61
+         TabIndex        =   47
          Top             =   3960
          Width           =   2220
       End
@@ -2382,10 +2647,10 @@ Begin VB.Form FrmMirage
       ForeColor       =   &H80000008&
       Height          =   1995
       Left            =   4680
-      Picture         =   "frmMirage.frx":2D7E52
+      Picture         =   "frmMirage.frx":40740D
       ScaleHeight     =   1965
       ScaleWidth      =   3600
-      TabIndex        =   89
+      TabIndex        =   75
       Top             =   4440
       Visible         =   0   'False
       Width           =   3630
@@ -2395,7 +2660,7 @@ Begin VB.Form FrmMirage
          Height          =   615
          Index           =   3
          Left            =   120
-         TabIndex        =   96
+         TabIndex        =   82
          Top             =   1080
          Width           =   3375
       End
@@ -2404,7 +2669,7 @@ Begin VB.Form FrmMirage
          Caption         =   "Oublier le Metier"
          Height          =   255
          Left            =   1440
-         TabIndex        =   95
+         TabIndex        =   81
          Top             =   1680
          Width           =   1335
       End
@@ -2413,7 +2678,7 @@ Begin VB.Form FrmMirage
          BackStyle       =   0  'Transparent
          Height          =   255
          Left            =   3390
-         TabIndex        =   94
+         TabIndex        =   80
          Top             =   1935
          Width           =   375
       End
@@ -2423,7 +2688,7 @@ Begin VB.Form FrmMirage
          Caption         =   "Fermer"
          Height          =   255
          Left            =   2760
-         TabIndex        =   93
+         TabIndex        =   79
          Top             =   1680
          Width           =   735
       End
@@ -2433,7 +2698,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   2
          Left            =   120
-         TabIndex        =   92
+         TabIndex        =   78
          Top             =   840
          Width           =   3255
       End
@@ -2443,7 +2708,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   1
          Left            =   120
-         TabIndex        =   91
+         TabIndex        =   77
          Top             =   600
          Width           =   3375
       End
@@ -2453,7 +2718,7 @@ Begin VB.Form FrmMirage
          Height          =   255
          Index           =   0
          Left            =   120
-         TabIndex        =   90
+         TabIndex        =   76
          Top             =   360
          Width           =   3375
       End
@@ -2467,10 +2732,10 @@ Begin VB.Form FrmMirage
       ForeColor       =   &H80000008&
       Height          =   1965
       Left            =   6360
-      Picture         =   "frmMirage.frx":2EEF04
+      Picture         =   "frmMirage.frx":41E4BF
       ScaleHeight     =   1965
       ScaleWidth      =   3600
-      TabIndex        =   62
+      TabIndex        =   48
       Top             =   3120
       Visible         =   0   'False
       Width           =   3600
@@ -2478,7 +2743,7 @@ Begin VB.Form FrmMirage
          BackStyle       =   0  'Transparent
          Height          =   495
          Left            =   0
-         TabIndex        =   66
+         TabIndex        =   52
          Top             =   360
          Width           =   3615
       End
@@ -2486,7 +2751,7 @@ Begin VB.Form FrmMirage
          BackStyle       =   0  'Transparent
          Height          =   495
          Left            =   0
-         TabIndex        =   65
+         TabIndex        =   51
          Top             =   840
          Width           =   3615
       End
@@ -2494,7 +2759,7 @@ Begin VB.Form FrmMirage
          BackStyle       =   0  'Transparent
          Height          =   495
          Left            =   0
-         TabIndex        =   64
+         TabIndex        =   50
          Top             =   1320
          Width           =   3615
       End
@@ -2502,241 +2767,17 @@ Begin VB.Form FrmMirage
          BackStyle       =   0  'Transparent
          Height          =   255
          Left            =   3360
-         TabIndex        =   63
+         TabIndex        =   49
          Top             =   0
          Width           =   255
       End
    End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   13
-      Left            =   7125
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   43
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   12
-      Left            =   6585
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   42
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   11
-      Left            =   6045
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   41
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   10
-      Left            =   5505
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   40
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   9
-      Left            =   4965
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   39
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   8
-      Left            =   4425
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   38
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   7
-      Left            =   3885
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   37
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   6
-      Left            =   3345
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   36
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   5
-      Left            =   2805
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   35
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   4
-      Left            =   2265
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   34
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   3
-      Left            =   1725
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   33
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   2
-      Left            =   1185
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   32
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   1
-      Left            =   645
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   31
-      Top             =   9315
-      Width           =   480
-   End
-   Begin VB.PictureBox picRac 
-      Appearance      =   0  'Flat
-      AutoRedraw      =   -1  'True
-      BackColor       =   &H00000000&
-      BorderStyle     =   0  'None
-      ForeColor       =   &H80000008&
-      Height          =   480
-      Index           =   0
-      Left            =   105
-      ScaleHeight     =   32
-      ScaleMode       =   3  'Pixel
-      ScaleWidth      =   32
-      TabIndex        =   30
-      Top             =   9315
-      Width           =   480
-   End
    Begin VB.ComboBox Canal 
       Appearance      =   0  'Flat
       Height          =   315
-      ItemData        =   "frmMirage.frx":2F1AB6
+      ItemData        =   "frmMirage.frx":421071
       Left            =   120
-      List            =   "frmMirage.frx":2F1AC6
+      List            =   "frmMirage.frx":421081
       Locked          =   -1  'True
       TabIndex        =   29
       Text            =   "Carte"
@@ -2819,6 +2860,277 @@ Begin VB.Form FrmMirage
       Top             =   0
       Visible         =   0   'False
       Width           =   12000
+      Begin VB.Timer TimerCarte 
+         Interval        =   1500
+         Left            =   9840
+         Top             =   120
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   12
+         Left            =   0
+         Picture         =   "frmMirage.frx":4210A1
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   265
+         Top             =   8160
+         Visible         =   0   'False
+         Width           =   600
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   12
+            Left            =   0
+            TabIndex        =   266
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   12
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   11
+         Left            =   0
+         Picture         =   "frmMirage.frx":4223A3
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   263
+         Top             =   7560
+         Visible         =   0   'False
+         Width           =   600
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   11
+            Left            =   0
+            TabIndex        =   264
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   11
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   10
+         Left            =   0
+         Picture         =   "frmMirage.frx":4236A5
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   261
+         Top             =   6960
+         Visible         =   0   'False
+         Width           =   600
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   10
+            Left            =   0
+            TabIndex        =   262
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   10
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   9
+         Left            =   0
+         Picture         =   "frmMirage.frx":4249A7
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   259
+         Top             =   6360
+         Visible         =   0   'False
+         Width           =   600
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   9
+            Left            =   0
+            TabIndex        =   260
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   9
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   8
+         Left            =   0
+         Picture         =   "frmMirage.frx":425CA9
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   257
+         Top             =   5760
+         Visible         =   0   'False
+         Width           =   600
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   8
+            Left            =   0
+            TabIndex        =   258
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   8
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   7
+         Left            =   0
+         Picture         =   "frmMirage.frx":426FAB
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   255
+         Top             =   5160
+         Visible         =   0   'False
+         Width           =   600
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   7
+            Left            =   0
+            TabIndex        =   256
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   7
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+      End
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H80000008&
+         Height          =   600
+         Index           =   6
+         Left            =   0
+         Picture         =   "frmMirage.frx":4282AD
+         ScaleHeight     =   600
+         ScaleWidth      =   600
+         TabIndex        =   253
+         Top             =   4560
+         Visible         =   0   'False
+         Width           =   600
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   6
+            Left            =   0
+            TabIndex        =   254
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   6
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+      End
       Begin VB.PictureBox Picture1 
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
@@ -2827,12 +3139,35 @@ Begin VB.Form FrmMirage
          Height          =   600
          Index           =   5
          Left            =   0
-         Picture         =   "frmMirage.frx":2F1AE6
+         Picture         =   "frmMirage.frx":4295AF
          ScaleHeight     =   600
          ScaleWidth      =   600
-         TabIndex        =   260
+         TabIndex        =   246
          Top             =   3960
+         Visible         =   0   'False
          Width           =   600
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   5
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   5
+            Left            =   0
+            TabIndex        =   252
+            Top             =   360
+            Width           =   615
+         End
       End
       Begin VB.PictureBox Picture1 
          Appearance      =   0  'Flat
@@ -2842,12 +3177,35 @@ Begin VB.Form FrmMirage
          Height          =   600
          Index           =   4
          Left            =   0
-         Picture         =   "frmMirage.frx":2F2DE8
+         Picture         =   "frmMirage.frx":42A8B1
          ScaleHeight     =   600
          ScaleWidth      =   600
-         TabIndex        =   259
+         TabIndex        =   245
          Top             =   3360
+         Visible         =   0   'False
          Width           =   600
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   4
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   4
+            Left            =   0
+            TabIndex        =   251
+            Top             =   360
+            Width           =   615
+         End
       End
       Begin VB.PictureBox Picture1 
          Appearance      =   0  'Flat
@@ -2857,12 +3215,35 @@ Begin VB.Form FrmMirage
          Height          =   600
          Index           =   3
          Left            =   0
-         Picture         =   "frmMirage.frx":2F40EA
+         Picture         =   "frmMirage.frx":42BBB3
          ScaleHeight     =   600
          ScaleWidth      =   600
-         TabIndex        =   258
+         TabIndex        =   244
          Top             =   2760
+         Visible         =   0   'False
          Width           =   600
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   3
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   3
+            Left            =   0
+            TabIndex        =   250
+            Top             =   360
+            Width           =   615
+         End
       End
       Begin VB.PictureBox Picture1 
          Appearance      =   0  'Flat
@@ -2872,12 +3253,35 @@ Begin VB.Form FrmMirage
          Height          =   600
          Index           =   2
          Left            =   0
-         Picture         =   "frmMirage.frx":2F53EC
+         Picture         =   "frmMirage.frx":42CEB5
          ScaleHeight     =   600
          ScaleWidth      =   600
-         TabIndex        =   257
+         TabIndex        =   243
          Top             =   2160
+         Visible         =   0   'False
          Width           =   600
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   2
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   2
+            Left            =   0
+            TabIndex        =   249
+            Top             =   360
+            Width           =   615
+         End
       End
       Begin VB.PictureBox Picture1 
          Appearance      =   0  'Flat
@@ -2887,12 +3291,35 @@ Begin VB.Form FrmMirage
          Height          =   600
          Index           =   0
          Left            =   0
-         Picture         =   "frmMirage.frx":2F66EE
+         Picture         =   "frmMirage.frx":42E1B7
          ScaleHeight     =   600
          ScaleWidth      =   600
-         TabIndex        =   253
+         TabIndex        =   239
          Top             =   960
+         Visible         =   0   'False
          Width           =   600
+         Begin VB.Shape shapestat 
+            BorderStyle     =   0  'Transparent
+            FillColor       =   &H005982C4&
+            FillStyle       =   0  'Solid
+            Height          =   80
+            Index           =   0
+            Left            =   0
+            Top             =   540
+            Width           =   615
+         End
+         Begin VB.Label lblstat2 
+            Alignment       =   2  'Center
+            BackStyle       =   0  'Transparent
+            Caption         =   "000"
+            ForeColor       =   &H00FFFFFF&
+            Height          =   195
+            Index           =   0
+            Left            =   0
+            TabIndex        =   247
+            Top             =   360
+            Width           =   615
+         End
       End
       Begin VB.PictureBox pictTouche 
          Appearance      =   0  'Flat
@@ -2903,7 +3330,7 @@ Begin VB.Form FrmMirage
          ScaleHeight     =   267
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   511
-         TabIndex        =   114
+         TabIndex        =   100
          Top             =   600
          Visible         =   0   'False
          Width           =   7695
@@ -2911,7 +3338,7 @@ Begin VB.Form FrmMirage
             Caption         =   "Ok"
             Height          =   255
             Left            =   6120
-            TabIndex        =   116
+            TabIndex        =   102
             Top             =   3720
             Width           =   735
          End
@@ -2919,7 +3346,7 @@ Begin VB.Form FrmMirage
             Caption         =   "Annuler"
             Height          =   255
             Left            =   6840
-            TabIndex        =   115
+            TabIndex        =   101
             Top             =   3720
             Width           =   735
          End
@@ -2938,7 +3365,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   22
             Left            =   120
-            TabIndex        =   179
+            TabIndex        =   165
             Top             =   2400
             Width           =   3735
          End
@@ -2957,7 +3384,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   21
             Left            =   120
-            TabIndex        =   178
+            TabIndex        =   164
             Top             =   1920
             Width           =   855
          End
@@ -2976,7 +3403,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   20
             Left            =   120
-            TabIndex        =   177
+            TabIndex        =   163
             Top             =   1680
             Width           =   855
          End
@@ -2995,7 +3422,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   19
             Left            =   120
-            TabIndex        =   176
+            TabIndex        =   162
             Top             =   1440
             Width           =   855
          End
@@ -3014,7 +3441,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   18
             Left            =   120
-            TabIndex        =   175
+            TabIndex        =   161
             Top             =   1200
             Width           =   855
          End
@@ -3033,7 +3460,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   17
             Left            =   120
-            TabIndex        =   174
+            TabIndex        =   160
             Top             =   960
             Width           =   855
          End
@@ -3052,7 +3479,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   16
             Left            =   120
-            TabIndex        =   173
+            TabIndex        =   159
             Top             =   720
             Width           =   855
          End
@@ -3071,7 +3498,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   15
             Left            =   120
-            TabIndex        =   172
+            TabIndex        =   158
             Top             =   480
             Width           =   855
          End
@@ -3090,7 +3517,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   14
             Left            =   120
-            TabIndex        =   171
+            TabIndex        =   157
             Top             =   240
             Width           =   855
          End
@@ -3109,7 +3536,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   13
             Left            =   3960
-            TabIndex        =   170
+            TabIndex        =   156
             Top             =   3360
             Width           =   855
          End
@@ -3128,7 +3555,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   12
             Left            =   3960
-            TabIndex        =   169
+            TabIndex        =   155
             Top             =   3120
             Width           =   855
          End
@@ -3147,7 +3574,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   11
             Left            =   3960
-            TabIndex        =   168
+            TabIndex        =   154
             Top             =   2880
             Width           =   855
          End
@@ -3166,7 +3593,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   10
             Left            =   3960
-            TabIndex        =   167
+            TabIndex        =   153
             Top             =   2640
             Width           =   855
          End
@@ -3185,7 +3612,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   9
             Left            =   3960
-            TabIndex        =   166
+            TabIndex        =   152
             Top             =   2400
             Width           =   855
          End
@@ -3204,7 +3631,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   8
             Left            =   3960
-            TabIndex        =   165
+            TabIndex        =   151
             Top             =   2160
             Width           =   855
          End
@@ -3223,7 +3650,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   7
             Left            =   3960
-            TabIndex        =   164
+            TabIndex        =   150
             Top             =   1920
             Width           =   855
          End
@@ -3242,7 +3669,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   6
             Left            =   3960
-            TabIndex        =   163
+            TabIndex        =   149
             Top             =   1680
             Width           =   855
          End
@@ -3261,7 +3688,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   5
             Left            =   3960
-            TabIndex        =   162
+            TabIndex        =   148
             Top             =   1440
             Width           =   855
          End
@@ -3280,7 +3707,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   4
             Left            =   3960
-            TabIndex        =   161
+            TabIndex        =   147
             Top             =   1200
             Width           =   855
          End
@@ -3299,7 +3726,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   3
             Left            =   3960
-            TabIndex        =   160
+            TabIndex        =   146
             Top             =   960
             Width           =   855
          End
@@ -3318,7 +3745,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   2
             Left            =   3960
-            TabIndex        =   159
+            TabIndex        =   145
             Top             =   720
             Width           =   855
          End
@@ -3337,7 +3764,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   1
             Left            =   3960
-            TabIndex        =   158
+            TabIndex        =   144
             Top             =   480
             Width           =   855
          End
@@ -3351,7 +3778,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   13
             Left            =   5040
-            TabIndex        =   139
+            TabIndex        =   125
             Top             =   3360
             Width           =   1575
          End
@@ -3365,7 +3792,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   12
             Left            =   5040
-            TabIndex        =   138
+            TabIndex        =   124
             Top             =   3120
             Width           =   1575
          End
@@ -3379,7 +3806,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   11
             Left            =   5040
-            TabIndex        =   137
+            TabIndex        =   123
             Top             =   2880
             Width           =   1575
          End
@@ -3393,7 +3820,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   10
             Left            =   5040
-            TabIndex        =   136
+            TabIndex        =   122
             Top             =   2640
             Width           =   1575
          End
@@ -3407,7 +3834,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   9
             Left            =   5040
-            TabIndex        =   135
+            TabIndex        =   121
             Top             =   2400
             Width           =   1575
          End
@@ -3421,7 +3848,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   8
             Left            =   5040
-            TabIndex        =   134
+            TabIndex        =   120
             Top             =   2160
             Width           =   1575
          End
@@ -3435,7 +3862,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   7
             Left            =   5040
-            TabIndex        =   133
+            TabIndex        =   119
             Top             =   1920
             Width           =   1575
          End
@@ -3449,7 +3876,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   6
             Left            =   5040
-            TabIndex        =   132
+            TabIndex        =   118
             Top             =   1680
             Width           =   1575
          End
@@ -3463,7 +3890,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   5
             Left            =   5040
-            TabIndex        =   131
+            TabIndex        =   117
             Top             =   1440
             Width           =   1575
          End
@@ -3477,7 +3904,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   4
             Left            =   5040
-            TabIndex        =   130
+            TabIndex        =   116
             Top             =   1200
             Width           =   1575
          End
@@ -3491,7 +3918,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   3
             Left            =   5040
-            TabIndex        =   129
+            TabIndex        =   115
             Top             =   960
             Width           =   1575
          End
@@ -3505,7 +3932,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   2
             Left            =   5040
-            TabIndex        =   128
+            TabIndex        =   114
             Top             =   720
             Width           =   1575
          End
@@ -3519,7 +3946,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   1
             Left            =   5040
-            TabIndex        =   127
+            TabIndex        =   113
             Top             =   480
             Width           =   1575
          End
@@ -3533,7 +3960,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   0
             Left            =   5040
-            TabIndex        =   126
+            TabIndex        =   112
             Top             =   240
             Width           =   1575
          End
@@ -3547,7 +3974,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   7
             Left            =   1200
-            TabIndex        =   125
+            TabIndex        =   111
             Top             =   1920
             Width           =   1575
          End
@@ -3561,7 +3988,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   6
             Left            =   1200
-            TabIndex        =   124
+            TabIndex        =   110
             Top             =   1680
             Width           =   1575
          End
@@ -3575,7 +4002,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   5
             Left            =   1200
-            TabIndex        =   123
+            TabIndex        =   109
             Top             =   1440
             Width           =   1575
          End
@@ -3589,7 +4016,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   4
             Left            =   1200
-            TabIndex        =   122
+            TabIndex        =   108
             Top             =   1200
             Width           =   1575
          End
@@ -3603,7 +4030,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   3
             Left            =   1200
-            TabIndex        =   121
+            TabIndex        =   107
             Top             =   960
             Width           =   1575
          End
@@ -3617,7 +4044,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   2
             Left            =   1200
-            TabIndex        =   120
+            TabIndex        =   106
             Top             =   720
             Width           =   1575
          End
@@ -3631,7 +4058,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   1
             Left            =   1200
-            TabIndex        =   119
+            TabIndex        =   105
             Top             =   480
             Width           =   1575
          End
@@ -3645,7 +4072,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   0
             Left            =   1200
-            TabIndex        =   118
+            TabIndex        =   104
             Top             =   240
             Width           =   1575
          End
@@ -3664,7 +4091,7 @@ Begin VB.Form FrmMirage
             Height          =   255
             Index           =   0
             Left            =   3960
-            TabIndex        =   117
+            TabIndex        =   103
             Top             =   270
             Width           =   855
          End
@@ -3679,7 +4106,7 @@ Begin VB.Form FrmMirage
          BorderStyle     =   0  'None
          Height          =   2985
          Left            =   120
-         TabIndex        =   67
+         TabIndex        =   53
          Top             =   4440
          Visible         =   0   'False
          Width           =   2595
@@ -3691,7 +4118,7 @@ Begin VB.Form FrmMirage
             Left            =   240
             ScaleHeight     =   165
             ScaleWidth      =   2175
-            TabIndex        =   80
+            TabIndex        =   66
             Top             =   600
             Width           =   2175
             Begin VB.Shape shpPPLife 
@@ -3724,7 +4151,7 @@ Begin VB.Form FrmMirage
                Height          =   165
                Index           =   0
                Left            =   0
-               TabIndex        =   81
+               TabIndex        =   67
                Top             =   0
                Width           =   2175
             End
@@ -3737,7 +4164,7 @@ Begin VB.Form FrmMirage
             Left            =   240
             ScaleHeight     =   165
             ScaleWidth      =   2175
-            TabIndex        =   78
+            TabIndex        =   64
             Top             =   800
             Width           =   2175
             Begin VB.Shape shpPPMana 
@@ -3770,7 +4197,7 @@ Begin VB.Form FrmMirage
                Height          =   165
                Index           =   0
                Left            =   0
-               TabIndex        =   79
+               TabIndex        =   65
                Top             =   0
                Width           =   2175
             End
@@ -3788,10 +4215,10 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   270
             Left            =   1320
-            Picture         =   "frmMirage.frx":2F79F0
+            Picture         =   "frmMirage.frx":42F4B9
             ScaleHeight     =   270
             ScaleWidth      =   270
-            TabIndex        =   77
+            TabIndex        =   63
             Top             =   2400
             Width           =   270
          End
@@ -3808,10 +4235,10 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   270
             Left            =   960
-            Picture         =   "frmMirage.frx":2F7C88
+            Picture         =   "frmMirage.frx":42F751
             ScaleHeight     =   270
             ScaleWidth      =   270
-            TabIndex        =   76
+            TabIndex        =   62
             Top             =   2400
             Width           =   270
          End
@@ -3823,7 +4250,7 @@ Begin VB.Form FrmMirage
             Left            =   240
             ScaleHeight     =   165
             ScaleWidth      =   2175
-            TabIndex        =   74
+            TabIndex        =   60
             Top             =   1275
             Width           =   2175
             Begin VB.Shape shpPPLife 
@@ -3856,7 +4283,7 @@ Begin VB.Form FrmMirage
                Height          =   165
                Index           =   1
                Left            =   0
-               TabIndex        =   75
+               TabIndex        =   61
                Top             =   0
                Width           =   2175
             End
@@ -3869,7 +4296,7 @@ Begin VB.Form FrmMirage
             Left            =   240
             ScaleHeight     =   165
             ScaleWidth      =   2175
-            TabIndex        =   72
+            TabIndex        =   58
             Top             =   1485
             Width           =   2175
             Begin VB.Shape shpPPMana 
@@ -3902,7 +4329,7 @@ Begin VB.Form FrmMirage
                Height          =   165
                Index           =   1
                Left            =   0
-               TabIndex        =   73
+               TabIndex        =   59
                Top             =   0
                Width           =   2175
             End
@@ -3915,7 +4342,7 @@ Begin VB.Form FrmMirage
             Left            =   240
             ScaleHeight     =   165
             ScaleWidth      =   2175
-            TabIndex        =   70
+            TabIndex        =   56
             Top             =   1995
             Width           =   2175
             Begin VB.Shape shpPPLife 
@@ -3948,7 +4375,7 @@ Begin VB.Form FrmMirage
                Height          =   165
                Index           =   2
                Left            =   0
-               TabIndex        =   71
+               TabIndex        =   57
                Top             =   0
                Width           =   2175
             End
@@ -3961,7 +4388,7 @@ Begin VB.Form FrmMirage
             Left            =   240
             ScaleHeight     =   165
             ScaleWidth      =   2175
-            TabIndex        =   68
+            TabIndex        =   54
             Top             =   2205
             Width           =   2175
             Begin VB.Shape shpPPMana 
@@ -3994,7 +4421,7 @@ Begin VB.Form FrmMirage
                Height          =   165
                Index           =   2
                Left            =   0
-               TabIndex        =   69
+               TabIndex        =   55
                Top             =   0
                Width           =   2175
             End
@@ -4002,7 +4429,7 @@ Begin VB.Form FrmMirage
          Begin VB.Image Image5 
             Height          =   2985
             Left            =   0
-            Picture         =   "frmMirage.frx":2F7F13
+            Picture         =   "frmMirage.frx":42F9DC
             Top             =   0
             Width           =   2595
          End
@@ -4012,7 +4439,7 @@ Begin VB.Form FrmMirage
             Height          =   375
             Left            =   0
             MousePointer    =   5  'Size
-            TabIndex        =   88
+            TabIndex        =   74
             Top             =   0
             Width           =   2655
          End
@@ -4021,7 +4448,7 @@ Begin VB.Form FrmMirage
             Caption         =   "                                   "
             Height          =   375
             Left            =   2280
-            TabIndex        =   87
+            TabIndex        =   73
             Top             =   0
             Width           =   255
          End
@@ -4040,7 +4467,7 @@ Begin VB.Form FrmMirage
             EndProperty
             Height          =   180
             Left            =   0
-            TabIndex        =   86
+            TabIndex        =   72
             Top             =   2760
             Visible         =   0   'False
             Width           =   2535
@@ -4060,7 +4487,7 @@ Begin VB.Form FrmMirage
             Height          =   180
             Index           =   0
             Left            =   240
-            TabIndex        =   85
+            TabIndex        =   71
             Top             =   400
             Width           =   2175
          End
@@ -4069,7 +4496,7 @@ Begin VB.Form FrmMirage
             Caption         =   "                                   "
             Height          =   375
             Left            =   2040
-            TabIndex        =   84
+            TabIndex        =   70
             Top             =   0
             Width           =   255
          End
@@ -4088,7 +4515,7 @@ Begin VB.Form FrmMirage
             Height          =   180
             Index           =   1
             Left            =   240
-            TabIndex        =   83
+            TabIndex        =   69
             Top             =   1080
             Width           =   2175
          End
@@ -4107,7 +4534,7 @@ Begin VB.Form FrmMirage
             Height          =   180
             Index           =   2
             Left            =   240
-            TabIndex        =   82
+            TabIndex        =   68
             Top             =   1800
             Width           =   2175
          End
@@ -4125,7 +4552,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   4290
          Left            =   480
-         Picture         =   "frmMirage.frx":31138D
+         Picture         =   "frmMirage.frx":448E56
          ScaleHeight     =   286
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   223
@@ -4430,7 +4857,7 @@ Begin VB.Form FrmMirage
          ForeColor       =   &H80000008&
          Height          =   1575
          Left            =   5400
-         Picture         =   "frmMirage.frx":34028F
+         Picture         =   "frmMirage.frx":477D58
          ScaleHeight     =   1545
          ScaleWidth      =   6510
          TabIndex        =   2
@@ -4446,7 +4873,7 @@ Begin VB.Form FrmMirage
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
             TabIndex        =   3
-            Text            =   "frmMirage.frx":3700E1
+            Text            =   "frmMirage.frx":4A7BAA
             Top             =   240
             Width           =   6285
          End
@@ -4470,18 +4897,18 @@ Begin VB.Form FrmMirage
       Caption         =   "0"
       Height          =   255
       Left            =   7800
-      TabIndex        =   99
+      TabIndex        =   85
       Top             =   9185
       Visible         =   0   'False
       Width           =   4095
    End
    Begin VB.Label menu_quete 
       BackStyle       =   0  'Transparent
-      Height          =   540
+      Height          =   300
       Left            =   9240
-      TabIndex        =   44
+      TabIndex        =   30
       ToolTipText     =   "Quetes"
-      Top             =   9240
+      Top             =   9480
       Width           =   375
    End
    Begin VB.Label menu_quit 
@@ -4495,11 +4922,11 @@ Begin VB.Form FrmMirage
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   540
+      Height          =   420
       Left            =   11640
       TabIndex        =   28
       ToolTipText     =   "Quitter"
-      Top             =   9240
+      Top             =   9360
       Width           =   345
    End
    Begin VB.Label menu_equ 
@@ -4513,11 +4940,11 @@ Begin VB.Form FrmMirage
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   540
+      Height          =   300
       Left            =   8760
       TabIndex        =   27
       ToolTipText     =   "Equipements"
-      Top             =   9240
+      Top             =   9360
       Width           =   345
    End
    Begin VB.Label menu_guild 
@@ -4550,7 +4977,7 @@ Begin VB.Form FrmMirage
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   420
+      Height          =   300
       Left            =   11160
       TabIndex        =   25
       ToolTipText     =   "Options"
@@ -4568,7 +4995,7 @@ Begin VB.Form FrmMirage
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   420
+      Height          =   300
       Left            =   10680
       TabIndex        =   24
       ToolTipText     =   "Qui est en ligne ?"
@@ -4586,11 +5013,11 @@ Begin VB.Form FrmMirage
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   540
+      Height          =   420
       Left            =   8280
       TabIndex        =   23
       ToolTipText     =   "Sorts"
-      Top             =   9240
+      Top             =   9360
       Width           =   465
    End
    Begin VB.Label menu_inv 
@@ -4604,17 +5031,17 @@ Begin VB.Form FrmMirage
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   540
+      Height          =   300
       Left            =   7920
       TabIndex        =   22
       ToolTipText     =   "Inventaire"
-      Top             =   9240
+      Top             =   9360
       Width           =   315
    End
    Begin VB.Image Interface 
-      Height          =   900
+      Height          =   1005
       Left            =   0
-      Picture         =   "frmMirage.frx":3700E7
+      Picture         =   "frmMirage.frx":4A7BB0
       Top             =   9120
       Width           =   12000
    End
@@ -4936,7 +5363,7 @@ txtMyTextBox.SetFocus
 End Sub
 
 Private Sub Form_Load()
-Dim i As Long, X As Integer, Y As Byte
+Dim i As Long, x As Integer, y As Byte
 Dim Ending As String
 Dim Qq As Long
     
@@ -4990,9 +5417,9 @@ Dim Qq As Long
     FrmMirage.ShapeColor1(i).FillColor = RGB(MsgRgb(i).r, MsgRgb(i).g, MsgRgb(i).B)
     Next i
     
-    For Y = 0 To 23
-        Call LoadTouches(Y)
-    Next Y
+    For y = 0 To 23
+        Call LoadTouches(y)
+    Next y
     
     fra_fenetre.Visible = False
     Chat.Enabled = True
@@ -5006,12 +5433,12 @@ Private Sub Form_Unload(Cancel As Integer)
         End
     End If
 End Sub
-Private Sub Image4_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Image4_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 3
-DragX = X
-DragY = Y
+DragX = x
+DragY = y
 End Sub
-Private Sub Image4_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Image4_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 0
 DragX = 0
 DragY = 0
@@ -5074,6 +5501,10 @@ Private Sub Label22_Click()
 Call key1_Click(4)
 End Sub
 
+Private Sub Label2_Click()
+PicInterface.Visible = False
+End Sub
+
 Private Sub Label27_Click()
     PicMenuQuitter.Visible = False
 End Sub
@@ -5092,17 +5523,17 @@ Private Sub Label39_Click()
 Call key1_Click(6)
 End Sub
 
-Private Sub Label4_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Label4_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 6
-DragX = X
-DragY = Y
+DragX = x
+DragY = y
 End Sub
 
-Private Sub Label4_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-If DragImg = 6 Then picParty.Move picParty.Left + ((X / twippx) - (DragX / twippx)), picParty.Top + ((Y / twippy) - (DragY / twippy))
+Private Sub Label4_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+If DragImg = 6 Then picParty.Move picParty.Left + ((x / twippx) - (DragX / twippx)), picParty.Top + ((y / twippy) - (DragY / twippy))
 End Sub
 
-Private Sub Label4_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Label4_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 0
 DragX = 0
 DragY = 0
@@ -5180,18 +5611,18 @@ Private Sub lblmaskinvmin_Click()
     If fra_fenetre.height >= 2985 / twippy Then fra_fenetre.height = 315 / twippy Else fra_fenetre.height = 2985 / twippy
 End Sub
 
-Private Sub lblmaskinv_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lblmaskinv_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 2
-DragX = X
-DragY = Y
+DragX = x
+DragY = y
 End Sub
 
-Private Sub lblmaskinv_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lblmaskinv_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
 If Button = 0 Then Exit Sub
-Call MoveFrame(fra_fenetre, Button, Shift, X, Y)
+Call MoveFrame(fra_fenetre, Button, Shift, x, y)
 End Sub
 
-Private Sub lblmaskinv_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lblmaskinv_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 0
 DragX = 0
 DragY = 0
@@ -5199,15 +5630,15 @@ End Sub
 
 
 
-Private Sub lblmaskmenu_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lblmaskmenu_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 1
-DragX = X
-DragY = Y
+DragX = x
+DragY = y
 End Sub
 
 
 
-Private Sub lblmaskmenu_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lblmaskmenu_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 0
 DragX = 0
 DragY = 0
@@ -5247,13 +5678,19 @@ Private Sub lblQuitter_Click()
     End
 End Sub
 
+Private Sub lblWho_Click(Index As Integer)
+If lstOnline.ListIndex = -1 Then Exit Sub
+txtMyTextBox.Text = "/mp " & lstOnline.List(lstOnline.ListIndex) & " "
+txtMyTextBox.Visible = True: txtMyTextBox.SelStart = Len(txtMyTextBox.Text)
+txtMyTextBox.SetFocus
+End Sub
+
 Private Sub lstOnline_DblClick()
     Call SendData("playerchat" & SEP_CHAR & Trim$(lstOnline.Text) & END_CHAR)
 End Sub
 
 Private Sub menu_equ_Click()
-If picInv3.Visible = True Then picInv3.Visible = False: PicInterface.Visible = False: Exit Sub
-
+If picInv3.Visible = True Then Exit Sub
     PicInterface.Visible = True
     picInv3.Visible = True
     Picture13.Visible = False
@@ -5307,7 +5744,7 @@ Call UpdateVisInv
 Call ClearPic
 End Sub
 
-Private Sub menu_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub menu_MouseMove(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim i As Byte
 
     For i = 0 To menu.count - 1
@@ -5316,7 +5753,7 @@ Dim i As Byte
         menu(Index).ForeColor = &H808080
 End Sub
 
-Private Sub menu_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub menu_MouseUp(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim i As Long
 Select Case Index
     Case 0 'renommer
@@ -5398,10 +5835,10 @@ If PicMenuQuitter.Visible Then PicMenuQuitter.Visible = False Else PicMenuQuitte
 End Sub
 
 Private Sub menu_sort_Click()
-If Picture13.Visible = True Then Picture13.Visible = False: PicInterface.Visible = False: Exit Sub
-
+If Picture13.Visible = True Then Exit Sub
 PicInterface.Visible = True
 Picture13.Visible = True
+picInv3.Visible = False
 
 Call ClearPic
 Call SendData("spells" & END_CHAR)
@@ -5434,15 +5871,15 @@ End If
 txtQ.Visible = False
 End Sub
 
-Private Sub Onglet_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Onglet_MouseUp(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim i As Long
 
 
 If Button = 2 Then
 If Index = 0 Then Popup.Visible = False: Exit Sub
-   Popup.Left = picScreen.Width + Onglet(Index).Left + (X / twippx)
-   If (picScreen.Width + Onglet(Index).Left + (X / twippx) + Onglet(Index).Width) > Picture20.Width Then Popup.Left = (picScreen.Width + Onglet(Index).Left + (X / twippx)) - Onglet(Index).Width
-   Popup.Top = Onglet(Index).Top + (Y / twippy) + 10
+   Popup.Left = picScreen.Width + Onglet(Index).Left + (x / twippx)
+   If (picScreen.Width + Onglet(Index).Left + (x / twippx) + Onglet(Index).Width) > Picture20.Width Then Popup.Left = (picScreen.Width + Onglet(Index).Left + (x / twippx)) - Onglet(Index).Width
+   Popup.Top = Onglet(Index).Top + (y / twippy) + 10
    Popup.Visible = True
    Onglet(Index).ForeColor = vbWhite
    OngletActif = Index
@@ -5472,7 +5909,7 @@ End Sub
 
 
 
-Private Sub PicColor_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub PicColor_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
 On Error GoTo trap:
 Dim value As Long
 
@@ -5480,7 +5917,7 @@ Dim value As Long
 If Button = 1 Then
     With MsgRgb2(OptionColorSelect)
 
-        value = PicColor.point(X, Y)
+        value = PicColor.point(x, y)
         .r = value Mod 256
         .g = Int(value / 256) Mod 256
         .B = Int(value / 256 / 256) Mod 256
@@ -5507,7 +5944,7 @@ Call UpdateVisInv
 End Sub
 
 
-Private Sub picInv_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub picInv_MouseDown(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
 If Index > MAX_INV - 1 Then Exit Sub
     Inventory = Index + 1
     FrmMirage.SelectedItem.Top = FrmMirage.picInv(Inventory - 1).Top - 1
@@ -5538,7 +5975,7 @@ If Index > MAX_INV - 1 Then Exit Sub
     End If
 End Sub
 
-Private Sub picInv_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub picInv_MouseMove(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim d As Long
 d = Index
 If Index > MAX_INV - 1 Then Exit Sub
@@ -5607,22 +6044,22 @@ Dim tp As Long
     If (FrmMirage.txtMyTextBox.Visible = False) And (KeyCode = Raccourcit(7)) Then
         PX = 0
         PY = 0
-        If Player(MyIndex).Y - 1 > -1 And PX = 0 And PY = 0 Then
+        If Player(MyIndex).y - 1 > -1 And PX = 0 And PY = 0 Then
             tp = Map(GetPlayerMap(MyIndex)).Tile(GetPlayerX(MyIndex), GetPlayerY(MyIndex) - 1).Type
             If tp = TILE_TYPE_COFFRE Or tp = TILE_TYPE_PORTE_CODE And Player(MyIndex).Dir = DIR_UP Then PX = 0: PY = -1
         End If
                 
-        If Player(MyIndex).Y + 1 < MAX_MAPY + 1 And PX = 0 And PY = 0 Then
+        If Player(MyIndex).y + 1 < MAX_MAPY + 1 And PX = 0 And PY = 0 Then
             tp = Map(GetPlayerMap(MyIndex)).Tile(GetPlayerX(MyIndex), GetPlayerY(MyIndex) + 1).Type
             If tp = TILE_TYPE_COFFRE Or tp = TILE_TYPE_PORTE_CODE And Player(MyIndex).Dir = DIR_DOWN Then PX = 0: PY = 1
         End If
                 
-        If Player(MyIndex).X - 1 > -1 And PX = 0 And PY = 0 Then
+        If Player(MyIndex).x - 1 > -1 And PX = 0 And PY = 0 Then
             tp = Map(GetPlayerMap(MyIndex)).Tile(GetPlayerX(MyIndex) - 1, GetPlayerY(MyIndex)).Type
             If tp = TILE_TYPE_COFFRE Or tp = TILE_TYPE_PORTE_CODE And Player(MyIndex).Dir = DIR_LEFT Then PX = -1: PY = 0
         End If
         
-        If Player(MyIndex).X + 1 < MAX_MAPX + 1 And PX = 0 And PY = 0 Then
+        If Player(MyIndex).x + 1 < MAX_MAPX + 1 And PX = 0 And PY = 0 Then
             tp = Map(GetPlayerMap(MyIndex)).Tile(GetPlayerX(MyIndex) + 1, GetPlayerY(MyIndex)).Type
             If tp = TILE_TYPE_COFFRE Or tp = TILE_TYPE_PORTE_CODE And Player(MyIndex).Dir = DIR_RIGHT Then PX = 1: PY = 0
         End If
@@ -5683,9 +6120,10 @@ Dim tp As Long
     If KeyCode = Raccourcit(23) Then Call useRac(13)
     End If
     If KeyCode = vbKeyEscape And PopupOK = False Then
+        If PicInterface.Visible = True Then PicInterface.Visible = False: GoTo suite
         If PicMenuQuitter.Visible Then PicMenuQuitter.Visible = False Else PicMenuQuitter.Visible = True
     End If
-    
+suite:
     If KeyCode = vbKeyF1 And (FrmMirage.txtMyTextBox.Visible = False) Then Call menu_inv_Click: Exit Sub '"i" ouvre l'inventaire
     If KeyCode = vbKeyF2 And (FrmMirage.txtMyTextBox.Visible = False) Then Call menu_sort_Click: Exit Sub '"m" ouvre le pannel magie
     If KeyCode = vbKeyF3 And (FrmMirage.txtMyTextBox.Visible = False) Then Call menu_equ_Click: Exit Sub   '"e" ouvre l'equipement
@@ -5768,36 +6206,36 @@ Dim tp As Long
         End If
     End If
 End Sub
-Private Sub PicOptions_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    DragX = X
-    DragY = Y
+Private Sub PicOptions_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+    DragX = x
+    DragY = y
 End Sub
 
-Private Sub PicOptions_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    Call MovePicture(FrmMirage.picOptions, Button, Shift, X, Y)
+Private Sub PicOptions_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+    Call MovePicture(FrmMirage.picOptions, Button, Shift, x, y)
 End Sub
 
 
 
-Private Sub picquete_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub picquete_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 5
-DragX = X
-DragY = Y
+DragX = x
+DragY = y
 End Sub
 
-Private Sub picquete_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub picquete_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
 If Button = 0 Then Exit Sub
-Call MovePicture(picquete, Button, Shift, X, Y)
+Call MovePicture(picquete, Button, Shift, x, y)
 'If DragImg = 5 Then DoEvents: If DragImg = 5 Then picquete.Top = picquete.Top + ((y / twippy) - (DragY / twippy)): picquete.Left = picquete.Left + ((x / twippx) - (DragX / twippx))
 End Sub
 
-Private Sub picquete_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub picquete_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 0
 DragX = 0
 DragY = 0
 End Sub
 
-Private Sub picRac_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub picRac_MouseDown(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim Q As Long
 Dim Qq As Long
 Dim d As Byte
@@ -5826,20 +6264,20 @@ On Error Resume Next
     txtMyTextBox.SetFocus
 End Sub
 
-Private Sub picScreen_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    If Button = 1 Then Call PlayerSearch(Button, Shift, (X + NewPlayerPicX), (Y + NewPlayerPicY))
+Private Sub picScreen_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+    If Button = 1 Then Call PlayerSearch(Button, Shift, (x + NewPlayerPicX), (y + NewPlayerPicY))
 End Sub
 
-Private Sub picScreen_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-CurX = ((X + NewPlayerPicX) \ 32)
-CurY = ((Y + NewPlayerPicY) \ 32)
-PotX = X
-PotY = Y
+Private Sub picScreen_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+CurX = ((x + NewPlayerPicX) \ 32)
+CurY = ((y + NewPlayerPicY) \ 32)
+PotX = x
+PotY = y
 
 If CurX <> OldPCX Or CurY <> OldPCY Then Call CaseChange(CurX, CurY): OldPCX = CurX: OldPCY = CurY
 End Sub
 
-Private Sub picspell_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub picspell_MouseDown(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
     If Button = 1 Then
         If Player(MyIndex).Spell(Index + 1) > 0 Then
             If GetTickCount > Player(MyIndex).AttackTimer + 1000 Then
@@ -5944,14 +6382,14 @@ Private Sub Picture18_Click()
     If Picture11.Top > 0 Then Picture11.Top = 0
 End Sub
 
-Private Sub PicColor_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub PicColor_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim value As Long
 
 
 
 With MsgRgb2(OptionColorSelect)
 
-value = PicColor.point(X, Y)
+value = PicColor.point(x, y)
 .r = value Mod 256
 .g = Int(value / 256) Mod 256
 .B = Int(value / 256 / 256) Mod 256
@@ -5959,16 +6397,16 @@ FrmMirage.ShapeColor1(OptionColorSelect).FillColor = RGB(.r, .g, .B)
 End With
 End Sub
 
-Private Sub Picture19_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    DragX = X
-    DragY = Y
+Private Sub Picture19_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+    DragX = x
+    DragY = y
 End Sub
 
-Private Sub Picture19_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-Call MovePicture(FrmMirage.Picture19, Button, Shift, X, Y)
+Private Sub Picture19_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+Call MovePicture(FrmMirage.Picture19, Button, Shift, x, y)
 End Sub
 
-Private Sub Picture20_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Picture20_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 Popup.Visible = False
 'DragX = x
 'DragY = y
@@ -5981,7 +6419,7 @@ Private Sub Picture21_Click()
 End Sub
 
 
-Private Sub Popup_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Popup_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim i As Byte
     For i = 0 To menu.count - 1
         menu(i).ForeColor = &HE0E0E0
@@ -6101,6 +6539,10 @@ Timer3.Enabled = False
 PopupOK = False
 End Sub
 
+Private Sub TimerCarte_Timer()
+Call UpdateCarte
+End Sub
+
 Private Sub tmrRainDrop_Timer()
     If BLT_RAIN_DROPS > RainIntensity Then tmrRainDrop.Enabled = False: Exit Sub
     If BLT_RAIN_DROPS > 0 Then If DropRain(BLT_RAIN_DROPS).Randomized = False Then Call RNDRainDrop(BLT_RAIN_DROPS)
@@ -6165,17 +6607,17 @@ Private Sub txtQ_KeyPress(KeyAscii As Integer)
 If KeyAscii = vbKeyReturn Then KeyAscii = 0: txtQ.Visible = False
 End Sub
 
-Private Sub txtQ_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub txtQ_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 4
-DragX = X
-DragY = Y
+DragX = x
+DragY = y
 End Sub
 
-Private Sub txtQ_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-If DragImg = 4 Then txtQ.Top = txtQ.Top + ((Y / twippy) - (DragY / twippy)): txtQ.Left = txtQ.Left + ((X / twippx) - (DragX / twippx))
+Private Sub txtQ_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+If DragImg = 4 Then txtQ.Top = txtQ.Top + ((y / twippy) - (DragY / twippy)): txtQ.Left = txtQ.Left + ((x / twippx) - (DragX / twippx))
 End Sub
 
-Private Sub txtQ_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub txtQ_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
 DragImg = 0
 DragX = 0
 DragY = 0

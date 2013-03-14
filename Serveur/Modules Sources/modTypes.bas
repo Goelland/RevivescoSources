@@ -279,7 +279,7 @@ Type PlayerRec
     Buff(1 To 6) As Long '1=HP 2=MP 3=STR 4=Endu 5=Vitesse 6=Magie
     Buff2(1 To 6) As Long
     Debuff(7 To 13) As Long '7=HP 8=MP 9=STR 10=Endu 11=Vitesse 12=Magie 13 = root
-    
+    Debuff2(7 To 13) As Long
     
     ' Position
     Map As Long
@@ -879,6 +879,10 @@ With Player(Index)
         .Char(i).Buff2(n) = 0
         Next n
         
+        For n = 7 To 13
+        .Char(i).Debuff(n) = 0
+        .Char(i).Debuff2(n) = 0
+        Next n
         ' Temporary vars
         .Buffer = vbNullString
         .IncBuffer = vbNullString
@@ -970,6 +974,12 @@ With Player(Index)
      .Char(charnum).Buff(n) = 0
      .Char(charnum).Buff2(n) = 0
     Next n
+
+    For n = 7 To 13
+     .Char(charnum).Debuff(n) = 0
+     .Char(charnum).Debuff2(n) = 0
+    Next n
+    
     .Char(charnum).ArmorSlot = 0
     .Char(charnum).WeaponSlot = 0
     .Char(charnum).HelmetSlot = 0
@@ -1519,7 +1529,7 @@ add = 0
     If GetPlayerShieldSlot(Index) > 0 Then add = add + item(GetPlayerInvItemNum(Index, GetPlayerShieldSlot(Index))).AddHP
     If GetPlayerHelmetSlot(Index) > 0 Then add = add + item(GetPlayerInvItemNum(Index, GetPlayerHelmetSlot(Index))).AddHP
     If Player(Index).Char(charnum).Buff(1) > 0 And Player(Index).Char(charnum).Buff2(1) > 0 Then add = add + Spell(Player(Index).Char(charnum).Buff2(1)).data3
-
+    If Player(Index).Char(charnum).Debuff(7) > 0 And Player(Index).Char(charnum).Debuff2(7) > 0 Then add = add - Spell(Player(Index).Char(charnum).Debuff2(7)).data3
     'GetPlayerMaxHP = ((Player(index).Char(CharNum).Level + Int(GetPlayerstr(index) / 2) + ClassE(Player(index).Char(CharNum).Class).STR) * 2) + add
     GetPlayerMaxHP = (GetPlayerLevel(Index) * AddHP.Level) + (GetPlayerStr(Index) * AddHP.STR) + (GetPlayerDEF(Index) * AddHP.def) + (GetPlayerMAGI(Index) * AddHP.magi) + (GetPlayerSPEED(Index) * AddHP.Speed) + add
 End Function
@@ -1534,7 +1544,7 @@ add = 0
     If GetPlayerShieldSlot(Index) > 0 Then add = add + item(GetPlayerInvItemNum(Index, GetPlayerShieldSlot(Index))).AddMP
     If GetPlayerHelmetSlot(Index) > 0 Then add = add + item(GetPlayerInvItemNum(Index, GetPlayerHelmetSlot(Index))).AddMP
     If Player(Index).Char(charnum).Buff(2) > 0 And Player(Index).Char(charnum).Buff2(2) > 0 Then add = add + Spell(Player(Index).Char(charnum).Buff2(2)).data3
-
+    If Player(Index).Char(charnum).Debuff(8) > 0 And Player(Index).Char(charnum).Debuff2(8) > 0 Then add = add - Spell(Player(Index).Char(charnum).Debuff2(8)).data3
     'GetPlayerMaxMP = ((Player(index).Char(CharNum).Level + Int(GetPlayerMAGI(index) / 2) + Class(Player(index).Char(CharNum).Class).MAGI) * 2) + add
     GetPlayerMaxMP = (GetPlayerLevel(Index) * AddMP.Level) + (GetPlayerStr(Index) * AddMP.STR) + (GetPlayerDEF(Index) * AddMP.def) + (GetPlayerMAGI(Index) * AddMP.magi) + (GetPlayerSPEED(Index) * AddMP.Speed) + add
 End Function
@@ -1595,6 +1605,7 @@ add = 0
     If GetPlayerHelmetSlot(Index) > 0 Then add = add + item(GetPlayerInvItemNum(Index, GetPlayerHelmetSlot(Index))).AddStr
     Dim charnum As Long: charnum = Player(Index).charnum
     If Player(Index).Char(charnum).Buff(3) > 0 And Player(Index).Char(charnum).Buff2(3) > 0 Then add = add + Spell(Player(Index).Char(charnum).Buff2(3)).data3
+    If Player(Index).Char(charnum).Debuff(9) > 0 And Player(Index).Char(charnum).Debuff2(9) > 0 Then add = add - Spell(Player(Index).Char(charnum).Debuff2(9)).data3
     
     GetPlayerStr = Player(Index).Char(Player(Index).charnum).STR + add
 End Function
@@ -1612,6 +1623,7 @@ add = 0
     If GetPlayerHelmetSlot(Index) > 0 Then add = add + item(GetPlayerInvItemNum(Index, GetPlayerHelmetSlot(Index))).AddDef
     Dim charnum As Long: charnum = Player(Index).charnum
     If Player(Index).Char(charnum).Buff(4) > 0 And Player(Index).Char(charnum).Buff2(4) > 0 Then add = add + Spell(Player(Index).Char(charnum).Buff2(4)).data3
+    If Player(Index).Char(charnum).Debuff(10) > 0 And Player(Index).Char(charnum).Debuff2(10) > 0 Then add = add - Spell(Player(Index).Char(charnum).Debuff2(10)).data3
     
     GetPlayerDEF = Player(Index).Char(Player(Index).charnum).def + add
 End Function
@@ -1629,6 +1641,8 @@ add = 0
     If GetPlayerHelmetSlot(Index) > 0 Then add = add + item(GetPlayerInvItemNum(Index, GetPlayerHelmetSlot(Index))).AddSpeed
     Dim charnum As Long: charnum = Player(Index).charnum
     If Player(Index).Char(charnum).Buff(5) > 0 And Player(Index).Char(charnum).Buff2(5) > 0 Then add = add + Spell(Player(Index).Char(charnum).Buff2(5)).data3
+    If Player(Index).Char(charnum).Debuff(11) > 0 And Player(Index).Char(charnum).Debuff2(11) > 0 Then add = add - Spell(Player(Index).Char(charnum).Debuff2(11)).data3
+    
     GetPlayerSPEED = Player(Index).Char(Player(Index).charnum).Speed + add
 End Function
 
@@ -1645,6 +1659,7 @@ add = 0
     If GetPlayerHelmetSlot(Index) > 0 Then add = add + item(GetPlayerInvItemNum(Index, GetPlayerHelmetSlot(Index))).AddMagi
     Dim charnum As Long: charnum = Player(Index).charnum
     If Player(Index).Char(charnum).Buff(6) > 0 And Player(Index).Char(charnum).Buff2(6) > 0 Then add = add + Spell(Player(Index).Char(charnum).Buff2(6)).data3
+    If Player(Index).Char(charnum).Debuff(12) > 0 And Player(Index).Char(charnum).Debuff2(12) > 0 Then add = add - Spell(Player(Index).Char(charnum).Debuff2(12)).data3
     GetPlayerMAGI = Player(Index).Char(Player(Index).charnum).magi + add
 End Function
 

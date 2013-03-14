@@ -33,7 +33,6 @@ Begin VB.Form frmPlayerHelp
       _ExtentY        =   6165
       _Version        =   393216
       Tabs            =   2
-      Tab             =   1
       TabsPerRow      =   2
       TabHeight       =   520
       TabMaxWidth     =   1879
@@ -48,23 +47,24 @@ Begin VB.Form frmPlayerHelp
       EndProperty
       TabCaption(0)   =   "Commande"
       TabPicture(0)   =   "frmPlayerHelp.frx":17D2A
-      Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Frame2"
+      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).Control(0)=   "Label1(0)"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "Frame1"
-      Tab(0).Control(2)=   "Label1(0)"
+      Tab(0).Control(1).Enabled=   0   'False
+      Tab(0).Control(2)=   "Frame2"
+      Tab(0).Control(2).Enabled=   0   'False
       Tab(0).ControlCount=   3
       TabCaption(1)   =   "Aide"
       TabPicture(1)   =   "frmPlayerHelp.frx":17D46
-      Tab(1).ControlEnabled=   -1  'True
-      Tab(1).Control(0)=   "Label1(1)"
-      Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Frame8"
-      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).ControlEnabled=   0   'False
+      Tab(1).Control(0)=   "Frame8"
+      Tab(1).Control(1)=   "Label1(1)"
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame8 
          Caption         =   "Conseil"
          Height          =   1935
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   9
          Top             =   720
          Width           =   2775
@@ -83,7 +83,7 @@ Begin VB.Form frmPlayerHelp
       Begin VB.Frame Frame2 
          Caption         =   "Commande sans Cible"
          Height          =   1335
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   6
          Top             =   2040
          Width           =   2775
@@ -123,7 +123,7 @@ Begin VB.Form frmPlayerHelp
       Begin VB.Frame Frame1 
          Caption         =   "Commande avec Cible"
          Height          =   1215
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   3
          Top             =   720
          Width           =   2775
@@ -155,7 +155,7 @@ Begin VB.Form frmPlayerHelp
          Caption         =   "Panneau d'aide au Joueur 0.4"
          Height          =   135
          Index           =   1
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   2
          Top             =   480
          Width           =   2055
@@ -164,7 +164,7 @@ Begin VB.Form frmPlayerHelp
          Caption         =   "Panneau d'aide au Joueur"
          Height          =   135
          Index           =   0
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   1
          Top             =   480
          Width           =   2055

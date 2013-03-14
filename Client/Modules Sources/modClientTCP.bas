@@ -156,7 +156,7 @@ ligne = ""
 
         
         
-        For i = 1 To MAX_SPELLS - 1
+        For i = 1 To MAX_PLAYER_SPELLS - 1
             If Loading = False Then Load FrmMirage.picspell(i)
             
             X = Int(i / 10)
@@ -508,6 +508,7 @@ ligne = ""
     ' ::::::::::::::::::::::::::::::::::::
     ' :: Player inventory update packet ::
     ' ::::::::::::::::::::::::::::::::::::
+     ligne = "PlayerINventory"
     If LCase$(Parse(0)) = "playerinvupdate" Then
         n = Val(Parse(1))
         z = Val(Parse(2))
@@ -561,14 +562,14 @@ ligne = ""
         Next i
         Exit Sub
     End If
-    
+     ligne = "playermetier2"
     If (LCase$(Parse(0)) = "playermetier") Then
         n = Val(Parse(1))
         Player(n).Metier = Val(Parse(2))
         Player(n).MetierLvl = Val(Parse(3))
         Player(n).MetierExp = Val(Parse(4))
     End If
-    
+     ligne = "Metier2"
     If (LCase$(Parse(0)) = "metier") Then
         If Player(MyIndex).Metier > 0 Then
             FrmMirage.pictMetier.Visible = True
@@ -578,7 +579,7 @@ ligne = ""
             FrmMirage.lblmetier(3).Caption = "Description: " + Metier(Player(MyIndex).Metier).desc
         End If
     End If
-    
+    ligne = "Recettes"
     ' :::::::::::::
     ' :: recette ::
     ' :::::::::::::
@@ -616,7 +617,7 @@ ligne = ""
         Player(MyIndex).MaxHp = Val(Parse(1))
         Call SetPlayerHP(MyIndex, Val(Parse(2)))
         If GetPlayerMaxHP(MyIndex) > 0 Then FrmMirage.svie.Width = (((GetPlayerHP(MyIndex) / 1425) / (GetPlayerMaxHP(MyIndex) / 1425)) * 1425): FrmMirage.lvie.Caption = "PV : " & GetPlayerHP(MyIndex) & " / " & GetPlayerMaxHP(MyIndex)
-        FrmMirage.lblvie.Caption = FrmMirage.lvie.Caption
+        FrmMirage.lblStat(0).Caption = FrmMirage.lvie.Caption
         Exit Sub
     End If
     ligne = "Party"
@@ -655,7 +656,7 @@ ligne = ""
         Player(MyIndex).MaxMp = Val(Parse(1))
         Call SetPlayerMP(MyIndex, Val(Parse(2)))
         If GetPlayerMaxMP(MyIndex) > 0 Then FrmMirage.smana.Width = (((GetPlayerMP(MyIndex) / 1425) / (GetPlayerMaxMP(MyIndex) / 1425)) * 1425): FrmMirage.lmana.Caption = "MP : " & GetPlayerMP(MyIndex) & " / " & GetPlayerMaxMP(MyIndex)
-        FrmMirage.lblmana.Caption = FrmMirage.lmana.Caption
+        FrmMirage.lblStat(1).Caption = FrmMirage.lmana.Caption
         Exit Sub
     End If
     
@@ -683,11 +684,13 @@ ligne = ""
     ' :::::::::::::::::::::::::
     ' :: Player Stats Packet ::
     ' :::::::::::::::::::::::::
+    ligne = "PlayersBuffpacket"
     If (LCase$(Parse(0)) = "playersbuffpacket") Then
     z = 1
-    For i = 1 To 6
+    For i = 1 To 13
         Buff(i) = Parse(z)
         Buff2(i) = Parse(z + 1)
+        If FrmMirage.shapestat(i - 1).Tag = vbNullString Then FrmMirage.shapestat(i - 1).Tag = Buff(i) - GetTickCount
         z = z + 2
     Next i
     Call UpdateBuff
@@ -734,10 +737,10 @@ mont:
             SubSpeed = SubSpeed + Item(GetPlayerInvItemNum(MyIndex, GetPlayerHelmetSlot(MyIndex))).AddSpeed
         End If
 
-        If SubStr > 0 Or apf > 0 Then FrmMirage.lblSTR.Caption = Val(Parse(1)) - SubStr & " (+" & SubStr + apf & ")" Else If SubStr < 0 Then FrmMirage.lblSTR.Caption = Val(Parse(1)) - SubStr & " (" & apf - SubStr & ")" Else FrmMirage.lblSTR.Caption = Val(Parse(1))
-        If SubDef > 0 Or apd > 0 Then FrmMirage.lblDEF.Caption = Val(Parse(2)) - SubDef & " (+" & SubDef + apd & ")" Else If SubDef < 0 Then FrmMirage.lblDEF.Caption = Val(Parse(2)) - SubDef & " (" & apd - SubDef & ")" Else FrmMirage.lblDEF.Caption = Val(Parse(2))
-        If SubMagi > 0 Then FrmMirage.lblMAGI.Caption = Val(Parse(4)) - SubMagi & " (+" & SubMagi & ")" Else If SubMagi < 0 Then FrmMirage.lblMAGI.Caption = Val(Parse(4)) - SubMagi & " (" & SubMagi & ")" Else FrmMirage.lblMAGI.Caption = Val(Parse(4))
-        If SubSpeed > 0 Then FrmMirage.lblSPEED.Caption = Val(Parse(3)) - SubSpeed & " (+" & SubSpeed & ")" Else If SubSpeed < 0 Then FrmMirage.lblSPEED.Caption = Val(Parse(3)) - SubSpeed & " (" & SubSpeed & ")" Else FrmMirage.lblSPEED.Caption = Val(Parse(3))
+        If SubStr > 0 Or apf > 0 Then FrmMirage.lblStat(2).Caption = Val(Parse(1)) - SubStr & " (+" & SubStr + apf & ")" Else If SubStr < 0 Then FrmMirage.lblStat(2).Caption = Val(Parse(1)) - SubStr & " (" & apf - SubStr & ")" Else FrmMirage.lblStat(2).Caption = Val(Parse(1))
+        If SubDef > 0 Or apd > 0 Then FrmMirage.lblStat(3).Caption = Val(Parse(2)) - SubDef & " (+" & SubDef + apd & ")" Else If SubDef < 0 Then FrmMirage.lblStat(3).Caption = Val(Parse(2)) - SubDef & " (" & apd - SubDef & ")" Else FrmMirage.lblStat(3).Caption = Val(Parse(2))
+        If SubMagi > 0 Then FrmMirage.lblStat(5).Caption = Val(Parse(4)) - SubMagi & " (+" & SubMagi & ")" Else If SubMagi < 0 Then FrmMirage.lblStat(5).Caption = Val(Parse(4)) - SubMagi & " (" & SubMagi & ")" Else FrmMirage.lblStat(5).Caption = Val(Parse(4))
+        If SubSpeed > 0 Then FrmMirage.lblStat(4).Caption = Val(Parse(3)) - SubSpeed & " (+" & SubSpeed & ")" Else If SubSpeed < 0 Then FrmMirage.lblStat(4).Caption = Val(Parse(3)) - SubSpeed & " (" & SubSpeed & ")" Else FrmMirage.lblStat(4).Caption = Val(Parse(3))
         Call SetPlayerExp(MyIndex, Val(Parse(6)))
         nelvl = Val(Parse(5))
         FrmMirage.lexp.Caption = "EXP : " & Val(Parse(6)) & " / " & Val(Parse(5))
@@ -1648,7 +1651,7 @@ mont:
     ' :::::::::::::::::::
     ' :: Spells packet ::
     ' :::::::::::::::::::
-    ligne = "Spell Data 2"
+    ligne = "SpellData2"
     If (LCase$(Parse(0)) = "spells") Then
         
         FrmMirage.Picture13.Visible = True
@@ -1817,7 +1820,7 @@ mont:
             Case "magic"
                 Call PlaySound("magic" & Val(Parse(2)) & ".wav")
             Case "warp"
-                Call PlaySound("warp.wav")
+                'Call PlaySound("warp.wav")
             Case "pain"
                 Call PlaySound("pain.wav")
             Case "soundattribute"

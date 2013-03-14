@@ -3929,6 +3929,9 @@ Dim i As Byte
     For i = 1 To 6
     packet = packet & Player(Index).Char(Player(Index).charnum).Buff(i) & SEP_CHAR & Player(Index).Char(Player(Index).charnum).Buff2(i) & SEP_CHAR
     Next i
+    For i = 7 To 13
+    packet = packet & Player(Index).Char(Player(Index).charnum).Debuff(i) & SEP_CHAR & Player(Index).Char(Player(Index).charnum).Debuff2(i) & SEP_CHAR
+    Next i
     packet = packet & END_CHAR
     Call SendDataTo(Index, packet)
 End Sub
